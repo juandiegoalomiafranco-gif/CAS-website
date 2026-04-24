@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.imagenesgraficas.com)",
+      "Read(//Users/juandiegoalomiafranco/Desktop/**)",
+      "WebSearch",
+      "Bash(open \"/Users/juandiegoalomiafranco/Desktop/imágenes gráficas página web/presentacion-imagenes-graficas.html\")",
+      "WebFetch(domain:lasersa.com)",
+      "WebFetch(domain:webcache.googleusercontent.com)",
+      "WebFetch(domain:www.semana.com)",
+      "WebFetch(domain:b2bmarketplace.procolombia.co)",
+      "WebFetch(domain:web.archive.org)",
+      "Bash(open \"/Users/juandiegoalomiafranco/Desktop/LASER Externat Tira Vitis Kill/presentacion-laser-sa.html\")"
+    ],
+    "additionalDirectories": [
+      "/Users/juandiegoalomiafranco/Desktop"
+    ]
+  }
+}
