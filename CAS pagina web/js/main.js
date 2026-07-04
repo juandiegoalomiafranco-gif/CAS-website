@@ -22,16 +22,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileOverlay = document.querySelector('.nav__mobile-overlay');
 
   if (hamburger && mobileOverlay) {
+    hamburger.setAttribute('aria-expanded', 'false');
+
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       mobileOverlay.classList.toggle('active');
-      document.body.style.overflow = mobileOverlay.classList.contains('active') ? 'hidden' : '';
+      const isOpen = mobileOverlay.classList.contains('active');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     mobileOverlay.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         mobileOverlay.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       });
     });
@@ -221,21 +226,5 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.add('active');
     }
   });
-
-  // --- Subtle Parallax on Hero (scroll) ---
-  const heroSection = document.querySelector('.hero');
-  if (heroSection) {
-    const handleParallax = () => {
-      const scrolled = window.scrollY;
-      const heroHeight = heroSection.offsetHeight;
-      if (scrolled < heroHeight) {
-        const offset = scrolled * 0.25;
-        const opacity = 1 - (scrolled / heroHeight) * 1.4;
-        heroSection.style.setProperty('--parallax-y', offset + 'px');
-        heroSection.style.setProperty('--parallax-opacity', Math.max(0, opacity));
-      }
-    };
-    window.addEventListener('scroll', handleParallax, { passive: true });
-  }
 
 });
