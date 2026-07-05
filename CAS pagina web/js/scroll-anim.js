@@ -100,7 +100,7 @@
     });
 
     // --- Watermark parallax (subtle upward drift while its section scrolls) ---
-    document.querySelectorAll('.section__bg-text, .section__bg-number, .project-block__number').forEach((el) => {
+    document.querySelectorAll('.section__bg-text, .section__bg-number, .project-block__number, .proj-hero__num').forEach((el) => {
       gsap.to(el, {
         y: -40,
         ease: 'none',
