@@ -22,36 +22,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileOverlay = document.querySelector('.nav__mobile-overlay');
 
   if (hamburger && mobileOverlay) {
+    hamburger.setAttribute('aria-expanded', 'false');
+
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       mobileOverlay.classList.toggle('active');
-      document.body.style.overflow = mobileOverlay.classList.contains('active') ? 'hidden' : '';
+      const isOpen = mobileOverlay.classList.contains('active');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     mobileOverlay.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         mobileOverlay.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       });
     });
   }
 
-  // --- Scroll Reveal (IntersectionObserver) ---
-  const revealElements = document.querySelectorAll('.reveal, .stagger-children');
-
-  if (revealElements.length > 0) {
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
-
-    revealElements.forEach(el => revealObserver.observe(el));
-  }
+  // Scroll reveals live in js/scroll-anim.js (GSAP).
 
   // --- Counter Animation ---
   const animateCounter = (el, target, suffix, duration = 1400) => {
@@ -70,7 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const counterEls = document.querySelectorAll('.counter-num[data-target]');
-  if (counterEls.length > 0) {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (counterEls.length > 0 && reducedMotion) {
+    counterEls.forEach(el => {
+      el.textContent = el.dataset.target + (el.dataset.suffix || '');
+    });
+  } else if (counterEls.length > 0) {
     const counterObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -111,6 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (details) {
         details.classList.toggle('open');
         const isOpen = details.classList.contains('open');
+        // measure instead of a fixed cap so tall (three-zone) content never clips
+        details.style.maxHeight = isOpen ? details.scrollHeight + 'px' : '';
         btn.innerHTML = isOpen
           ? 'Cerrar <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>'
           : 'Leer más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>';
@@ -221,21 +219,5 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.add('active');
     }
   });
-
-  // --- Subtle Parallax on Hero (scroll) ---
-  const heroSection = document.querySelector('.hero');
-  if (heroSection) {
-    const handleParallax = () => {
-      const scrolled = window.scrollY;
-      const heroHeight = heroSection.offsetHeight;
-      if (scrolled < heroHeight) {
-        const offset = scrolled * 0.25;
-        const opacity = 1 - (scrolled / heroHeight) * 1.4;
-        heroSection.style.setProperty('--parallax-y', offset + 'px');
-        heroSection.style.setProperty('--parallax-opacity', Math.max(0, opacity));
-      }
-    };
-    window.addEventListener('scroll', handleParallax, { passive: true });
-  }
 
 });

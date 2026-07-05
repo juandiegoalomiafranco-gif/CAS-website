@@ -6,11 +6,12 @@
   <meta name="description" content="Portafolio CAS del Programa del Diploma IB — Creatividad, Actividad y Servicio. Documentación de experiencias y proyectos 2025–2027.">
   <title>CAS — ¿Qué es CAS?</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231C1814'/%3E%3Ctext x='32' y='46' font-family='Georgia, serif' font-size='40' font-style='italic' fill='%23F5F2EB' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
 
-  <!-- Baskervville for hero animation -->
+  <!-- Site fonts: Baskervville (display, also hero), Inter (body), Karla (labels) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Karla:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Preload hero image -->
   <link rel="preload" as="image" href="images/drummer.jpg" />
@@ -87,26 +88,27 @@
 
         <div class="grid grid--60-40" style="position:relative;z-index:1;">
           <div class="reveal">
-            <h2 class="font-display" style="font-size:clamp(40px,5vw,64px);line-height:1.05;margin-bottom:24px;">Más que un requisito.</h2>
-            <p style="font-size:16px;line-height:1.8;color:var(--zinc);max-width:540px;">CAS es un programa que permite a los alumnos desarrollar su potencial personal e interpersonal a través del aprendizaje vivencial. No se trata de cumplir horas — se trata de convertirte en alguien más.</p>
+            <span class="eyebrow">Programa CAS</span>
+            <h2 class="section-head" style="margin-top:16px;">Más que un requisito.</h2>
+            <p class="lead" style="max-width:540px;">CAS es un programa que permite a los alumnos desarrollar su potencial personal e interpersonal a través del aprendizaje vivencial. No se trata de cumplir horas — se trata de convertirte en alguien más.</p>
 
-            <div class="pull-quote reveal reveal-delay-1">
+            <div class="pull-quote reveal">
               <span class="pull-quote__mark">"</span>
               <p class="pull-quote__text">Cada experiencia deja una huella. Cada proyecto, una versión mejor de ti.</p>
             </div>
           </div>
 
-          <div class="reveal reveal-delay-2" style="display:flex;flex-direction:column;gap:40px;padding-top:16px;">
+          <div class="reveal stagger-children" style="display:flex;flex-direction:column;gap:40px;padding-top:16px;">
             <div class="stat">
-              <div class="stat__number text-creativity"><span class="counter-num" data-target="14" data-suffix="+">14+</span></div>
+              <div class="stat__number"><span class="counter-num" data-target="14" data-suffix="+">14+</span></div>
               <div class="stat__label">Experiencias mínimas</div>
             </div>
             <div class="stat">
-              <div class="stat__number text-activity"><span class="counter-num" data-target="7" data-suffix="+">7+</span></div>
+              <div class="stat__number"><span class="counter-num" data-target="7" data-suffix="+">7+</span></div>
               <div class="stat__label">Proyectos requeridos</div>
             </div>
             <div class="stat">
-              <div class="stat__number text-service"><span class="counter-num" data-target="28" data-suffix="">28</span></div>
+              <div class="stat__number"><span class="counter-num" data-target="28" data-suffix="">28</span></div>
               <div class="stat__label">Días mínimos por proyecto</div>
             </div>
           </div>
@@ -119,25 +121,25 @@
       <div class="container">
         <div class="grid grid--3 stagger-children">
           <!-- Creativity -->
-          <div style="border-top:1px dashed var(--creativity);padding-top:32px;">
-            <span class="font-display text-creativity" style="font-size:96px;line-height:1;">C</span>
-            <div class="font-mono uppercase tracking-widest text-creativity" style="font-size:13px;margin:8px 0 16px;">Creatividad</div>
-            <p style="font-size:15px;line-height:1.7;color:var(--zinc);">Arte, música, diseño, expresión. Desarrollar la imaginación y el proceso creativo.</p>
-            <a href="proyectos.html" class="font-mono uppercase text-creativity" style="font-size:11px;display:inline-flex;align-items:center;gap:6px;margin-top:24px;">Ver proyectos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <div class="pillar pillar--c">
+            <span class="pillar__letter text-creativity">C</span>
+            <div class="eyebrow eyebrow--c pillar__name">Creatividad</div>
+            <p class="pillar__desc">Arte, música, diseño, expresión. Desarrollar la imaginación y el proceso creativo.</p>
+            <a href="proyectos.html" class="arrow-link text-creativity">Ver proyectos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
           <!-- Activity -->
-          <div style="border-top:1px dashed var(--activity);padding-top:32px;">
-            <span class="font-display text-activity" style="font-size:96px;line-height:1;">A</span>
-            <div class="font-mono uppercase tracking-widest text-activity" style="font-size:13px;margin:8px 0 16px;">Actividad</div>
-            <p style="font-size:15px;line-height:1.7;color:var(--zinc);">Deporte, movimiento, resistencia. Cuidar el cuerpo como se cuida la mente.</p>
-            <a href="proyectos.html" class="font-mono uppercase text-activity" style="font-size:11px;display:inline-flex;align-items:center;gap:6px;margin-top:24px;">Ver proyectos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <div class="pillar pillar--a">
+            <span class="pillar__letter text-activity">A</span>
+            <div class="eyebrow eyebrow--a pillar__name">Actividad</div>
+            <p class="pillar__desc">Deporte, movimiento, resistencia. Cuidar el cuerpo como se cuida la mente.</p>
+            <a href="proyectos.html" class="arrow-link text-activity">Ver proyectos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
           <!-- Service -->
-          <div style="border-top:1px dashed var(--service);padding-top:32px;">
-            <span class="font-display text-service" style="font-size:96px;line-height:1;">S</span>
-            <div class="font-mono uppercase tracking-widest text-service" style="font-size:13px;margin:8px 0 16px;">Servicio</div>
-            <p style="font-size:15px;line-height:1.7;color:var(--zinc);">Comunidad, impacto, propósito. Actuar por algo más grande que uno mismo.</p>
-            <a href="proyectos.html" class="font-mono uppercase text-service" style="font-size:11px;display:inline-flex;align-items:center;gap:6px;margin-top:24px;">Ver proyectos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <div class="pillar pillar--s">
+            <span class="pillar__letter text-service">S</span>
+            <div class="eyebrow eyebrow--s pillar__name">Servicio</div>
+            <p class="pillar__desc">Comunidad, impacto, propósito. Actuar por algo más grande que uno mismo.</p>
+            <a href="proyectos.html" class="arrow-link text-service">Ver proyectos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
       </div>
@@ -148,20 +150,20 @@
       <div class="container">
         <div class="grid grid--2 reveal">
           <div>
-            <h3 class="font-display" style="font-size:36px;margin-bottom:16px;">Programa del Diploma IB</h3>
-            <p style="font-size:15px;line-height:1.8;color:var(--zinc);">CAS es uno de los tres componentes troncales del Programa del Diploma, junto con Teoría del Conocimiento (TdC) y la Monografía. Es el eje que conecta al estudiante con el mundo real — más allá de los exámenes y las calificaciones.</p>
+            <h3 class="section-head section-head--sm">Programa del Diploma IB</h3>
+            <p class="prose" style="font-size:15px;line-height:1.8;color:var(--zinc);">CAS es uno de los tres componentes troncales del Programa del Diploma, junto con Teoría del Conocimiento (TdC) y la Monografía. Es el eje que conecta al estudiante con el mundo real — más allá de los exámenes y las calificaciones.</p>
           </div>
           <div>
-            <div class="font-mono uppercase tracking-widest text-zinc" style="font-size:11px;margin-bottom:20px;">Resultados de aprendizaje</div>
-            <div style="display:flex;flex-direction:column;gap:8px;" class="stagger-children">
-              <span class="tag">01 · Fortalezas y áreas de mejora</span>
-              <span class="tag">02 · Desafíos y nuevas habilidades</span>
-              <span class="tag">03 · Iniciar y planificar</span>
-              <span class="tag">04 · Compromiso y perseverancia</span>
-              <span class="tag">05 · Trabajo en equipo</span>
-              <span class="tag">06 · Importancia global</span>
-              <span class="tag">07 · Ética en las decisiones</span>
-            </div>
+            <div class="eyebrow" style="margin-bottom:20px;">Resultados de aprendizaje</div>
+            <nav class="lo-index stagger-children" aria-label="Resultados de aprendizaje">
+              <a class="lo-index__item" href="resultados.html#ra-01"><span class="lo-index__num">01</span> Fortalezas y áreas de mejora</a>
+              <a class="lo-index__item" href="resultados.html#ra-02"><span class="lo-index__num">02</span> Desafíos y nuevas habilidades</a>
+              <a class="lo-index__item" href="resultados.html#ra-03"><span class="lo-index__num">03</span> Iniciar y planificar</a>
+              <a class="lo-index__item" href="resultados.html#ra-04"><span class="lo-index__num">04</span> Compromiso y perseverancia</a>
+              <a class="lo-index__item" href="resultados.html#ra-05"><span class="lo-index__num">05</span> Trabajo en equipo</a>
+              <a class="lo-index__item" href="resultados.html#ra-06"><span class="lo-index__num">06</span> Importancia global</a>
+              <a class="lo-index__item" href="resultados.html#ra-07"><span class="lo-index__num">07</span> Ética en las decisiones</a>
+            </nav>
           </div>
         </div>
       </div>
@@ -182,5 +184,6 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="js/hero-anim.js"></script>
+  <script src="js/scroll-anim.js"></script>
 </body>
 </html>
