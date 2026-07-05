@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Proyectos CAS — Creatividad, Actividad y Servicio. Documentación formal de todos los proyectos del portafolio IB.">
   <title>CAS — Proyectos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231C1814'/%3E%3Ctext x='32' y='46' font-family='Georgia, serif' font-size='40' font-style='italic' fill='%23F5F2EB' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
 </head>
@@ -24,14 +27,15 @@
     <section class="section section--lg">
       <div class="container">
         <!-- Page Header -->
-        <div class="reveal">
-          <h1 class="font-display" style="font-size:clamp(72px,10vw,120px);line-height:1;">Proyectos</h1>
-          <div style="width:80px;height:2px;background:var(--creativity);margin:16px 0 12px;"></div>
-          <p class="font-mono text-zinc" style="font-size:13px;">Documentación formal de proyectos CAS de más de 28 días</p>
+        <div class="page-head reveal" style="padding-top:0;">
+          <span class="eyebrow">Portafolio CAS</span>
+          <h1 class="page-head__title">Proyectos</h1>
+          <hr class="page-head__rule">
+          <p class="page-head__sub">Documentación formal de proyectos CAS de más de 28 días</p>
         </div>
 
         <!-- Filters -->
-        <div class="reveal reveal-delay-1" style="display:flex;gap:8px;margin:40px 0 48px;flex-wrap:wrap;">
+        <div class="filters-row reveal">
           <button class="filter-btn active" data-filter="all">Todos</button>
           <button class="filter-btn" data-filter="creativity">Creativity</button>
           <button class="filter-btn" data-filter="activity">Activity</button>
@@ -43,105 +47,99 @@
 
           <!-- CREATIVITY : Batería -->
           <div class="card card--creativity" data-category="creativity">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+            <div class="card__head">
               <span class="cat-chip cat-chip--c">C</span>
-              <span class="font-display text-zinc" style="font-size:48px;line-height:1;opacity:0.3;">01</span>
+              <span class="card__index">01</span>
             </div>
-            <h3 class="font-display" style="font-size:28px;margin-bottom:4px;">Batería</h3>
-            <span class="font-mono text-zinc" style="font-size:12px;">2025 — Presente</span>
-            <div style="margin:12px 0;"><span class="badge badge--creativity" style="font-size:10px;">Activo</span></div>
-            <p style="font-size:14px;line-height:1.7;color:var(--zinc);margin-bottom:16px;">Aprendizaje continuo de batería: técnica, lectura rítmica y práctica con metrónomo.</p>
-            <a href="proyectos-cas.html" class="font-mono uppercase text-creativity" style="font-size:11px;display:inline-flex;align-items:center;gap:4px;">Ver proyecto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <h3 class="card__title">Batería</h3>
+            <span class="card__date">2025 — Presente</span>
+            <div class="card__badges"><span class="badge badge--creativity">Activo</span></div>
+            <p class="card__desc">Aprendizaje continuo de batería: técnica, lectura rítmica y práctica con metrónomo.</p>
+            <a href="proyectos-cas.html#p-01" class="arrow-link text-creativity">Ver proyecto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
 
           <!-- CREATIVITY : Bajo -->
           <div class="card card--creativity" data-category="creativity">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+            <div class="card__head">
               <span class="cat-chip cat-chip--c">C</span>
-              <span class="font-display text-zinc" style="font-size:48px;line-height:1;opacity:0.3;">02</span>
+              <span class="card__index">02</span>
             </div>
-            <h3 class="font-display" style="font-size:28px;margin-bottom:4px;">Bajo Eléctrico</h3>
-            <span class="font-mono text-zinc" style="font-size:12px;">2025</span>
-            <div style="margin:12px 0;"><span class="badge badge--planning">En Planeación</span></div>
-            <p style="font-size:14px;line-height:1.7;color:var(--zinc);margin-bottom:16px;">Exploración del bajo como instrumento rítmico y armónico dentro de un grupo musical.</p>
-            <a href="proyectos-cas.html" class="font-mono uppercase text-creativity" style="font-size:11px;display:inline-flex;align-items:center;gap:4px;">Ver proyecto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <h3 class="card__title">Bajo Eléctrico</h3>
+            <span class="card__date">2025</span>
+            <div class="card__badges"><span class="badge badge--planning">En Planeación</span></div>
+            <p class="card__desc">Exploración del bajo como instrumento rítmico y armónico dentro de un grupo musical.</p>
+            <a href="proyectos-cas.html#p-02" class="arrow-link text-creativity">Ver proyecto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
 
           <!-- CREATIVITY : Piano -->
           <div class="card card--creativity" data-category="creativity">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+            <div class="card__head">
               <span class="cat-chip cat-chip--c">C</span>
-              <span class="font-display text-zinc" style="font-size:48px;line-height:1;opacity:0.3;">03</span>
+              <span class="card__index">03</span>
             </div>
-            <h3 class="font-display" style="font-size:28px;margin-bottom:4px;">Piano</h3>
-            <span class="font-mono text-zinc" style="font-size:12px;">2025</span>
-            <div style="margin:12px 0;"><span class="badge badge--planning">En Planeación</span></div>
-            <p style="font-size:14px;line-height:1.7;color:var(--zinc);margin-bottom:16px;">Desarrollo de teoría musical aplicada al piano: escalas, acordes y composición.</p>
-            <a href="proyectos-cas.html" class="font-mono uppercase text-creativity" style="font-size:11px;display:inline-flex;align-items:center;gap:4px;">Ver proyecto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <h3 class="card__title">Piano</h3>
+            <span class="card__date">2025</span>
+            <div class="card__badges"><span class="badge badge--planning">En Planeación</span></div>
+            <p class="card__desc">Desarrollo de teoría musical aplicada al piano: escalas, acordes y composición.</p>
+            <a href="proyectos-cas.html#p-03" class="arrow-link text-creativity">Ver proyecto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
 
           <!-- ACTIVITY : Natación -->
           <div class="card card--activity" data-category="activity">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+            <div class="card__head">
               <span class="cat-chip cat-chip--a">A</span>
-              <span class="font-display text-zinc" style="font-size:48px;line-height:1;opacity:0.3;">04</span>
+              <span class="card__index">04</span>
             </div>
-            <h3 class="font-display" style="font-size:28px;margin-bottom:4px;">Natación</h3>
-            <span class="font-mono text-zinc" style="font-size:12px;">2025 — Presente</span>
-            <div style="margin:12px 0;"><span class="badge badge--active">Activo</span></div>
-            <p style="font-size:14px;line-height:1.7;color:var(--zinc);margin-bottom:16px;">Entrenamiento de natación con enfoque en técnica de estilos y mejora de tiempos.</p>
-            <a href="proyectos-cas.html" class="font-mono uppercase text-activity" style="font-size:11px;display:inline-flex;align-items:center;gap:4px;">Ver proyecto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <h3 class="card__title">Natación</h3>
+            <span class="card__date">2025 — Presente</span>
+            <div class="card__badges"><span class="badge badge--active">Activo</span></div>
+            <p class="card__desc">Entrenamiento de natación con enfoque en técnica de estilos y mejora de tiempos.</p>
+            <a href="proyectos-cas.html#p-04" class="arrow-link text-activity">Ver proyecto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
 
           <!-- ACTIVITY : Running -->
           <div class="card card--activity" data-category="activity">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+            <div class="card__head">
               <span class="cat-chip cat-chip--a">A</span>
-              <span class="font-display text-zinc" style="font-size:48px;line-height:1;opacity:0.3;">05</span>
+              <span class="card__index">05</span>
             </div>
-            <h3 class="font-display" style="font-size:28px;margin-bottom:4px;">Running</h3>
-            <span class="font-mono text-zinc" style="font-size:12px;">2025</span>
-            <div style="margin:12px 0;"><span class="badge badge--planning">En Planeación</span></div>
-            <p style="font-size:14px;line-height:1.7;color:var(--zinc);margin-bottom:16px;">Plan de entrenamiento de carrera con objetivo de completar una prueba de 10K.</p>
-            <a href="proyectos-cas.html" class="font-mono uppercase text-activity" style="font-size:11px;display:inline-flex;align-items:center;gap:4px;">Ver proyecto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <h3 class="card__title">Running</h3>
+            <span class="card__date">2025</span>
+            <div class="card__badges"><span class="badge badge--planning">En Planeación</span></div>
+            <p class="card__desc">Plan de entrenamiento de carrera con objetivo de completar una prueba de 10K.</p>
+            <a href="proyectos-cas.html#p-05" class="arrow-link text-activity">Ver proyecto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
 
           <!-- ACTIVITY : Triatlón ★ FEATURED -->
           <div class="card card--featured-activity" data-category="activity">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+            <div class="card__head">
               <div style="display:flex;align-items:center;gap:8px;">
                 <span class="cat-chip cat-chip--a">A</span>
-                <span class="badge badge--featured" style="font-size:9px;">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="var(--service)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                  Destacado
-                </span>
+                <span class="badge badge--featured">Destacado</span>
               </div>
-              <span class="font-display text-zinc" style="font-size:48px;line-height:1;opacity:0.3;">06</span>
+              <span class="card__index">06</span>
             </div>
-            <h3 class="font-display" style="font-size:28px;margin-bottom:4px;">Triatlón</h3>
-            <span class="font-mono text-zinc" style="font-size:12px;">2025–2026</span>
-            <div style="margin:12px 0;"><span class="badge badge--planning">En Planeación</span> <span class="font-mono text-activity" style="font-size:10px;margin-left:8px;">45+ Días</span></div>
-            <p style="font-size:14px;line-height:1.7;color:var(--zinc);margin-bottom:16px;">Preparación multidisciplinaria para completar un triatlón sprint. El proyecto físico más exigente del portafolio.</p>
-            <a href="proyectos-cas.html" class="font-mono uppercase text-activity" style="font-size:11px;display:inline-flex;align-items:center;gap:4px;">Ver proyecto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <h3 class="card__title">Triatlón</h3>
+            <span class="card__date">2025–2026</span>
+            <div class="card__badges"><span class="badge badge--planning">En Planeación</span> <span class="badge badge--activity">45+ Días</span></div>
+            <p class="card__desc">Preparación multidisciplinaria para completar un triatlón sprint. El proyecto físico más exigente del portafolio.</p>
+            <a href="proyectos-cas.html#p-06" class="arrow-link text-activity">Ver proyecto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
 
           <!-- SERVICE : Proyecto Impacto Social ★ FEATURED -->
           <div class="card card--featured-service" data-category="service">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+            <div class="card__head">
               <div style="display:flex;align-items:center;gap:8px;">
                 <span class="cat-chip cat-chip--s">S</span>
-                <span class="badge badge--featured" style="font-size:9px;">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="var(--service)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                  Destacado
-                </span>
+                <span class="badge badge--featured">Destacado</span>
               </div>
-              <span class="font-display text-zinc" style="font-size:48px;line-height:1;opacity:0.3;">07</span>
+              <span class="card__index">07</span>
             </div>
-            <h3 class="font-display" style="font-size:28px;margin-bottom:4px;">Proyecto Impacto Social</h3>
-            <span class="font-mono text-zinc" style="font-size:12px;">2025–2026</span>
-            <div style="margin:12px 0;"><span class="badge badge--planning">En Planeación</span></div>
-            <p style="font-size:14px;line-height:1.7;color:var(--zinc);margin-bottom:16px;">Proyecto de servicio comunitario en definición. El eje central de mi CAS.</p>
-            <a href="proyectos-cas.html" class="font-mono uppercase text-service" style="font-size:11px;display:inline-flex;align-items:center;gap:4px;">Ver proyecto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <h3 class="card__title">Proyecto Impacto Social</h3>
+            <span class="card__date">2025–2026</span>
+            <div class="card__badges"><span class="badge badge--planning">En Planeación</span></div>
+            <p class="card__desc">Proyecto de servicio comunitario en definición. El eje central de mi CAS.</p>
+            <a href="proyectos-cas.html#p-07" class="arrow-link text-service">Ver proyecto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
 
         </div>
@@ -151,5 +149,8 @@
 
   <footer class="footer"><div class="footer__inner"><span>CAS Portfolio · IB Diploma 2025–2027</span><span>CCB Cali · Juan Diego</span></div></footer>
   <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/scroll-anim.js"></script>
 </body>
 </html>

@@ -42,21 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Scroll Reveal (IntersectionObserver) ---
-  const revealElements = document.querySelectorAll('.reveal, .stagger-children');
-
-  if (revealElements.length > 0) {
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
-
-    revealElements.forEach(el => revealObserver.observe(el));
-  }
+  // Scroll reveals live in js/scroll-anim.js (GSAP).
 
   // --- Counter Animation ---
   const animateCounter = (el, target, suffix, duration = 1400) => {
@@ -75,7 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const counterEls = document.querySelectorAll('.counter-num[data-target]');
-  if (counterEls.length > 0) {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (counterEls.length > 0 && reducedMotion) {
+    counterEls.forEach(el => {
+      el.textContent = el.dataset.target + (el.dataset.suffix || '');
+    });
+  } else if (counterEls.length > 0) {
     const counterObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {

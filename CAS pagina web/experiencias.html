@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Registro de experiencias CAS — Documentación individual de actividades de Creatividad, Actividad y Servicio.">
   <title>CAS — Experiencias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231C1814'/%3E%3Ctext x='32' y='46' font-family='Georgia, serif' font-size='40' font-style='italic' fill='%23F5F2EB' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
 </head>
@@ -27,24 +30,24 @@
         <span class="section__bg-text" style="top:-30px;left:-20px;">EXP.</span>
 
         <!-- Page Header -->
-        <div class="reveal" style="position:relative;z-index:1;">
-          <h1 class="font-display" style="font-size:clamp(48px,8vw,72px);line-height:1;">Experiencias</h1>
-          <p class="font-mono text-zinc" style="font-size:13px;margin:12px 0 8px;">Registro individual de actividades CAS</p>
-          <span class="badge" style="border-color:var(--white);color:var(--white);font-size:12px;padding:5px 12px;">0 / 14+</span>
+        <div class="page-head reveal" style="position:relative;z-index:1;padding-top:0;">
+          <span class="eyebrow">Registro CAS</span>
+          <h1 class="page-head__title">Experiencias</h1>
+          <hr class="page-head__rule">
+          <p class="page-head__sub">Registro individual de actividades CAS</p>
+          <p class="count-note" style="margin-top:12px;">0 de 14+ experiencias registradas</p>
         </div>
 
         <!-- Filters -->
-        <div class="reveal reveal-delay-1" style="display:flex;align-items:center;gap:12px;margin:48px 0 40px;flex-wrap:wrap;">
+        <div class="filters-row reveal">
           <button class="filter-btn exp-filter-btn active" data-filter="all">Todas</button>
           <button class="filter-btn exp-filter-btn" data-filter="creativity">C</button>
           <button class="filter-btn exp-filter-btn" data-filter="activity">A</button>
           <button class="filter-btn exp-filter-btn" data-filter="service">S</button>
-          <div style="margin-left:auto;">
-            <select class="select-styled exp-sort-select">
-              <option value="fecha">Fecha</option>
-              <option value="categoria">Categoría</option>
-            </select>
-          </div>
+          <select class="select-styled exp-sort-select">
+            <option value="fecha">Fecha</option>
+            <option value="categoria">Categoría</option>
+          </select>
         </div>
 
         <!-- Experience List -->
@@ -52,138 +55,124 @@
 
           <!-- EXP.001 -->
           <div class="exp-entry exp-entry--creativity reveal" data-category="creativity" data-date="2025-03-10">
-            <div class="exp-entry__header">
+            <div class="exp-entry__rail">
               <span class="exp-entry__number">EXP. 001</span>
+              <span class="exp-entry__date">10 · 03 · 2025</span>
+              <span class="exp-entry__dur text-creativity">2H</span>
               <span class="cat-chip cat-chip--c">C</span>
-              <h3 class="exp-entry__title">Ensayo de Batería</h3>
             </div>
-            <div class="exp-entry__meta">
-              <span class="font-mono text-zinc" style="font-size:12px;">10 · 03 · 2025</span>
-              <span class="font-mono text-creativity" style="font-size:11px;">2H</span>
-            </div>
+            <h3 class="exp-entry__title">Ensayo de Batería</h3>
             <p class="exp-entry__desc">Primera sesión formal de ensayo con enfoque en técnica de brazos y desarrollo de independencia rítmica.</p>
             <button class="exp-entry__expand">Leer más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
             <div class="exp-entry__details">
               <div class="exp-entry__details-inner">
-                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <div class="project-block__tags">
                   <span class="tag">RA 02</span>
                   <span class="tag">Audaz</span>
                   <span class="tag">Reflexivo</span>
                 </div>
-                <p style="font-size:14px;color:var(--zinc);line-height:1.7;">Durante esta sesión trabajé ejercicios de independencia de manos con el pad de práctica antes de pasar al kit completo. Utilicé metrónomo a 80 BPM y registré grabación de audio para comparar progreso. El mayor desafío fue mantener el hi-hat constante mientras cambiaba patrones con la mano derecha.</p>
+                <p class="exp-entry__details-text">Durante esta sesión trabajé ejercicios de independencia de manos con el pad de práctica antes de pasar al kit completo. Utilicé metrónomo a 80 BPM y registré grabación de audio para comparar progreso. El mayor desafío fue mantener el hi-hat constante mientras cambiaba patrones con la mano derecha.</p>
                 <div style="display:flex;gap:8px;">
-                  <div class="placeholder-img placeholder-img--square" style="width:120px;height:120px;font-size:9px;">Foto 01</div>
-                  <div class="placeholder-img placeholder-img--square" style="width:120px;height:120px;font-size:9px;">Foto 02</div>
+                  <div class="placeholder-img placeholder-img--square" style="width:120px;height:120px;"><span class="eyebrow">Próximamente</span><span class="placeholder-img__note">Foto 01</span></div>
+                  <div class="placeholder-img placeholder-img--square" style="width:120px;height:120px;"><span class="eyebrow">Próximamente</span><span class="placeholder-img__note">Foto 02</span></div>
                 </div>
               </div>
             </div>
           </div>
 
-          <hr class="divider" style="margin:24px 0;">
 
           <!-- EXP.002 -->
           <div class="exp-entry exp-entry--activity reveal" data-category="activity" data-date="2025-03-12">
-            <div class="exp-entry__header">
+            <div class="exp-entry__rail">
               <span class="exp-entry__number">EXP. 002</span>
+              <span class="exp-entry__date">12 · 03 · 2025</span>
+              <span class="exp-entry__dur text-activity">1.5H</span>
               <span class="cat-chip cat-chip--a">A</span>
-              <h3 class="exp-entry__title">Entrenamiento de Natación</h3>
             </div>
-            <div class="exp-entry__meta">
-              <span class="font-mono text-zinc" style="font-size:12px;">12 · 03 · 2025</span>
-              <span class="font-mono text-activity" style="font-size:11px;">1.5H</span>
-            </div>
+            <h3 class="exp-entry__title">Entrenamiento de Natación</h3>
             <p class="exp-entry__desc">Sesión de piscina enfocada en técnica de crol y mejora de respiración bilateral.</p>
             <button class="exp-entry__expand">Leer más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
             <div class="exp-entry__details">
               <div class="exp-entry__details-inner">
-                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <div class="project-block__tags">
                   <span class="tag">RA 02</span>
                   <span class="tag">RA 04</span>
                   <span class="tag">Equilibrado</span>
                 </div>
-                <p style="font-size:14px;color:var(--zinc);line-height:1.7;">Trabajé 1500m totales divididos en series de 100m crol con pausa de 15 segundos. El enfoque principal fue la rotación del cuerpo y la respiración bilateral cada 3 brazadas. Grabé tiempos por cada 100m para seguimiento.</p>
+                <p class="exp-entry__details-text">Trabajé 1500m totales divididos en series de 100m crol con pausa de 15 segundos. El enfoque principal fue la rotación del cuerpo y la respiración bilateral cada 3 brazadas. Grabé tiempos por cada 100m para seguimiento.</p>
               </div>
             </div>
           </div>
 
-          <hr class="divider" style="margin:24px 0;">
 
           <!-- EXP.003 -->
           <div class="exp-entry exp-entry--activity reveal" data-category="activity" data-date="2025-03-15">
-            <div class="exp-entry__header">
+            <div class="exp-entry__rail">
               <span class="exp-entry__number">EXP. 003</span>
+              <span class="exp-entry__date">15 · 03 · 2025</span>
+              <span class="exp-entry__dur text-activity">45MIN</span>
               <span class="cat-chip cat-chip--a">A</span>
-              <h3 class="exp-entry__title">Carrera 5K</h3>
             </div>
-            <div class="exp-entry__meta">
-              <span class="font-mono text-zinc" style="font-size:12px;">15 · 03 · 2025</span>
-              <span class="font-mono text-activity" style="font-size:11px;">45MIN</span>
-            </div>
+            <h3 class="exp-entry__title">Carrera 5K</h3>
             <p class="exp-entry__desc">Primera salida de running estructurada: 5km en zona aeróbica, ritmo controlado y registro de datos.</p>
             <button class="exp-entry__expand">Leer más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
             <div class="exp-entry__details">
               <div class="exp-entry__details-inner">
-                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <div class="project-block__tags">
                   <span class="tag">RA 02</span>
                   <span class="tag">RA 04</span>
                   <span class="tag">Perseverante</span>
                 </div>
-                <p style="font-size:14px;color:var(--zinc);line-height:1.7;">Salida temprana a las 6:00am. Recorrido por el parque del río con ritmo objetivo de 6:30/km. Usé reloj GPS para registro de ritmo y frecuencia cardíaca. Mantuve zona aeróbica durante los 5km con split negativo (segunda mitad más rápida).</p>
+                <p class="exp-entry__details-text">Salida temprana a las 6:00am. Recorrido por el parque del río con ritmo objetivo de 6:30/km. Usé reloj GPS para registro de ritmo y frecuencia cardíaca. Mantuve zona aeróbica durante los 5km con split negativo (segunda mitad más rápida).</p>
               </div>
             </div>
           </div>
 
-          <hr class="divider" style="margin:24px 0;">
 
           <!-- EXP.004 -->
           <div class="exp-entry exp-entry--creativity reveal" data-category="creativity" data-date="2025-03-18">
-            <div class="exp-entry__header">
+            <div class="exp-entry__rail">
               <span class="exp-entry__number">EXP. 004</span>
+              <span class="exp-entry__date">18 · 03 · 2025</span>
+              <span class="exp-entry__dur text-creativity">1H</span>
               <span class="cat-chip cat-chip--c">C</span>
-              <h3 class="exp-entry__title">Práctica de Bajo</h3>
             </div>
-            <div class="exp-entry__meta">
-              <span class="font-mono text-zinc" style="font-size:12px;">18 · 03 · 2025</span>
-              <span class="font-mono text-creativity" style="font-size:11px;">1H</span>
-            </div>
+            <h3 class="exp-entry__title">Práctica de Bajo</h3>
             <p class="exp-entry__desc">Sesión de bajo eléctrico: escalas pentatónicas y primeras líneas de bajo sobre backing track.</p>
             <button class="exp-entry__expand">Leer más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
             <div class="exp-entry__details">
               <div class="exp-entry__details-inner">
-                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <div class="project-block__tags">
                   <span class="tag">RA 01</span>
                   <span class="tag">RA 02</span>
                   <span class="tag">Indagador</span>
                 </div>
-                <p style="font-size:14px;color:var(--zinc);line-height:1.7;">Comencé con escalas pentatónicas menores en Mi y La, practicando con metrónomo a 70 BPM. Luego toqué sobre backing tracks de blues en YouTube para aplicar las escalas en contexto musical real. Descubrí que la colocación del pulgar es clave para la velocidad.</p>
+                <p class="exp-entry__details-text">Comencé con escalas pentatónicas menores en Mi y La, practicando con metrónomo a 70 BPM. Luego toqué sobre backing tracks de blues en YouTube para aplicar las escalas en contexto musical real. Descubrí que la colocación del pulgar es clave para la velocidad.</p>
               </div>
             </div>
           </div>
 
-          <hr class="divider" style="margin:24px 0;">
 
           <!-- EXP.005 -->
           <div class="exp-entry exp-entry--service reveal" data-category="service" data-date="2025-03-20">
-            <div class="exp-entry__header">
+            <div class="exp-entry__rail">
               <span class="exp-entry__number">EXP. 005</span>
+              <span class="exp-entry__date">20 · 03 · 2025</span>
+              <span class="exp-entry__dur text-service">3H</span>
               <span class="cat-chip cat-chip--s">S</span>
-              <h3 class="exp-entry__title">Investigación de Impacto Social</h3>
             </div>
-            <div class="exp-entry__meta">
-              <span class="font-mono text-zinc" style="font-size:12px;">20 · 03 · 2025</span>
-              <span class="font-mono text-service" style="font-size:11px;">3H</span>
-            </div>
+            <h3 class="exp-entry__title">Investigación de Impacto Social</h3>
             <p class="exp-entry__desc">Investigación preliminar para definir el proyecto de servicio: estudio de necesidades de la comunidad local.</p>
             <button class="exp-entry__expand">Leer más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
             <div class="exp-entry__details">
               <div class="exp-entry__details-inner">
-                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <div class="project-block__tags">
                   <span class="tag">RA 03</span>
                   <span class="tag">RA 06</span>
                   <span class="tag">Solidario</span>
                   <span class="tag">Íntegro</span>
                 </div>
-                <p style="font-size:14px;color:var(--zinc);line-height:1.7;">Dediqué la sesión a investigar organizaciones locales en Cali que atienden necesidades sociales. Identifiqué tres áreas potenciales: educación en comunidades vulnerables, acceso a deporte para jóvenes, y programas de alimentación. El siguiente paso es contactar líderes comunitarios para entender el panorama de primera mano.</p>
+                <p class="exp-entry__details-text">Dediqué la sesión a investigar organizaciones locales en Cali que atienden necesidades sociales. Identifiqué tres áreas potenciales: educación en comunidades vulnerables, acceso a deporte para jóvenes, y programas de alimentación. El siguiente paso es contactar líderes comunitarios para entender el panorama de primera mano.</p>
               </div>
             </div>
           </div>
@@ -195,5 +184,8 @@
 
   <footer class="footer"><div class="footer__inner"><span>CAS Portfolio · IB Diploma 2025–2027</span><span>CCB Cali · Juan Diego</span></div></footer>
   <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/scroll-anim.js"></script>
 </body>
 </html>
