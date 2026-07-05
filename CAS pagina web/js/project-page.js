@@ -51,6 +51,77 @@
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     gsap.registerPlugin(ScrollTrigger);
 
+    // Hero numeral: cinematic settle on load (parallax comes from scroll-anim.js)
+    const heroNum = document.querySelector('.proj-hero__num');
+    if (heroNum) {
+      gsap.fromTo(heroNum, { opacity: 0, scale: 1.15 }, { opacity: 0.06, scale: 1, duration: 1.4, ease: 'power3.out' });
+    }
+
+    // Day counters count up from zero when they enter the viewport
+    document.querySelectorAll('.js-day-count').forEach((el) => {
+      const target = parseInt(el.textContent, 10) || 0;
+      if (!target) return;
+      const state = { n: 0 };
+      gsap.to(state, {
+        n: target,
+        duration: 1,
+        ease: 'power2.out',
+        snap: { n: 1 },
+        onUpdate: () => { el.textContent = state.n; },
+        scrollTrigger: { trigger: el, start: 'top 92%', once: true },
+      });
+    });
+
+    // Filmstrip: pinned full-bleed slides that crossfade with scroll
+    const strip = document.querySelector('.filmstrip');
+    if (strip) {
+      const slides = [...strip.querySelectorAll('.filmstrip__slide')];
+      if (slides.length > 1) {
+        slides.slice(1).forEach((s) => gsap.set(s, { opacity: 0, scale: 1.06 }));
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: strip,
+            start: 'top top',
+            end: '+=' + (slides.length - 1) * 100 + '%',
+            pin: true,
+            scrub: 0.8,
+            anticipatePin: 1,
+          },
+        });
+        slides.slice(1).forEach((slide, i) => {
+          tl.to(slides[i], { scale: 0.98, ease: 'none', duration: 1 }, i);
+          tl.to(slide, { opacity: 1, scale: 1, ease: 'none', duration: 1 }, i);
+        });
+      }
+    }
+
+    // Timeline: each week's day dots ripple in as the week enters
+    timeline.querySelectorAll('.timeline__days').forEach((days) => {
+      const cells = days.children;
+      if (!cells.length) return;
+      gsap.set(cells, { opacity: 0.2, y: 8 });
+      gsap.to(cells, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'power2.out',
+        stagger: 0.04,
+        scrollTrigger: { trigger: days, start: 'top 85%', once: true },
+      });
+    });
+
+    // Week labels slide in from the left
+    timeline.querySelectorAll('.timeline__week-label').forEach((label) => {
+      gsap.set(label, { x: -24, opacity: 0 });
+      gsap.to(label, {
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: label, start: 'top 88%', once: true },
+      });
+    });
+
     const line = document.querySelector('.timeline__line');
     if (line) {
       gsap.set(line, { scaleY: 0 });

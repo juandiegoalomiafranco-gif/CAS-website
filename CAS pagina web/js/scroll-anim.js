@@ -84,8 +84,21 @@
       });
     });
 
-    // --- Evidence / pending frames: soft cascade ---
-    document.querySelectorAll('.evidence-grid').forEach((grid) => {
+    // --- Zone-head numerals settle slightly after their zone reveals ---
+    document.querySelectorAll('.zone-head__num').forEach((num) => {
+      gsap.set(num, { y: 16, opacity: 0 });
+      gsap.to(num, {
+        y: 0,
+        opacity: 0.45,
+        duration: 0.9,
+        ease: EASE,
+        delay: 0.15,
+        scrollTrigger: { trigger: num, start: TRIGGER_START, once: true },
+      });
+    });
+
+    // --- Evidence / pending frames + mosaics: soft cascade ---
+    document.querySelectorAll('.evidence-grid, .mosaic').forEach((grid) => {
       const frames = grid.children;
       if (!frames.length) return;
       gsap.set(frames, { opacity: 0, y: 16 });
