@@ -10,15 +10,6 @@
     const timeline = document.querySelector('.timeline');
     if (!timeline) return;
 
-    // --- Consistency counter (X de N+ días registrados) ---
-    const logged = timeline.querySelectorAll('.timeline__day--logged');
-    const goal = parseInt(timeline.dataset.goal, 10) || 28;
-    document.querySelectorAll('.js-day-count').forEach((el) => { el.textContent = logged.length; });
-    document.querySelectorAll('.js-day-goal').forEach((el) => { el.textContent = goal; });
-    document.querySelectorAll('.js-meter-fill').forEach((el) => {
-      el.dataset.target = String(Math.round((logged.length / goal) * 100));
-    });
-
     // Per-week registered-day counts
     timeline.querySelectorAll('.timeline__week').forEach((week) => {
       const out = week.querySelector('.js-week-count');
@@ -56,21 +47,6 @@
     if (heroNum) {
       gsap.fromTo(heroNum, { opacity: 0, scale: 1.15 }, { opacity: 0.06, scale: 1, duration: 1.4, ease: 'power3.out' });
     }
-
-    // Day counters count up from zero when they enter the viewport
-    document.querySelectorAll('.js-day-count').forEach((el) => {
-      const target = parseInt(el.textContent, 10) || 0;
-      if (!target) return;
-      const state = { n: 0 };
-      gsap.to(state, {
-        n: target,
-        duration: 1,
-        ease: 'power2.out',
-        snap: { n: 1 },
-        onUpdate: () => { el.textContent = state.n; },
-        scrollTrigger: { trigger: el, start: 'top 92%', once: true },
-      });
-    });
 
     // Filmstrip: pinned full-bleed slides that crossfade with scroll
     const strip = document.querySelector('.filmstrip');

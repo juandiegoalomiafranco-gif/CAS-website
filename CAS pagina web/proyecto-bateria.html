@@ -12,16 +12,15 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231C1814'/%3E%3Ctext x='32' y='46' font-family='Georgia, serif' font-size='40' font-style='italic' fill='%23F5F2EB' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
 </head>
 <body class="proj proj--c tone-p01">
-  <div class="scroll-progress"></div>
   <nav class="nav"><div class="nav__inner">
     <a href="index.html" class="nav__logo"><span class="nav__logo-mark">CAS</span><span class="nav__logo-sep"></span><span class="nav__logo-name">Juan Diego</span></a>
     <div class="nav__links">
-      <a href="index.html" class="nav__link">Qué es CAS</a><a href="quien-soy.html" class="nav__link">Quién Soy</a><a href="proyectos.html" class="nav__link">Proyectos</a><a href="experiencias.html" class="nav__link">Experiencias</a><a href="entrevistas.html" class="nav__link">Entrevistas</a><a href="resultados.html" class="nav__link">Resultados</a><a href="proyectos-cas.html" class="nav__link active">Proyectos CAS</a>
+      <a href="index.html" class="nav__link">Qué es CAS</a><a href="quien-soy.html" class="nav__link">Quién Soy</a><a href="proyectos.html" class="nav__link">Proyectos</a><a href="experiencias.html" class="nav__link">Experiencias</a><a href="entrevistas.html" class="nav__link">Entrevistas</a><a href="resultados.html" class="nav__link">Resultados</a><a href="proyectos-cas.html" class="nav__link active">Proyectos CAS</a><a href="proyecto-cas.html" class="nav__link">Proyecto CAS</a>
     </div>
     <span class="nav__badge">IB · 2025–2027</span>
     <button class="nav__hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
   </div></nav>
-  <div class="nav__mobile-overlay"><a href="index.html">Qué es CAS</a><a href="quien-soy.html">Quién Soy</a><a href="proyectos.html">Proyectos</a><a href="experiencias.html">Experiencias</a><a href="entrevistas.html">Entrevistas</a><a href="resultados.html">Resultados</a><a href="proyectos-cas.html">Proyectos CAS</a></div>
+  <div class="nav__mobile-overlay"><a href="index.html">Qué es CAS</a><a href="quien-soy.html">Quién Soy</a><a href="proyectos.html">Proyectos</a><a href="experiencias.html">Experiencias</a><a href="entrevistas.html">Entrevistas</a><a href="resultados.html">Resultados</a><a href="proyectos-cas.html">Proyectos CAS</a><a href="proyecto-cas.html">Proyecto CAS</a></div>
 
   <main>
     <!-- ══ HERO ══ -->
@@ -35,7 +34,7 @@
           <hr class="page-head__rule">
           <div class="proj-hero__meta">
             <span class="card__date">2025 — Presente</span>
-            <span class="count-note"><span class="js-day-count">0</span> / 28+ días registrados</span>
+            <span class="card__date">Desde marzo de 2025</span>
           </div>
         </div>
       </div>
@@ -51,10 +50,9 @@
             <dl class="proj-ficha__list stagger-children">
               <div class="proj-ficha__row"><dt>Categoría</dt><dd><span class="cat-chip cat-chip--c">C</span> Creativity</dd></div>
               <div class="proj-ficha__row"><dt>Fechas</dt><dd>2025 — Presente</dd></div>
-              <div class="proj-ficha__row"><dt>Días</dt><dd><span class="js-day-count">0</span> de 28+</dd></div>
+              <div class="proj-ficha__row"><dt>Duración</dt><dd>Desde marzo de 2025</dd></div>
             </dl>
             <div class="project-block__tags"><span class="tag">RA 01</span><span class="tag">RA 02</span><span class="tag">RA 04</span></div>
-            <div class="progress-bar"><div class="progress-bar__fill progress-bar__fill--creativity js-meter-fill" data-target="0"></div></div>
           </aside>
           <div class="reveal">
             <div class="zone-head">
@@ -96,7 +94,20 @@
               <a class="lo-index__item" href="resultados.html#ra-04"><span class="lo-index__num">04</span> Compromiso y perseverancia</a>
             </nav>
             <div class="eyebrow" style="margin:28px 0 12px;">Atributos IB</div>
-            <div class="project-block__tags" style="margin-top:0;"><span class="tag">Audaz</span><span class="tag">Reflexivo</span><span class="tag">Equilibrado</span></div>
+            <div class="attr-list">
+              <div class="attr-card">
+                <div class="attr-card__name">Audaz</div>
+                <p class="attr-card__desc">Abordo desafíos nuevos con coraje y determinación.</p>
+              </div>
+              <div class="attr-card">
+                <div class="attr-card__name">Reflexivo</div>
+                <p class="attr-card__desc">Evalúo mi propio aprendizaje: qué hice bien y qué puedo mejorar.</p>
+              </div>
+              <div class="attr-card">
+                <div class="attr-card__name">Equilibrado</div>
+                <p class="attr-card__desc">Balanceo cuerpo, mente y estudio para crecer de forma integral.</p>
+              </div>
+            </div>
           </div>
           <div class="reveal">
             <blockquote class="pull-quote" style="margin-top:0;">
@@ -161,17 +172,13 @@
           </div>
         </div>
 
-        <div class="timeline__meterbox reveal">
-          <p class="count-note"><span class="js-day-count">0</span> de <span class="js-day-goal">28</span>+ días registrados</p>
-          <div class="progress-bar"><div class="progress-bar__fill progress-bar__fill--creativity js-meter-fill" data-target="0"></div></div>
-        </div>
 
         <!-- CÓMO REGISTRAR UN DÍA:
              1) En la semana correcta, cambia un <li class="timeline__day"> vacío por el bloque
                 "logged" (copia el del 10·03): pon la fecha en data-date y bajo el punto.
              2) Copia un <div class="timeline__note" id="nota-sX-dY" hidden> al final de esa
                 semana, escribe tu nota y usa el MISMO id en aria-controls del botón.
-             El contador "X de 28+" y la barra se actualizan solos. -->
+             La bitácora se actualiza sola. -->
         <div class="timeline-wrap">
           <span class="timeline__line" aria-hidden="true"></span>
           <ol class="timeline" data-goal="28">
@@ -199,7 +206,7 @@
               <div class="timeline__note" id="nota-s1-d1" hidden>
                 <span class="exp-entry__date">10 · 03 · 2025 · 2H</span>
                 <p>Primera sesión formal de ensayo con enfoque en técnica de brazos y desarrollo de independencia rítmica.</p>
-                <a class="arrow-link" href="experiencia-01.html">Ver EXP. 001 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a class="arrow-link" href="experiencia-01.html">Ver EXP. 1 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
               </div>
             </li>
 
