@@ -4,19 +4,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- Scroll Progress Bar ---
-  const progressBar = document.querySelector('.scroll-progress');
-  if (progressBar) {
-    const updateProgress = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      progressBar.style.width = progress + '%';
-    };
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    updateProgress();
-  }
-
   // --- Mobile Navigation ---
   const hamburger = document.querySelector('.nav__hamburger');
   const mobileOverlay = document.querySelector('.nav__mobile-overlay');
@@ -81,23 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.4 });
 
     counterEls.forEach(el => counterObserver.observe(el));
-  }
-
-  // --- Progress Bar Animation ---
-  const progressBars = document.querySelectorAll('.progress-bar__fill');
-
-  if (progressBars.length > 0) {
-    const progressObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const target = entry.target.dataset.target || '0';
-          entry.target.style.width = target + '%';
-          progressObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-
-    progressBars.forEach(bar => progressObserver.observe(bar));
   }
 
   // --- Experience Expand/Collapse ---

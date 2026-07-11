@@ -29,7 +29,6 @@
     const panelMeta = root.querySelector('.exp-carousel__panel .eyebrow');
     const panelTitle = root.querySelector('.exp-carousel__title');
     const cta = root.querySelector('.exp-carousel__cta');
-    const count = root.querySelector('.exp-carousel__count');
     const panel = root.querySelector('.exp-carousel__panel');
 
     const LOOPS = 2;          // full cycles across the pinned distance
@@ -56,7 +55,7 @@
         const y = centerY + d * itemH - node.offsetHeight / 2;
         const closeness = Math.max(0, 1 - Math.abs(d) * 0.45);
         const x = -44 * closeness;                 // curve: center bows toward the content
-        const scale = 0.72 + 0.5 * closeness;      // active ≈ 1.22, far ≈ 0.72
+        const scale = 0.72 + 0.8 * closeness;      // active ≈ 1.52, far ≈ 0.72
         const opacity = 0.3 + 0.7 * closeness;
         gsap.set(node, { y, x, scale, opacity, transformOrigin: 'right center' });
         node.classList.toggle('is-active', Math.abs(d) < 0.5);
@@ -73,7 +72,6 @@
       panelMeta.textContent = src.dataset.meta;
       panelTitle.textContent = src.querySelector('.exp-carousel__label-title').textContent;
       cta.setAttribute('href', src.getAttribute('href'));
-      count.textContent = String(idx + 1).padStart(2, '0') + ' / ' + String(N).padStart(2, '0');
       gsap.fromTo(panel, { opacity: 0.35, y: 8 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out', overwrite: 'auto' });
     }
 

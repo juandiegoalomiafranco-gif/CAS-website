@@ -62,17 +62,6 @@ a { color: inherit; text-decoration: none; }
 ul, ol { list-style: none; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
 
-/* --- Scroll Progress Bar --- */
-.scroll-progress {
-  position: fixed;
-  top: 0; left: 0;
-  height: 2px;
-  background: var(--ink);
-  z-index: 2000;
-  width: 0%;
-  transition: width 0.1s linear;
-}
-
 /* --- Typography Utilities --- */
 .font-display { font-family: var(--font-display); font-weight: 400; letter-spacing: 0; }
 .font-body    { font-family: var(--font-body); }
@@ -1176,6 +1165,45 @@ main { padding-top: var(--nav-height); }
   color: var(--zinc);
 }
 
+.pillar__quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.pillar__quote-attr {
+  display: block;
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--zinc);
+  margin-top: 8px;
+}
+
+.pillar__desc + .arrow-link { margin-top: 18px; }
+
+/* --- IB attribute cloud (index) --- */
+.attr-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-content: flex-start;
+  padding-top: 48px;
+}
+
+.tag--attr {
+  font-size: 13px;
+  padding: 10px 18px;
+  color: var(--ink);
+  border-color: var(--border);
+}
+
 /* Arrow link */
 .arrow-link {
   display: inline-flex;
@@ -1219,6 +1247,25 @@ main { padding-top: var(--nav-height); }
 }
 
 .card--profile .card__title { font-size: 20px; }
+
+.card--profile-me {
+  border-color: var(--ink);
+  position: relative;
+}
+
+.card__flag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--bg);
+  background: var(--ink);
+  padding: 3px 8px;
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+}
 
 .card__date {
   font-family: var(--font-mono);
@@ -2064,14 +2111,6 @@ main { padding-top: var(--nav-height); }
 
 .exp-carousel__cta:hover { background: #F5F2EB; color: var(--ink); border-color: #F5F2EB; }
 
-.exp-carousel__count {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(245, 242, 235, 0.65);
-}
-
 /* Right rail — static fallback: simple vertical list of the 5 originals */
 .exp-carousel__rail {
   position: absolute;
@@ -2198,4 +2237,115 @@ main { padding-top: var(--nav-height); }
   .mosaic__link img,
   .proj-pager__num,
   .timeline__note { transition: none !important; }
+}
+
+/* ============================================
+   LEARNING ZONE (experiencias · Zona 02)
+   Sub-bloques diferenciados: reflexión, objetivo,
+   habilidades, atributos y resultados.
+   ============================================ */
+.learn-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.learn-block {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px;
+}
+
+.learn-block--wide { grid-column: 1 / -1; }
+
+.learn-block__label {
+  display: block;
+  margin-bottom: 18px;
+}
+
+.learn-block .prose p { max-width: 68ch; }
+.learn-block .prose p + p { margin-top: 14px; }
+
+.learn-block__text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--ink);
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Tarjetas de atributos IB (reemplazan los tags pequeños) */
+.attr-list { display: flex; flex-direction: column; }
+
+.attr-card {
+  border-top: 1px solid var(--border);
+  padding: 14px 0;
+}
+
+.attr-card:last-child { padding-bottom: 0; }
+
+.attr-card__name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 19px;
+  color: var(--accent, var(--ink));
+}
+
+.attr-card__desc {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--zinc);
+  margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+  .learn-grid { grid-template-columns: 1fr; }
+  .learn-block { padding: 28px 24px; }
+}
+
+/* --- Etapas del Proyecto CAS (proyecto-cas.html) --- */
+.stage-list { border-top: 1px solid var(--border); margin-top: 8px; }
+
+.stage {
+  display: grid;
+  grid-template-columns: 64px 240px 1fr;
+  gap: 24px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: baseline;
+}
+
+.stage__num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--accent, var(--ink));
+}
+
+.stage__name {
+  font-family: var(--font-display);
+  font-size: 23px;
+  line-height: 1.3;
+}
+
+.stage__name .badge { vertical-align: middle; margin-left: 10px; }
+
+.stage__desc {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--zinc);
+  max-width: 62ch;
+}
+
+@media (max-width: 800px) {
+  .stage { grid-template-columns: 40px 1fr; gap: 12px 16px; }
+  .stage__desc { grid-column: 2; }
 }
