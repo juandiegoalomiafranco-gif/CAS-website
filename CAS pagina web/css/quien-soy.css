@@ -1,0 +1,237 @@
+/* ============================================
+   CAS PORTFOLIO — "Quién Soy" page styles
+   Loaded AFTER styles.css. Scoped to this page:
+   typographic hero + "showcase" section.
+   Content stays visible without JS / GSAP / under
+   prefers-reduced-motion (static fallback).
+   ============================================ */
+
+/* ---------- HERO (typographic, cream background) ---------- */
+.ps-hero {
+  min-height: calc(88vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.ps-hero__inner {
+  max-width: 900px;
+}
+
+.ps-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(64px, 13vw, 170px);
+  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--ink);
+  margin: 0;
+}
+
+.ps-hero__title em {
+  font-style: italic;
+}
+
+.ps-hero__quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(20px, 2.6vw, 30px);
+  line-height: 1.4;
+  color: var(--zinc);
+  max-width: 640px;
+  margin-top: 28px;
+}
+
+.ps-hero__attr {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--zinc);
+  margin-top: 16px;
+}
+
+/* Word-rise wrappers injected by js/ps-hero.js */
+.ps-hero .anim-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+.ps-hero .anim-word > span {
+  display: inline-block;
+}
+
+/* ---------- SHOWCASE ("Lo que me define") ---------- */
+.showcase__head {
+  margin-bottom: 56px;
+}
+
+.showcase__layout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+/* -- Left: staggered photo grid -- */
+.showcase__grid {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.showcase__col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.showcase__col--2 { margin-top: 68px; }
+.showcase__col--3 { margin-top: 32px; }
+
+.showcase__tile {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* slight size variation per column, like the original */
+.showcase__col--1 .showcase__tile { width: 158px; height: 172px; }
+.showcase__col--2 .showcase__tile { width: 172px; height: 150px; }
+.showcase__col--3 .showcase__tile { width: 152px; height: 164px; }
+
+.showcase__tile-name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--ink);
+  text-align: center;
+  padding: 0 10px;
+  transition: color 0.3s ease;
+}
+
+/* When a photo arrives it fills the tile; name becomes an overlay caption */
+.showcase__tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) brightness(0.77);
+  transition: filter 0.5s ease;
+}
+.showcase__tile.is-active img { filter: none; }
+
+.showcase__tile:focus-visible {
+  border-color: var(--ink);
+}
+
+/* -- Right: names list -- */
+.showcase__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.showcase__row {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  column-gap: 14px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-light);
+  cursor: pointer;
+  outline: none;
+  transition: opacity 0.35s ease;
+}
+.showcase__row:first-child { border-top: 1px solid var(--border-light); }
+
+.showcase__marker {
+  display: block;
+  width: 16px;
+  height: 12px;
+  border-radius: 5px;
+  background: rgba(28, 24, 20, 0.25);
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.showcase__row-name {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.showcase__row-role {
+  grid-column: 2;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--zinc);
+  margin-top: 3px;
+}
+
+/* -- Cross-highlight states (driven by js/showcase.js) -- */
+.showcase__tile.is-active {
+  border-color: var(--ink);
+  opacity: 1;
+}
+.showcase__tile.is-active .showcase__tile-name {
+  color: var(--ink);
+}
+.showcase__tile.is-dim {
+  opacity: 0.5;
+}
+
+.showcase__row.is-active { opacity: 1; }
+.showcase__row.is-active .showcase__marker {
+  width: 20px;
+  background: var(--ink);
+}
+.showcase__row.is-dim { opacity: 0.6; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .showcase__layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  /* grid on top, horizontal scroll if it doesn't fit */
+  .showcase__grid {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+  }
+  .showcase__col { flex-shrink: 0; }
+  .showcase__col--2 { margin-top: 40px; }
+  .showcase__col--3 { margin-top: 20px; }
+
+  /* list below in 2 columns, like the original sm:grid-cols-2 */
+  .showcase__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+  }
+  .showcase__row:nth-child(2) { border-top: 1px solid var(--border-light); }
+}
+
+@media (max-width: 560px) {
+  .showcase__list {
+    grid-template-columns: 1fr;
+  }
+  .showcase__row:nth-child(2) { border-top: none; }
+}

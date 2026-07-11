@@ -33,7 +33,7 @@
         <a href="experiencias.html" class="nav__link">Experiencias</a>
         <a href="entrevistas.html" class="nav__link">Entrevistas</a>
         <a href="resultados.html" class="nav__link">Resultados</a>
-        <a href="proyectos-cas.html" class="nav__link">Proyectos CAS</a><a href="proyecto-cas.html" class="nav__link">Proyecto CAS</a>
+        <a href="proyecto-cas.html" class="nav__link">Proyecto CAS</a>
       </div>
       <span class="nav__badge">IB · 2025–2027</span>
       <button class="nav__hamburger" aria-label="Menú">
@@ -50,7 +50,7 @@
     <a href="experiencias.html">Experiencias</a>
     <a href="entrevistas.html">Entrevistas</a>
     <a href="resultados.html">Resultados</a>
-    <a href="proyectos-cas.html">Proyectos CAS</a><a href="proyecto-cas.html">Proyecto CAS</a>
+    <a href="proyecto-cas.html">Proyecto CAS</a>
   </div>
 
   <main>
@@ -81,7 +81,7 @@
     </section>
 
     <!-- SECTION 2 — What is CAS -->
-    <section class="section section--lg">
+    <section class="section section--lg" style="padding-bottom:56px;">
       <div class="container" style="position:relative;">
         <span class="section__bg-number" style="top:-20px;left:-10px;">01</span>
 
@@ -109,32 +109,38 @@
       </div>
     </section>
 
-    <!-- SECTION 3 — Three Pillars -->
-    <section class="section">
+    <!-- SECTION 3 — Three Pillars (interactive: hover/focus/click reveals quote + definition) -->
+    <section class="section" style="padding-top:40px;">
       <div class="container">
         <div class="grid grid--3 stagger-children">
           <!-- Creativity -->
-          <div class="pillar pillar--c">
+          <div class="pillar pillar--c" tabindex="0" role="button" aria-expanded="false">
             <span class="pillar__letter text-creativity">C</span>
             <div class="eyebrow eyebrow--c pillar__name">Creatividad</div>
-            <p class="pillar__quote">"Las artes y otras experiencias que implican pensamiento creativo."<span class="pillar__quote-attr">International Baccalaureate</span></p>
-            <p class="pillar__desc">Para mí, es la capacidad de generar ideas que pueden resolver problemas, o una puerta para expresar emociones y mensajes a través de formas artísticas.</p>
+            <div class="pillar__reveal">
+              <p class="pillar__quote">"Las artes y otras experiencias que implican pensamiento creativo."<span class="pillar__quote-attr">International Baccalaureate</span></p>
+              <p class="pillar__desc">Para mí, es la capacidad de generar ideas que pueden resolver problemas, o una puerta para expresar emociones y mensajes a través de formas artísticas.</p>
+            </div>
             <a href="proyectos.html" class="arrow-link text-creativity">Ver proyectos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
           <!-- Activity -->
-          <div class="pillar pillar--a">
+          <div class="pillar pillar--a" tabindex="0" role="button" aria-expanded="false">
             <span class="pillar__letter text-activity">A</span>
             <div class="eyebrow eyebrow--a pillar__name">Actividad</div>
-            <p class="pillar__quote">"Actividades que implican un esfuerzo o desafío físico y que contribuyen a un estilo de vida sano."<span class="pillar__quote-attr">International Baccalaureate</span></p>
-            <p class="pillar__desc">Para mí, es una manera de mantener compromiso que te permite adoptar una vida más saludable, y que además te brinda energía para elaborar mejor las diversas actividades del día.</p>
+            <div class="pillar__reveal">
+              <p class="pillar__quote">"Actividades que implican un esfuerzo o desafío físico y que contribuyen a un estilo de vida sano."<span class="pillar__quote-attr">International Baccalaureate</span></p>
+              <p class="pillar__desc">Para mí, es una manera de mantener compromiso que te permite adoptar una vida más saludable, y que además te brinda energía para elaborar mejor las diversas actividades del día.</p>
+            </div>
             <a href="proyectos.html" class="arrow-link text-activity">Ver proyectos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
           <!-- Service -->
-          <div class="pillar pillar--s">
+          <div class="pillar pillar--s" tabindex="0" role="button" aria-expanded="false">
             <span class="pillar__letter text-service">S</span>
             <div class="eyebrow eyebrow--s pillar__name">Servicio</div>
-            <p class="pillar__quote">"Un intercambio voluntario y no remunerado que significa un aprendizaje para el alumno, y en el que se respetan los derechos, la dignidad y la autonomía de todas las personas involucradas."<span class="pillar__quote-attr">International Baccalaureate</span></p>
-            <p class="pillar__desc">Para mí, es brindar un aporte voluntario a la comunidad que crea un impacto en un grupo de personas y permite el crecimiento personal.</p>
+            <div class="pillar__reveal">
+              <p class="pillar__quote">"Un intercambio voluntario y no remunerado que significa un aprendizaje para el alumno, y en el que se respetan los derechos, la dignidad y la autonomía de todas las personas involucradas."<span class="pillar__quote-attr">International Baccalaureate</span></p>
+              <p class="pillar__desc">Para mí, es brindar un aporte voluntario a la comunidad que crea un impacto en un grupo de personas y permite el crecimiento personal.</p>
+            </div>
             <a href="proyectos.html" class="arrow-link text-service">Ver proyectos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
@@ -151,18 +157,69 @@
             <h2 class="section-head section-head--sm" style="margin-top:16px;">Atributos del Perfil IB</h2>
             <p style="font-size:15px;line-height:1.8;color:var(--zinc);max-width:540px;margin-top:16px;">Son las cualidades que califican al alumno. Durante el curso, los estudiantes deben ir adoptando estas cualidades para mostrar su mejor mentalidad internacional. Cada experiencia y proyecto de este portafolio está conectado con uno o más de estos atributos.</p>
             <a href="quien-soy.html" class="arrow-link" style="margin-top:24px;">Conoce con cuáles me identifico <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+
+            <!-- Detail box: filled by js/ib-wheel.js when a wedge is activated -->
+            <div class="ib-wheel__detail" id="ibWheelDetail" data-state="empty">
+              <p class="ib-wheel__detail-hint">Toca un atributo de la rueda para ver su definición.</p>
+            </div>
           </div>
-          <div class="attr-cloud stagger-children reveal">
-            <span class="tag tag--attr">Indagación</span>
-            <span class="tag tag--attr">Conocimiento</span>
-            <span class="tag tag--attr">Razonamiento</span>
-            <span class="tag tag--attr">Comunicación</span>
-            <span class="tag tag--attr">Integridad</span>
-            <span class="tag tag--attr">Mentalidad abierta</span>
-            <span class="tag tag--attr">Solidaridad</span>
-            <span class="tag tag--attr">Audacia</span>
-            <span class="tag tag--attr">Equilibrio</span>
-            <span class="tag tag--attr">Reflexión</span>
+          <div class="ib-wheel" id="ibWheel">
+            <svg viewBox="0 0 520 520" role="img" aria-label="Rueda de los 10 atributos del Perfil de la Comunidad de Aprendizaje del IB">
+              <g class="ib-wheel__ring">
+                <a role="button" tabindex="0" class="ib-wheel__seg" data-attr="indagacion" data-color="#7A68B0" data-num="01" data-label="Indagación" data-definition="Desarrollo habilidades de investigación con autonomía e iniciativa. Cultivo mi curiosidad." aria-expanded="false">
+                  <path class="ib-wheel__wedge" d="M 186.91 20.92 A 250 250 0 0 1 333.09 20.92 L 303.86 116.55 A 150 150 0 0 0 216.14 116.55 Z" fill="#7A68B0"/>
+                  <text class="ib-wheel__label" x="260.00" y="60.00" transform="rotate(0.00 260.00 60.00)">Indagación</text>
+                  <text class="ib-wheel__num" x="260.00" y="97.00">01</text>
+                </a>
+                <a role="button" tabindex="0" class="ib-wheel__seg" data-attr="conocimiento" data-color="#5E7FA6" data-num="02" data-label="Conocimiento" data-definition="Exploro temas de importancia local y mundial con profundidad." aria-expanded="false">
+                  <path class="ib-wheel__wedge" d="M 341.39 23.62 A 250 250 0 0 1 459.66 109.55 L 379.80 169.73 A 150 150 0 0 0 308.84 118.17 Z" fill="#5E7FA6"/>
+                  <text class="ib-wheel__label" x="377.56" y="98.20" transform="rotate(36.00 377.56 98.20)">Conocimiento</text>
+                  <text class="ib-wheel__num" x="355.81" y="128.13">02</text>
+                </a>
+                <a role="button" tabindex="0" class="ib-wheel__seg" data-attr="razonamiento" data-color="#A5638C" data-num="03" data-label="Razonamiento" data-definition="Analizo y tomo decisiones razonadas frente a problemas complejos." aria-expanded="false">
+                  <path class="ib-wheel__wedge" d="M 464.79 116.61 A 250 250 0 0 1 509.96 255.64 L 409.98 257.38 A 150 150 0 0 0 382.87 173.96 Z" fill="#A5638C"/>
+                  <text class="ib-wheel__label" x="450.21" y="198.20" transform="rotate(72.00 450.21 198.20)">Razonamiento</text>
+                  <text class="ib-wheel__num" x="415.02" y="209.63">03</text>
+                </a>
+                <a role="button" tabindex="0" class="ib-wheel__seg" data-attr="comunicacion" data-color="#3E8FA3" data-num="04" data-label="Comunicación" data-definition="Expreso ideas con confianza y creatividad en más de una lengua, y escucho las de los demás." aria-expanded="false">
+                  <path class="ib-wheel__wedge" d="M 509.96 264.36 A 250 250 0 0 1 464.79 403.39 L 382.87 346.04 A 150 150 0 0 0 409.98 262.62 Z" fill="#3E8FA3"/>
+                  <text class="ib-wheel__label" x="450.21" y="321.80" transform="rotate(-72.00 450.21 321.80)">Comunicación</text>
+                  <text class="ib-wheel__num" x="415.02" y="310.37">04</text>
+                </a>
+                <a role="button" tabindex="0" class="ib-wheel__seg" data-attr="integridad" data-color="#4C9175" data-num="05" data-label="Integridad" data-definition="Actúo con honradez y un profundo sentido de la justicia, la equidad y el respeto." aria-expanded="false">
+                  <path class="ib-wheel__wedge" d="M 459.66 410.45 A 250 250 0 0 1 341.39 496.38 L 308.84 401.83 A 150 150 0 0 0 379.80 350.27 Z" fill="#4C9175"/>
+                  <text class="ib-wheel__label" x="377.56" y="421.80" transform="rotate(-36.00 377.56 421.80)">Integridad</text>
+                  <text class="ib-wheel__num" x="355.81" y="391.87">05</text>
+                </a>
+                <a role="button" tabindex="0" class="ib-wheel__seg" data-attr="mentalidad-abierta" data-color="#A8862E" data-num="06" data-label="Mentalidad abierta" data-definition="Aprecio tradiciones, valores y perspectivas diferentes a las mías." aria-expanded="false">
+                  <path class="ib-wheel__wedge" d="M 333.09 499.08 A 250 250 0 0 1 186.91 499.08 L 216.14 403.45 A 150 150 0 0 0 303.86 403.45 Z" fill="#A8862E"/>
+                  <text class="ib-wheel__label" x="260.00" y="460.00" transform="rotate(0.00 260.00 460.00)">Mentalidad abierta</text>
+                  <text class="ib-wheel__num" x="260.00" y="423.00">06</text>
+                </a>
+                <a role="button" tabindex="0" class="ib-wheel__seg" data-attr="solidaridad" data-color="#BA7250" data-num="07" data-label="Solidaridad" data-definition="Muestro empatía, compasión y compromiso con quienes me rodean." aria-expanded="false">
+                  <path class="ib-wheel__wedge" d="M 178.61 496.38 A 250 250 0 0 1 60.34 410.45 L 140.20 350.27 A 150 150 0 0 0 211.16 401.83 Z" fill="#BA7250"/>
+                  <text class="ib-wheel__label" x="142.44" y="421.80" transform="rotate(36.00 142.44 421.80)">Solidaridad</text>
+                  <text class="ib-wheel__num" x="164.19" y="391.87">07</text>
+                </a>
+                <a role="button" tabindex="0" class="ib-wheel__seg" data-attr="audacia" data-color="#8A6D4F" data-num="08" data-label="Audacia" data-definition="Exploro ideas nuevas con coraje y determinación. Defiendo aquello en lo que creo." aria-expanded="false">
+                  <path class="ib-wheel__wedge" d="M 55.21 403.39 A 250 250 0 0 1 10.04 264.36 L 110.02 262.62 A 150 150 0 0 0 137.13 346.04 Z" fill="#8A6D4F"/>
+                  <text class="ib-wheel__label" x="69.79" y="321.80" transform="rotate(72.00 69.79 321.80)">Audacia</text>
+                  <text class="ib-wheel__num" x="104.98" y="310.37">08</text>
+                </a>
+                <a role="button" tabindex="0" class="ib-wheel__seg" data-attr="equilibrio" data-color="#6E8B6B" data-num="09" data-label="Equilibrio" data-definition="Balanceo lo académico, la música y el deporte para crecer de forma integral." aria-expanded="false">
+                  <path class="ib-wheel__wedge" d="M 10.04 255.64 A 250 250 0 0 1 55.21 116.61 L 137.13 173.96 A 150 150 0 0 0 110.02 257.38 Z" fill="#6E8B6B"/>
+                  <text class="ib-wheel__label" x="69.79" y="198.20" transform="rotate(-72.00 69.79 198.20)">Equilibrio</text>
+                  <text class="ib-wheel__num" x="104.98" y="209.63">09</text>
+                </a>
+                <a role="button" tabindex="0" class="ib-wheel__seg" data-attr="reflexion" data-color="#92687D" data-num="10" data-label="Reflexión" data-definition="Evalúo mi propio aprendizaje: qué hice bien y qué puedo hacer mejor." aria-expanded="false">
+                  <path class="ib-wheel__wedge" d="M 60.34 109.55 A 250 250 0 0 1 178.61 23.62 L 211.16 118.17 A 150 150 0 0 0 140.20 169.73 Z" fill="#92687D"/>
+                  <text class="ib-wheel__label" x="142.44" y="98.20" transform="rotate(-36.00 142.44 98.20)">Reflexión</text>
+                  <text class="ib-wheel__num" x="164.19" y="128.13">10</text>
+                </a>
+              </g>
+              <text class="ib-wheel__center-line1" x="260" y="248">El Perfil</text>
+              <text class="ib-wheel__center-line2" x="260" y="288">IB</text>
+            </svg>
           </div>
         </div>
       </div>
@@ -175,6 +232,10 @@
           <div>
             <h3 class="section-head section-head--sm">Programa del Diploma IB</h3>
             <p class="prose" style="font-size:15px;line-height:1.8;color:var(--zinc);">CAS es uno de los tres componentes troncales del Programa del Diploma, junto con Teoría del Conocimiento (TdC) y la Monografía. Es el eje que conecta al estudiante con el mundo real — más allá de los exámenes y las calificaciones.</p>
+            <div class="placeholder-img" style="height:280px;aspect-ratio:auto;margin-top:28px;">
+              <span class="eyebrow">Próximamente</span>
+              <span class="placeholder-img__note">Foto</span>
+            </div>
           </div>
           <div>
             <div class="eyebrow" style="margin-bottom:20px;">Resultados de aprendizaje</div>
@@ -202,6 +263,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/ib-wheel.js"></script>
 
   <!-- GSAP + ScrollTrigger -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>

@@ -181,6 +181,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Pillars (index, section 3): click/tap toggles .is-open, closing the
+  // other two. Hover/focus-within already reveal via CSS alone; this block
+  // only handles touch/click + Enter/Space so the reveal also works without
+  // a mouse hover. Does not depend on GSAP. ---
+  const pillars = document.querySelectorAll('.pillar');
+
+  if (pillars.length > 0) {
+    const togglePillar = (pillar) => {
+      const wasOpen = pillar.classList.contains('is-open');
+      pillars.forEach(p => {
+        p.classList.remove('is-open');
+        p.setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        pillar.classList.add('is-open');
+        pillar.setAttribute('aria-expanded', 'true');
+      }
+    };
+
+    pillars.forEach(pillar => {
+      pillar.addEventListener('click', (e) => {
+        // Let the internal "Ver proyectos" link navigate normally.
+        if (e.target.closest('a')) return;
+        togglePillar(pillar);
+      });
+
+      pillar.addEventListener('keydown', (e) => {
+        // Only react when the pillar itself (not a child link) has focus.
+        if (e.target !== pillar) return;
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+          e.preventDefault();
+          togglePillar(pillar);
+        }
+      });
+    });
+  }
+
   // --- Active Nav Link ---
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav__link').forEach(link => {
