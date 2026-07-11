@@ -6,21 +6,43 @@
    prefers-reduced-motion (static fallback).
    ============================================ */
 
-/* ---------- HERO (typographic, cream background) ---------- */
+/* ---------- HERO (TeamShowcase layout: staggered grid + name/quote,
+   cream background) ---------- */
 .ps-hero {
   min-height: calc(88vh - var(--nav-height));
   display: flex;
   align-items: center;
   position: relative;
+  padding: 48px 0;
 }
 
 .ps-hero__inner {
-  max-width: 900px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(40px, 5vw, 80px);
+  align-items: center;
 }
+
+/* Left grid: same tiles as the showcase, sized to fit the hero height */
+.ps-hero__grid {
+  display: flex;
+  gap: 14px;
+  justify-content: flex-start;
+}
+
+.ps-hero__grid .showcase__col { gap: 14px; }
+.ps-hero__grid .showcase__col--2 { margin-top: 52px; }
+.ps-hero__grid .showcase__col--3 { margin-top: 26px; }
+
+.ps-hero__grid .showcase__col--1 .showcase__tile { width: 124px; height: 132px; }
+.ps-hero__grid .showcase__col--2 .showcase__tile { width: 138px; height: 122px; }
+.ps-hero__grid .showcase__col--3 .showcase__tile { width: 120px; height: 128px; }
+
+.ps-hero__grid .showcase__tile-name { font-size: 16px; }
 
 .ps-hero__title {
   font-family: var(--font-display);
-  font-size: clamp(64px, 13vw, 170px);
+  font-size: clamp(48px, 7vw, 104px);
   line-height: 1.02;
   font-weight: 400;
   letter-spacing: 0;
@@ -204,6 +226,27 @@
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
+  .ps-hero {
+    min-height: 0;
+    padding: 56px 0 40px;
+  }
+
+  /* stack: name + quote first, grid below (horizontal scroll if needed) */
+  .ps-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .ps-hero__text { order: -1; }
+  .ps-hero__grid {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+  }
+  .ps-hero__grid .showcase__col { flex-shrink: 0; }
+  .ps-hero__grid .showcase__col--2 { margin-top: 32px; }
+  .ps-hero__grid .showcase__col--3 { margin-top: 16px; }
+
   .showcase__layout {
     grid-template-columns: 1fr;
     gap: 48px;
