@@ -16,6 +16,8 @@
   height: calc(100vh - var(--nav-height));
   min-height: 560px;
   overflow: hidden;
+  /* explicit bg: the blended text needs a painted backdrop inside the section */
+  background: var(--bg);
 }
 
 .g3d__scene {
@@ -58,15 +60,20 @@
 .g3d__card:nth-child(3) { display: block; transform: translate(58%, -70%) scale(0.62); opacity: 0.42; }
 .g3d--live .g3d__card { display: block; opacity: 0; }
 
-/* Frase central */
+/* Frase central: overlay por encima de la escena, siempre visible.
+   mix-blend-mode: difference + colores calibrados contra el fondo crema:
+   sobre el fondo el texto se lee oscuro (como antes) y donde pasa una foto
+   las letras la revelan en negativo (efecto de la referencia). */
 .g3d__text {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) translateZ(0);
+  transform: translate(-50%, -50%);
   width: min(94vw, 1150px);
   text-align: center;
   pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: difference;
 }
 
 .ps-hero__title {
@@ -75,7 +82,8 @@
   line-height: 1.02;
   font-weight: 400;
   letter-spacing: 0;
-  color: var(--ink);
+  /* crema + difference = negro sobre el fondo, negativo brillante sobre foto */
+  color: var(--bg);
   margin: 0;
 }
 
@@ -111,7 +119,8 @@
   font-style: italic;
   font-size: clamp(18px, 2.2vw, 26px);
   line-height: 1.4;
-  color: var(--zinc);
+  /* bajo difference sobre el crema #F5F2EB rinde como el gris --zinc de antes */
+  color: #5B6263;
   max-width: 640px;
   margin: 24px auto 0;
 }
@@ -123,7 +132,7 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--zinc);
+  color: #5B6263;
   margin-top: 16px;
 }
 

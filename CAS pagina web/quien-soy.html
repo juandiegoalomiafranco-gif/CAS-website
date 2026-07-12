@@ -56,18 +56,19 @@
           <figure class="g3d__card"><img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=720&amp;h=960&amp;fit=crop&amp;q=75" alt="Modelo de Naciones Unidas"></figure>
           <figure class="g3d__card"><img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=720&amp;h=960&amp;fit=crop&amp;q=75" alt="Estudio"></figure>
           <figure class="g3d__card"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=720&amp;h=960&amp;fit=crop&amp;q=75" alt="Montaña"></figure>
-          <!-- Frase central: vive en la misma escena 3D (z = 0), así las fotos lejanas
-               pasan por detrás del texto y las cercanas por delante. -->
-          <div class="g3d__text ps-hero__text">
-            <h1 class="ps-hero__title">Juan <em>Diego</em></h1>
-            <p class="ps-hero__quote">"He fallado una y otra vez en mi vida, y por eso he tenido éxito."</p>
-            <span class="ps-hero__attr">Michael Jordan</span>
-          </div>
         </div>
+      </div>
+      <!-- Frase central: capa superpuesta a la escena (siempre visible). Con
+           mix-blend-mode: difference, las letras revelan en negativo la foto
+           que pase por debajo, como en la animación de referencia. -->
+      <div class="g3d__text ps-hero__text">
+        <h1 class="ps-hero__title">Juan <em>Diego</em></h1>
+        <p class="ps-hero__quote">"He fallado una y otra vez en mi vida, y por eso he tenido éxito."</p>
+        <span class="ps-hero__attr">Michael Jordan</span>
       </div>
       <div class="g3d__hint" aria-hidden="true">
         <span class="g3d__hint-strong">Desplázate, usa las flechas o desliza para navegar</span>
-        <span class="g3d__hint-soft">El auto-play se reanuda tras 3 segundos de inactividad</span>
+        <span class="g3d__hint-soft">El bucle continúa solo tras 3 segundos de inactividad</span>
       </div>
     </section>
 
