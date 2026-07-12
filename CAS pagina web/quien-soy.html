@@ -40,65 +40,35 @@
   </div>
 
   <main>
-    <!-- HERO — Personal Statement (TeamShowcase layout: staggered photo grid + name/quote) -->
-    <section class="ps-hero" aria-label="Presentación">
-      <span class="deco-rotated" style="right:24px;top:120px;font-size:11px;">Cali · Colombia</span>
-      <div class="container ps-hero__inner">
-        <!-- Left: staggered grid (fotos personales por llegar) -->
-        <div class="ps-hero__grid" data-showcase>
-          <div class="showcase__col showcase__col--1">
-            <figure class="showcase__tile" data-id="estudiante" tabindex="0">
-              <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-              <span class="showcase__tile-name">Estudiante</span>
-            </figure>
-            <figure class="showcase__tile" data-id="natacion" tabindex="0">
-              <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-              <span class="showcase__tile-name">Natación</span>
-            </figure>
-            <figure class="showcase__tile" data-id="onu" tabindex="0">
-              <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-              <span class="showcase__tile-name">ONU</span>
-            </figure>
-            <figure class="showcase__tile" data-id="equilibrado" tabindex="0">
-              <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-              <span class="showcase__tile-name">Equilibrado</span>
-            </figure>
-          </div>
-          <div class="showcase__col showcase__col--2">
-            <figure class="showcase__tile" data-id="bajo" tabindex="0">
-              <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-              <span class="showcase__tile-name">Bajo</span>
-            </figure>
-            <figure class="showcase__tile" data-id="running" tabindex="0">
-              <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-              <span class="showcase__tile-name">Running</span>
-            </figure>
-            <figure class="showcase__tile" data-id="audaz" tabindex="0">
-              <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-              <span class="showcase__tile-name">Audaz</span>
-            </figure>
-          </div>
-          <div class="showcase__col showcase__col--3">
-            <figure class="showcase__tile" data-id="bateria" tabindex="0">
-              <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-              <span class="showcase__tile-name">Batería</span>
-            </figure>
-            <figure class="showcase__tile" data-id="gimnasio" tabindex="0">
-              <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-              <span class="showcase__tile-name">Gimnasio</span>
-            </figure>
-            <figure class="showcase__tile" data-id="reflexivo" tabindex="0">
-              <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-              <span class="showcase__tile-name">Reflexivo</span>
-            </figure>
-          </div>
+    <!-- HERO — Galería 3D: fotos flotando en profundidad + frase central entrelazada.
+         El scroll (o las flechas / deslizar) hace avanzar las fotos hacia el espectador;
+         tras 3 s sin interacción el auto-play continúa solo (js/g3d-hero.js). -->
+    <section class="ps-hero g3d" aria-label="Presentación">
+      <div class="g3d__scene">
+        <div class="g3d__world" data-g3d-world>
+          <!-- Fotos de la galería (verticales ~720×960). Para usar tus fotos personales:
+               guarda cada una en images/ y cambia el src, p. ej. src="images/natacion.jpg". -->
+          <figure class="g3d__card"><img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=720&amp;h=960&amp;fit=crop&amp;q=75" alt="Natación"></figure>
+          <figure class="g3d__card"><img src="images/drummer.jpg" alt="Batería"></figure>
+          <figure class="g3d__card"><img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=720&amp;h=960&amp;fit=crop&amp;q=75" alt="Bajo"></figure>
+          <figure class="g3d__card"><img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=720&amp;h=960&amp;fit=crop&amp;q=75" alt="Running"></figure>
+          <figure class="g3d__card"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=720&amp;h=960&amp;fit=crop&amp;q=75" alt="Gimnasio"></figure>
+          <figure class="g3d__card"><img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=720&amp;h=960&amp;fit=crop&amp;q=75" alt="Modelo de Naciones Unidas"></figure>
+          <figure class="g3d__card"><img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=720&amp;h=960&amp;fit=crop&amp;q=75" alt="Estudio"></figure>
+          <figure class="g3d__card"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=720&amp;h=960&amp;fit=crop&amp;q=75" alt="Montaña"></figure>
         </div>
-        <!-- Right: name + quote (same word-rise animation) -->
-        <div class="ps-hero__text">
-          <h1 class="ps-hero__title">Juan <em>Diego</em></h1>
-          <p class="ps-hero__quote">"He fallado una y otra vez en mi vida, y por eso he tenido éxito."</p>
-          <span class="ps-hero__attr">Michael Jordan</span>
-        </div>
+      </div>
+      <!-- Frase central: capa superpuesta a la escena (siempre visible). Con
+           mix-blend-mode: difference, las letras revelan en negativo la foto
+           que pase por debajo, como en la animación de referencia. -->
+      <div class="g3d__text ps-hero__text">
+        <h1 class="ps-hero__title">Juan <em>Diego</em></h1>
+        <p class="ps-hero__quote">"He fallado una y otra vez en mi vida, y por eso he tenido éxito."</p>
+        <span class="ps-hero__attr">Michael Jordan</span>
+      </div>
+      <div class="g3d__hint" aria-hidden="true">
+        <span class="g3d__hint-strong">Desplázate, usa las flechas o desliza para navegar</span>
+        <span class="g3d__hint-soft">El bucle continúa solo tras 3 segundos de inactividad</span>
       </div>
     </section>
 
@@ -299,6 +269,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="js/scroll-anim.js"></script>
   <script src="js/ps-hero.js"></script>
+  <script src="js/g3d-hero.js"></script>
   <script src="js/showcase.js"></script>
 </body>
 </html>

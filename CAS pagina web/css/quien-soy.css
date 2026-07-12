@@ -6,49 +6,109 @@
    prefers-reduced-motion (static fallback).
    ============================================ */
 
-/* ---------- HERO (TeamShowcase layout: staggered grid + name/quote,
-   cream background) ---------- */
+/* ---------- HERO (Galería 3D: fotos en profundidad + frase central) ----------
+   La escena usa perspective + preserve-3d: cada .g3d__card se coloca con
+   translate3d desde js/g3d-hero.js; la frase vive a z = 0, así el orden 3D
+   entrelaza texto y fotos. Sin JS / sin GSAP / con prefers-reduced-motion,
+   el CSS de abajo muestra un collage estático (fallback). */
 .ps-hero {
-  min-height: calc(88vh - var(--nav-height));
-  display: flex;
-  align-items: center;
   position: relative;
-  padding: 48px 0;
+  height: calc(100vh - var(--nav-height));
+  min-height: 560px;
+  overflow: hidden;
+  /* explicit bg: the blended text needs a painted backdrop inside the section */
+  background: var(--bg);
 }
 
-.ps-hero__inner {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: clamp(40px, 5vw, 80px);
-  align-items: center;
+.g3d__scene {
+  position: absolute;
+  inset: 0;
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
 }
 
-/* Left grid: same tiles as the showcase, sized to fit the hero height */
-.ps-hero__grid {
-  display: flex;
-  gap: 14px;
-  justify-content: flex-start;
+.g3d__world {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
 }
 
-.ps-hero__grid .showcase__col { gap: 14px; }
-.ps-hero__grid .showcase__col--2 { margin-top: 52px; }
-.ps-hero__grid .showcase__col--3 { margin-top: 26px; }
+.g3d__card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(170px, 21vw, 300px);
+  aspect-ratio: 3 / 4;
+  margin: 0;
+  background: var(--surface);
+  box-shadow: 0 18px 60px rgba(28, 24, 20, 0.14);
+  will-change: transform, opacity;
+}
 
-.ps-hero__grid .showcase__col--1 .showcase__tile { width: 124px; height: 132px; }
-.ps-hero__grid .showcase__col--2 .showcase__tile { width: 138px; height: 122px; }
-.ps-hero__grid .showcase__col--3 .showcase__tile { width: 120px; height: 128px; }
+.g3d__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-.ps-hero__grid .showcase__tile-name { font-size: 16px; }
+/* Fallback estático (antes de que arranque el motor o si no puede arrancar):
+   collage de 3 fotos + texto encima, todo visible. El motor añade .g3d--live
+   y toma el control con estilos inline. */
+.g3d__card { display: none; }
+.g3d__card:nth-child(1) { display: block; transform: translate(-108%, -58%); }
+.g3d__card:nth-child(2) { display: block; transform: translate(-26%, -32%) scale(0.82); }
+.g3d__card:nth-child(3) { display: block; transform: translate(58%, -70%) scale(0.62); opacity: 0.42; }
+.g3d--live .g3d__card { display: block; opacity: 0; }
+
+/* Frase central: overlay por encima de la escena, siempre visible.
+   mix-blend-mode: difference + colores calibrados contra el fondo crema:
+   sobre el fondo el texto se lee oscuro (como antes) y donde pasa una foto
+   las letras la revelan en negativo (efecto de la referencia). */
+.g3d__text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(94vw, 1150px);
+  text-align: center;
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: difference;
+}
 
 .ps-hero__title {
   font-family: var(--font-display);
-  font-size: clamp(48px, 7vw, 104px);
+  font-size: clamp(56px, 9vw, 140px);
   line-height: 1.02;
   font-weight: 400;
   letter-spacing: 0;
-  color: var(--ink);
+  /* crema + difference = negro sobre el fondo, negativo brillante sobre foto */
+  color: var(--bg);
   margin: 0;
 }
+
+/* Hint inferior (como el original: mono-caps, dos líneas) */
+.g3d__hint {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  text-align: center;
+  padding: 0 16px;
+  pointer-events: none;
+}
+
+.g3d__hint-strong { color: var(--ink); }
+.g3d__hint-soft { color: var(--zinc); font-weight: 500; }
 
 .ps-hero__title em {
   font-style: italic;
@@ -57,11 +117,12 @@
 .ps-hero__quote {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: clamp(20px, 2.6vw, 30px);
+  font-size: clamp(18px, 2.2vw, 26px);
   line-height: 1.4;
-  color: var(--zinc);
+  /* bajo difference sobre el crema #F5F2EB rinde como el gris --zinc de antes */
+  color: #5B6263;
   max-width: 640px;
-  margin-top: 28px;
+  margin: 24px auto 0;
 }
 
 .ps-hero__attr {
@@ -71,7 +132,7 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--zinc);
+  color: #5B6263;
   margin-top: 16px;
 }
 
@@ -227,25 +288,15 @@
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .ps-hero {
-    min-height: 0;
-    padding: 56px 0 40px;
+    min-height: 480px;
   }
 
-  /* stack: name + quote first, grid below (horizontal scroll if needed) */
-  .ps-hero__inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .g3d__card { width: clamp(150px, 38vw, 220px); }
+
+  .g3d__hint {
+    bottom: 18px;
+    font-size: 9px;
   }
-  .ps-hero__text { order: -1; }
-  .ps-hero__grid {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 8px;
-    scrollbar-width: thin;
-  }
-  .ps-hero__grid .showcase__col { flex-shrink: 0; }
-  .ps-hero__grid .showcase__col--2 { margin-top: 32px; }
-  .ps-hero__grid .showcase__col--3 { margin-top: 16px; }
 
   .showcase__layout {
     grid-template-columns: 1fr;
