@@ -2859,3 +2859,14 @@ main { padding-top: var(--nav-height); }
   .pshow__cta { padding: 8px 14px; }
   .pshow__hint { bottom: 20px; }
 }
+
+/* Campo de estrellas del intro (canvas creado desde js/pshow.js
+   solo cuando la animación está activa) + capas del intro encima */
+.pshow__stars {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.pshow__intro { position: relative; z-index: 1; }
+.pshow__hint { z-index: 1; }
