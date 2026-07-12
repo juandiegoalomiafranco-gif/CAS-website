@@ -2560,3 +2560,302 @@ main { padding-top: var(--nav-height); }
     transition: none !important;
   }
 }
+
+/* ============================================
+   PROJECTS SHOWCASE (proyectos.html · .pshow)
+   Paneles a pantalla completa apilados: al hacer
+   scroll (pinned) el siguiente panel sube cubriendo
+   al actual, que se atenúa y desenfoca (js/pshow.js).
+   Sin JS, sin GSAP o con prefers-reduced-motion se
+   mantiene este estado estático: paneles en flujo
+   normal separados por hairlines.
+   ============================================ */
+.pshow {
+  position: relative;
+  background: var(--bg);
+}
+
+.pshow__panel {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: calc(var(--nav-height) + 24px) 5vw 48px;
+  background: var(--bg);
+  border-top: 1px solid var(--border-light);
+}
+.pshow__panel:first-child { border-top: none; }
+
+/* Live mode (aplicado desde JS): escenario de una
+   pantalla; los paneles se apilan en absoluto y el
+   orden del DOM da el z-order (el siguiente cubre). */
+.pshow--live .pshow__stage {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.pshow--live .pshow__panel {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+  border-top: none;
+  will-change: transform, opacity, filter;
+}
+
+/* --- Intro --- */
+.pshow__panel--intro {
+  align-items: center;
+  text-align: center;
+}
+
+.pshow__intro {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pshow__intro-eyebrow { margin-bottom: 28px; }
+
+.pshow__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(52px, 9vw, 120px);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.pshow__title em { font-style: italic; }
+
+.pshow__quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.55;
+  color: var(--ink);
+  opacity: 0.75;
+  max-width: 620px;
+  margin: 36px auto 0;
+}
+
+.pshow__attr {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--zinc);
+}
+
+.pshow__hint {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--zinc);
+  white-space: nowrap;
+}
+.pshow__hint svg { animation: pshow-hint-bob 2.2s ease-in-out infinite; }
+@keyframes pshow-hint-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(4px); }
+}
+
+/* --- Paneles de proyecto --- */
+.pshow__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.pshow__text {
+  border-top: 1px solid var(--ink);
+  padding-top: 22px;
+}
+
+.pshow__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: clamp(24px, 4vh, 48px);
+}
+
+.pshow__id {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.pshow__num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--ink);
+}
+
+.pshow__cat {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.pshow__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 9px 18px;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  color: var(--ink);
+  transition: background 0.25s ease, color 0.25s ease;
+  white-space: nowrap;
+}
+.pshow__cta:hover { background: var(--ink); color: var(--bg); }
+
+.pshow__chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.pshow__name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(40px, 4.6vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.pshow__date {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--zinc);
+}
+
+.pshow__desc {
+  margin-top: 18px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  opacity: 0.85;
+  max-width: 46ch;
+}
+
+/* --- Media (derecha): foto o placeholder tonal --- */
+.pshow__media {
+  position: relative;
+  height: clamp(340px, 66vh, 720px);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.pshow__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pshow__media--ph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--tone, var(--elevated));
+  border: none;
+}
+
+.pshow__media-letter {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(160px, 22vw, 340px);
+  line-height: 1;
+  color: var(--bg);
+  opacity: 0.28;
+  user-select: none;
+}
+
+.pshow__media-note {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--bg);
+  opacity: 0.75;
+}
+
+/* Tono por proyecto (colorea el placeholder) */
+.pshow__panel--p01 { --tone: var(--p01); }
+.pshow__panel--p02 { --tone: var(--p02); }
+.pshow__panel--p03 { --tone: var(--p03); }
+.pshow__panel--p04 { --tone: var(--p04); }
+.pshow__panel--p05 { --tone: var(--p05); }
+.pshow__panel--p06 { --tone: var(--p06); }
+.pshow__panel--p07 { --tone: var(--p07); }
+
+/* --- Contador (solo en modo live) --- */
+.pshow__counter {
+  display: none;
+  position: absolute;
+  left: 5vw;
+  bottom: 26px;
+  z-index: 50;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--zinc);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.pshow--live .pshow__counter { display: block; }
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .pshow__inner {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  /* La foto arriba, el texto debajo (el orden editorial se conserva
+     de izquierda→derecha como arriba→abajo) */
+  .pshow__media { order: -1; height: clamp(200px, 32vh, 320px); }
+  .pshow__media-letter { font-size: clamp(110px, 30vw, 180px); }
+  .pshow__panel { padding-left: 6vw; padding-right: 6vw; }
+  .pshow__name { font-size: clamp(32px, 9vw, 44px); }
+  .pshow__desc { font-size: 15px; }
+  .pshow__head { margin-bottom: 18px; }
+  .pshow__cta { padding: 8px 14px; }
+  .pshow__hint { bottom: 20px; }
+}

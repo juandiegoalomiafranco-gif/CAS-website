@@ -23,14 +23,213 @@
   <div class="nav__mobile-overlay"><a href="index.html">Qué es CAS</a><a href="quien-soy.html">Quién Soy</a><a href="proyectos.html">Proyectos</a><a href="experiencias.html">Experiencias</a><a href="entrevistas.html">Entrevistas</a><a href="resultados.html">Resultados</a><a href="proyecto-cas.html">Proyecto CAS</a></div>
 
   <main>
+
+    <!-- ============================================
+         SHOWCASE — intro + proyectos en paneles apilados
+         (scroll pinned: cada panel sube cubriendo al
+         anterior, que se atenúa y desenfoca). Sin JS o
+         con prefers-reduced-motion los paneles quedan
+         apilados de forma estática.
+         ============================================ -->
+    <section class="pshow" aria-label="Recorrido por los proyectos CAS">
+
+      <div class="pshow__stage" data-pshow-stage>
+
+        <!-- 00 · Intro -->
+        <div class="pshow__panel pshow__panel--intro" data-pshow-panel>
+          <div class="pshow__intro">
+            <span class="eyebrow pshow__intro-eyebrow">Portafolio CAS · IB 2025–2027</span>
+            <h1 class="pshow__title">Proyectos <em>CAS</em></h1>
+            <p class="pshow__quote">“Somos lo que hacemos repetidamente. La excelencia, entonces, no es un acto, sino un hábito.”</p>
+            <span class="pshow__attr">— Aristóteles</span>
+          </div>
+          <div class="pshow__hint" aria-hidden="true">
+            <span>Desliza para explorar</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </div>
+        </div>
+
+        <!-- 01 · Batería -->
+        <div class="pshow__panel pshow__panel--p01" data-pshow-panel>
+          <div class="pshow__inner">
+            <div class="pshow__text">
+              <div class="pshow__head">
+                <div class="pshow__id"><span class="pshow__num">01</span><span class="pshow__cat text-creativity">Creativity</span></div>
+                <a href="proyecto-bateria.html" class="pshow__cta">Ver proyecto</a>
+              </div>
+              <div class="pshow__chips">
+                <span class="cat-chip cat-chip--c">C</span>
+                <span class="badge badge--creativity">Música</span>
+                <span class="badge badge--creativity">Técnica</span>
+              </div>
+              <h2 class="pshow__name">Batería</h2>
+              <span class="pshow__date">2025 — Presente</span>
+              <p class="pshow__desc">Aprendizaje continuo de batería: técnica, lectura rítmica y práctica deliberada con metrónomo, sesión a sesión.</p>
+            </div>
+            <div class="pshow__media">
+              <img src="images/drummer.jpg" alt="Práctica de batería">
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 · Bajo -->
+        <div class="pshow__panel pshow__panel--p02" data-pshow-panel>
+          <div class="pshow__inner">
+            <div class="pshow__text">
+              <div class="pshow__head">
+                <div class="pshow__id"><span class="pshow__num">02</span><span class="pshow__cat text-creativity">Creativity</span></div>
+                <a href="proyecto-bajo.html" class="pshow__cta">Ver proyecto</a>
+              </div>
+              <div class="pshow__chips">
+                <span class="cat-chip cat-chip--c">C</span>
+                <span class="badge badge--creativity">Música</span>
+                <span class="badge badge--creativity">Armonía</span>
+              </div>
+              <h2 class="pshow__name">Bajo Eléctrico</h2>
+              <span class="pshow__date">2025</span>
+              <p class="pshow__desc">Exploración del bajo como instrumento rítmico y armónico dentro de un grupo musical.</p>
+            </div>
+            <div class="pshow__media pshow__media--ph">
+              <span class="pshow__media-letter" aria-hidden="true">B</span>
+              <span class="pshow__media-note">Evidencia fotográfica · En proceso</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 · Piano -->
+        <div class="pshow__panel pshow__panel--p03" data-pshow-panel>
+          <div class="pshow__inner">
+            <div class="pshow__text">
+              <div class="pshow__head">
+                <div class="pshow__id"><span class="pshow__num">03</span><span class="pshow__cat text-creativity">Creativity</span></div>
+                <a href="proyecto-piano.html" class="pshow__cta">Ver proyecto</a>
+              </div>
+              <div class="pshow__chips">
+                <span class="cat-chip cat-chip--c">C</span>
+                <span class="badge badge--creativity">Teoría musical</span>
+                <span class="badge badge--creativity">Composición</span>
+              </div>
+              <h2 class="pshow__name">Piano</h2>
+              <span class="pshow__date">2025</span>
+              <p class="pshow__desc">Desarrollo de teoría musical aplicada al piano: escalas, acordes y primeros ejercicios de composición.</p>
+            </div>
+            <div class="pshow__media pshow__media--ph">
+              <span class="pshow__media-letter" aria-hidden="true">P</span>
+              <span class="pshow__media-note">Evidencia fotográfica · En proceso</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 · Natación -->
+        <div class="pshow__panel pshow__panel--p04" data-pshow-panel>
+          <div class="pshow__inner">
+            <div class="pshow__text">
+              <div class="pshow__head">
+                <div class="pshow__id"><span class="pshow__num">04</span><span class="pshow__cat text-activity">Activity</span></div>
+                <a href="proyecto-natacion.html" class="pshow__cta">Ver proyecto</a>
+              </div>
+              <div class="pshow__chips">
+                <span class="cat-chip cat-chip--a">A</span>
+                <span class="badge badge--activity">Deporte</span>
+                <span class="badge badge--activity">Técnica de estilos</span>
+              </div>
+              <h2 class="pshow__name">Natación</h2>
+              <span class="pshow__date">2025 — Presente</span>
+              <p class="pshow__desc">Entrenamiento de natación con enfoque en técnica de estilos y mejora progresiva de tiempos.</p>
+            </div>
+            <div class="pshow__media pshow__media--ph">
+              <span class="pshow__media-letter" aria-hidden="true">N</span>
+              <span class="pshow__media-note">Evidencia fotográfica · En proceso</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 · Running -->
+        <div class="pshow__panel pshow__panel--p05" data-pshow-panel>
+          <div class="pshow__inner">
+            <div class="pshow__text">
+              <div class="pshow__head">
+                <div class="pshow__id"><span class="pshow__num">05</span><span class="pshow__cat text-activity">Activity</span></div>
+                <a href="proyecto-running.html" class="pshow__cta">Ver proyecto</a>
+              </div>
+              <div class="pshow__chips">
+                <span class="cat-chip cat-chip--a">A</span>
+                <span class="badge badge--activity">Deporte</span>
+                <span class="badge badge--activity">10K</span>
+              </div>
+              <h2 class="pshow__name">Running</h2>
+              <span class="pshow__date">2025</span>
+              <p class="pshow__desc">Plan de entrenamiento de carrera con un objetivo claro: completar una prueba de 10K.</p>
+            </div>
+            <div class="pshow__media pshow__media--ph">
+              <span class="pshow__media-letter" aria-hidden="true">R</span>
+              <span class="pshow__media-note">Evidencia fotográfica · En proceso</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 06 · Triatlón -->
+        <div class="pshow__panel pshow__panel--p06" data-pshow-panel>
+          <div class="pshow__inner">
+            <div class="pshow__text">
+              <div class="pshow__head">
+                <div class="pshow__id"><span class="pshow__num">06</span><span class="pshow__cat text-activity">Activity</span></div>
+                <a href="proyecto-triatlon.html" class="pshow__cta">Ver proyecto</a>
+              </div>
+              <div class="pshow__chips">
+                <span class="cat-chip cat-chip--a">A</span>
+                <span class="badge badge--featured">Destacado</span>
+                <span class="badge badge--activity">Natación</span>
+                <span class="badge badge--activity">Ciclismo</span>
+                <span class="badge badge--activity">Carrera</span>
+              </div>
+              <h2 class="pshow__name">Triatlón</h2>
+              <span class="pshow__date">2025 — 2026</span>
+              <p class="pshow__desc">Preparación multidisciplinaria para completar un triatlón sprint. El proyecto físico más exigente del portafolio.</p>
+            </div>
+            <div class="pshow__media pshow__media--ph">
+              <span class="pshow__media-letter" aria-hidden="true">T</span>
+              <span class="pshow__media-note">Evidencia fotográfica · En proceso</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 07 · Proyecto Impacto Social -->
+        <div class="pshow__panel pshow__panel--p07" data-pshow-panel>
+          <div class="pshow__inner">
+            <div class="pshow__text">
+              <div class="pshow__head">
+                <div class="pshow__id"><span class="pshow__num">07</span><span class="pshow__cat text-service">Service</span></div>
+                <a href="proyecto-cas.html" class="pshow__cta">Ver Proyecto CAS</a>
+              </div>
+              <div class="pshow__chips">
+                <span class="cat-chip cat-chip--s">S</span>
+                <span class="badge badge--featured">Destacado</span>
+                <span class="badge badge--service">Comunidad</span>
+                <span class="badge badge--service">Servicio</span>
+              </div>
+              <h2 class="pshow__name">Proyecto Impacto Social</h2>
+              <span class="pshow__date">2025 — 2026</span>
+              <p class="pshow__desc">Proyecto de servicio comunitario en definición. El eje central de mi CAS.</p>
+            </div>
+            <div class="pshow__media pshow__media--ph">
+              <span class="pshow__media-letter" aria-hidden="true">S</span>
+              <span class="pshow__media-note">Evidencia fotográfica · En proceso</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pshow__counter" data-pshow-counter aria-hidden="true">01 / 07</div>
+    </section>
+
     <section class="section section--lg">
       <div class="container">
-        <!-- Page Header -->
-        <div class="page-head reveal" style="padding-top:0;">
-          <span class="eyebrow">Portafolio CAS</span>
-          <h1 class="page-head__title">Proyectos</h1>
-          <hr class="page-head__rule">
-          <p class="page-head__sub">Documentación formal de los proyectos CAS del portafolio</p>
+        <!-- Grid Header -->
+        <div class="reveal" style="margin-bottom:32px;">
+          <span class="eyebrow" style="margin-bottom:12px;">Índice completo</span>
+          <h2 class="section-head section-head--sm">Todos los proyectos</h2>
         </div>
 
         <!-- Filters -->
@@ -144,5 +343,6 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="js/scroll-anim.js"></script>
+  <script src="js/pshow.js"></script>
 </body>
 </html>
