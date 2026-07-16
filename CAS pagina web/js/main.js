@@ -86,6 +86,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- Project ficha Expand/Collapse (Page 3 list) ---
+  document.querySelectorAll('.proj-row__expand').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const ficha = btn.parentElement.querySelector('.proj-row__ficha');
+      if (!ficha) return;
+      const isOpen = ficha.hasAttribute('hidden');
+      if (isOpen) {
+        ficha.removeAttribute('hidden');
+        ficha.style.maxHeight = ficha.scrollHeight + 'px';
+      } else {
+        ficha.style.maxHeight = '';
+        // wait for the collapse transition before re-hiding from a11y tree
+        setTimeout(() => { ficha.setAttribute('hidden', ''); }, 500);
+      }
+      btn.setAttribute('aria-expanded', String(isOpen));
+      btn.innerHTML = isOpen
+        ? 'Cerrar ficha <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>'
+        : 'Ver ficha de aprendizaje <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>';
+    });
+  });
+
   // --- Reflection Expand/Collapse (Page 7) ---
   document.querySelectorAll('.reflection-toggle').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -101,10 +122,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Project Filter (Page 3) ---
+  // Supports both the legacy .card grid and the .proj-row hierarchical list.
   const filterBtns = document.querySelectorAll('.filter-btn[data-filter]');
-  const filterCards = document.querySelectorAll('.card[data-category]');
+  const filterItems = document.querySelectorAll('.proj-row[data-category], .card[data-category]');
 
-  if (filterBtns.length > 0 && filterCards.length > 0) {
+  if (filterBtns.length > 0 && filterItems.length > 0) {
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
@@ -112,17 +134,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const filter = btn.dataset.filter;
 
-        filterCards.forEach(card => {
-          if (filter === 'all' || card.dataset.category === filter) {
-            card.classList.remove('hidden-filter');
-            card.style.position = '';
-            card.style.visibility = '';
+        filterItems.forEach(item => {
+          const match = filter === 'all' || item.dataset.category === filter;
+          if (match) {
+            item.classList.remove('hidden-filter');
+            item.style.display = '';
+            item.style.position = '';
+            item.style.visibility = '';
           } else {
-            card.classList.add('hidden-filter');
+            item.classList.add('hidden-filter');
             setTimeout(() => {
-              if (card.classList.contains('hidden-filter')) {
-                card.style.position = 'absolute';
-                card.style.visibility = 'hidden';
+              if (!item.classList.contains('hidden-filter')) return;
+              // .proj-row collapses out of flow; .card is absolutely removed
+              if (item.classList.contains('proj-row')) {
+                item.style.display = 'none';
+              } else {
+                item.style.position = 'absolute';
+                item.style.visibility = 'hidden';
               }
             }, 400);
           }

@@ -21,13 +21,17 @@
   --activity:     #4C9175;
   --service:      #BA7250;
   /* per-project tones (experiences inherit their parent project's tone) */
-  --p01: #7A68B0;   /* Batería — violeta */
-  --p02: #5E7FA6;   /* Bajo — azul pizarra */
-  --p03: #A5638C;   /* Piano — ciruela */
-  --p04: #3E8FA3;   /* Natación — teal */
-  --p05: #4C9175;   /* Running — verde */
-  --p06: #A8862E;   /* Triatlón — dorado */
-  --p07: #BA7250;   /* Impacto Social — terracota */
+  --p01: #7A68B0;   /* 01 Batería — violeta */
+  --p02: #5E7FA6;   /* 02 Bajo — azul pizarra */
+  --p03: #A5638C;   /* 03 Musical — ciruela */
+  --p04: #4C9175;   /* 04 Running — verde */
+  --p05: #3E8FA3;   /* 05 Natación — teal */
+  --p06: #A8862E;   /* 06 Voleibol — dorado */
+  --p07: #BA7250;   /* 07 Comer Sano — terracota */
+  --p08: #C08A3E;   /* 08 Viaje — ámbar */
+  --p09: #4E86A0;   /* 09 ONU — azul acero */
+  --p10: #6E6AC0;   /* 10 Presidencia Cambridge — índigo */
+  --p11: #B0655F;   /* 11 Día del Profesor — arcilla */
   --font-display: 'Baskervville', Georgia, 'Times New Roman', serif;
   --font-body:    'Inter', 'Helvetica Neue', Arial, sans-serif;
   /* historical name: this is the small-caps label font (Karla), not a monospace */
@@ -740,6 +744,186 @@ main { padding-top: var(--nav-height); }
   flex-direction: column;
   gap: 12px;
 }
+
+/* --- PROJECT INDEX (hierarchical list, replaces the card grid) ---
+   Ledger-style rows with a category rail, a large serif title, the
+   learning objective as a lead line, and an expandable "ficha" that
+   reveals the CAS learning metadata (RA areas, skills, IB attributes,
+   values). Filtering reuses the .hidden-filter mechanism (js/main.js). */
+.proj-index {
+  margin-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.proj-row {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  column-gap: 40px;
+  padding: 36px 0 36px 24px;
+  border-bottom: 1px solid var(--border-light);
+  position: relative;
+  transition: background 0.35s ease, opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* accent bar on the left, tinted with the project's tone */
+.proj-row::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent);
+  opacity: 0.28;
+  transition: opacity 0.3s ease, width 0.3s ease;
+}
+
+.proj-row:hover {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 7%, transparent), transparent 55%);
+}
+
+.proj-row:hover::before { opacity: 0.9; width: 4px; }
+
+.proj-row.hidden-filter {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+
+.proj-row__rail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.proj-row__num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 52px;
+  line-height: 0.9;
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+.proj-row__date {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--zinc);
+  margin-top: 4px;
+}
+
+.proj-row__dur {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--zinc);
+  opacity: 0.85;
+}
+
+.proj-row__body { min-width: 0; }
+
+.proj-row__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.proj-row__title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.4vw, 34px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.proj-row__title a {
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease, color 0.2s ease;
+  padding-bottom: 2px;
+}
+
+.proj-row__title a:hover { background-size: 100% 1px; color: var(--accent); }
+
+.proj-row__cat {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+.proj-row__goal {
+  margin-top: 14px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink);
+  max-width: 62ch;
+}
+
+.proj-row__goal strong {
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.proj-row__expand {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--zinc);
+  margin-top: 18px;
+  cursor: pointer;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.proj-row__expand:hover { color: var(--ink); }
+.proj-row__expand svg { transition: transform 0.25s ease; }
+
+.proj-row__ficha {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.proj-row__ficha-inner {
+  padding-top: 24px;
+}
+
+.proj-row__ficha-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 40px;
+}
+
+.proj-meta__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--zinc);
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.proj-meta__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.proj-row__ficha .arrow-link { margin-top: 24px; }
 
 /* --- INTERVIEW CARD (pending showcase) --- */
 .interview-card {
@@ -1660,6 +1844,12 @@ main { padding-top: var(--nav-height); }
   .exp-entry { grid-template-columns: 1fr; row-gap: 16px; }
   .exp-entry__rail { grid-row: 1; flex-direction: row; align-items: center; flex-wrap: wrap; }
   .exp-entry > *:not(.exp-entry__rail) { grid-column: 1; }
+
+  .proj-row { grid-template-columns: 1fr; row-gap: 14px; padding-left: 18px; }
+  .proj-row__rail { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .proj-row__num { font-size: 40px; }
+  .proj-row__head { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .proj-row__ficha-grid { grid-template-columns: 1fr; gap: 20px; }
 }
 
 @media (max-width: 768px) {
@@ -1719,6 +1909,10 @@ main { padding-top: var(--nav-height); }
 .tone-p05 { --accent: var(--p05); }
 .tone-p06 { --accent: var(--p06); }
 .tone-p07 { --accent: var(--p07); }
+.tone-p08 { --accent: var(--p08); }
+.tone-p09 { --accent: var(--p09); }
+.tone-p10 { --accent: var(--p10); }
+.tone-p11 { --accent: var(--p11); }
 
 .text-accent { color: var(--accent); }
 .eyebrow--accent { color: var(--accent); }
@@ -1767,6 +1961,12 @@ main { padding-top: var(--nav-height); }
 }
 
 .proj-ficha__list { margin-top: 16px; }
+
+/* Ficha técnica — grupos ampliados (objetivo, área, habilidades, atributos, valores) */
+.proj-ficha__group { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border-light); }
+.proj-ficha__group .eyebrow { display: block; margin-bottom: 10px; }
+.proj-ficha__goal { font-size: 14px; line-height: 1.7; color: var(--ink); }
+.proj-ficha__group .project-block__tags { margin-top: 0; }
 
 .proj-ficha__row {
   display: flex;
@@ -2823,6 +3023,10 @@ main { padding-top: var(--nav-height); }
 .pshow__panel--p05 { --tone: var(--p05); }
 .pshow__panel--p06 { --tone: var(--p06); }
 .pshow__panel--p07 { --tone: var(--p07); }
+.pshow__panel--p08 { --tone: var(--p08); }
+.pshow__panel--p09 { --tone: var(--p09); }
+.pshow__panel--p10 { --tone: var(--p10); }
+.pshow__panel--p11 { --tone: var(--p11); }
 
 /* --- Contador (solo en modo live) --- */
 .pshow__counter {
