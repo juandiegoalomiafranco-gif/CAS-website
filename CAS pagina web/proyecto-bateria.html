@@ -48,11 +48,28 @@
           <aside class="proj-ficha reveal">
             <span class="eyebrow">Ficha técnica</span>
             <dl class="proj-ficha__list stagger-children">
-              <div class="proj-ficha__row"><dt>Categoría</dt><dd><span class="cat-chip cat-chip--c">C</span> Creativity</dd></div>
-              <div class="proj-ficha__row"><dt>Fechas</dt><dd>2025 — Presente</dd></div>
+              <div class="proj-ficha__row"><dt>Área</dt><dd><span class="cat-chip cat-chip--c">C</span> Creatividad</dd></div>
+              <div class="proj-ficha__row proj-ficha__row--stack">
+                <dt>Objetivo de Aprendizaje</dt>
+                <dd>
+                  <ul class="ficha-ra">
+                  <li><a href="resultados.html#ra-01"><span class="ficha-ra__num">RA 01</span> Identificar las propias fortalezas y desarrollar áreas de crecimiento personal.</a></li>
+                  <li><a href="resultados.html#ra-02"><span class="ficha-ra__num">RA 02</span> Mostrar que se han afrontado desafíos y se han desarrollado nuevas habilidades en el proceso.</a></li>
+                  <li><a href="resultados.html#ra-04"><span class="ficha-ra__num">RA 04</span> Mostrar compromiso y perseverancia en las experiencias de CAS.</a></li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="proj-ficha__row proj-ficha__row--stack">
+                <dt>Habilidades Desarrolladas</dt>
+                <dd><span class="tag">Lectura rítmica</span><span class="tag">Independencia de extremidades</span><span class="tag">Práctica con metrónomo</span><span class="tag">Tocar en agrupación</span></dd>
+              </div>
+              <div class="proj-ficha__row proj-ficha__row--stack">
+                <dt>Atributos del IB y Valores</dt>
+                <dd><span class="tag">Audaz</span><span class="tag">Reflexivo</span><span class="tag">Equilibrado</span></dd>
+              </div>
+              <div class="proj-ficha__row"><dt>Fecha</dt><dd>2025 — Presente</dd></div>
               <div class="proj-ficha__row"><dt>Duración</dt><dd>Desde marzo de 2025</dd></div>
             </dl>
-            <div class="project-block__tags"><span class="tag">RA 01</span><span class="tag">RA 02</span><span class="tag">RA 04</span></div>
           </aside>
           <div class="reveal">
             <div class="zone-head">
@@ -85,221 +102,116 @@
             <h2 class="section-head section-head--sm">Qué me está enseñando</h2>
           </div>
         </div>
-        <div class="grid grid--2" style="position:relative;z-index:1;">
-          <div class="reveal">
-            <div class="eyebrow" style="margin-bottom:16px;">Resultados de aprendizaje</div>
-            <nav class="lo-index stagger-children" aria-label="Resultados de aprendizaje de este proyecto">
-              <a class="lo-index__item" href="resultados.html#ra-01"><span class="lo-index__num">01</span> Fortalezas y áreas de mejora</a>
-              <a class="lo-index__item" href="resultados.html#ra-02"><span class="lo-index__num">02</span> Desafíos y nuevas habilidades</a>
-              <a class="lo-index__item" href="resultados.html#ra-04"><span class="lo-index__num">04</span> Compromiso y perseverancia</a>
-            </nav>
-            <div class="eyebrow" style="margin:28px 0 12px;">Atributos IB</div>
-            <div class="attr-list">
-              <div class="attr-card">
-                <div class="attr-card__name">Audaz</div>
-                <p class="attr-card__desc">Abordo desafíos nuevos con coraje y determinación.</p>
-              </div>
-              <div class="attr-card">
-                <div class="attr-card__name">Reflexivo</div>
-                <p class="attr-card__desc">Evalúo mi propio aprendizaje: qué hice bien y qué puedo mejorar.</p>
-              </div>
-              <div class="attr-card">
-                <div class="attr-card__name">Equilibrado</div>
-                <p class="attr-card__desc">Balanceo cuerpo, mente y estudio para crecer de forma integral.</p>
-              </div>
-            </div>
-          </div>
-          <div class="reveal">
-            <blockquote class="pull-quote" style="margin-top:0;">
+        <div class="reveal" style="position:relative;z-index:1;max-width:760px;">
+          <blockquote class="pull-quote" style="margin-top:0;">
               <p class="pull-quote__text">Aprender batería me ha enseñado que la paciencia y la repetición son los verdaderos maestros. Cada sesión me obliga a escucharme con honestidad y a reconocer lo que aún no domino.</p>
               <div class="pull-quote__attr">Reflexión personal · 2025</div>
             </blockquote>
-            <span class="pending-note">Reflexión final — por escribir al cierre</span>
-          </div>
+          <span class="pending-note">Reflexión final — por escribir al cierre</span>
         </div>
       </div>
     </section>
 
 
-    <!-- ══ FILMSTRIP · fotos a pantalla completa ══
-         Para poner una foto real en una slide: reemplaza el contenido de
-         <div class="filmstrip__slide"> por
-           <img src="images/mifoto.jpg" alt="Descripción">
-           <div class="filmstrip__darken"></div>
-         y conserva el <div class="filmstrip__caption"> al final. -->
+    <!-- ══ FILMSTRIP · banda de fotos verticales ══
+         Tarjetas verticales que avanzan en horizontal mientras la sección
+         está fija (js/project-page.js). Sin JS se recorre a mano.
+
+         PARA PONER TUS FOTOS: súbelas a images/proyectos/bateria/ con el nombre
+         que declara cada data-slot (destacada-01.jpg…) y aparecen solas. -->
     <section class="filmstrip" aria-label="Fotos del proyecto">
-      <div class="filmstrip__slide">
-        <img src="images/drummer.jpg" alt="Juan Diego tocando batería en ensayo">
-        <div class="filmstrip__darken"></div>
-        <div class="filmstrip__caption">
-          <span class="filmstrip__caption-title">Batería</span>
-          <span class="filmstrip__caption-count">01 / 03 — Ensayo</span>
-        </div>
-      </div>
-      <div class="filmstrip__slide">
-        <span class="filmstrip__ghost" aria-hidden="true">01</span>
-        <div class="filmstrip__pendinglabel">
-          <span class="eyebrow">Próximamente</span>
-          <span class="placeholder-img__note">Evidencia a pantalla completa</span>
-        </div>
-        <div class="filmstrip__caption">
-          <span class="filmstrip__caption-title">Batería</span>
-          <span class="filmstrip__caption-count">02 / 03</span>
-        </div>
-      </div>
-      <div class="filmstrip__slide">
-        <span class="filmstrip__ghost" aria-hidden="true">01</span>
-        <div class="filmstrip__pendinglabel">
-          <span class="eyebrow">Próximamente</span>
-          <span class="placeholder-img__note">Evidencia a pantalla completa</span>
-        </div>
-        <div class="filmstrip__caption">
-          <span class="filmstrip__caption-title">Batería</span>
-          <span class="filmstrip__caption-count">03 / 03</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ ZONA 03 · BITÁCORA ══ -->
-    <section class="section proj-zone" id="bitacora">
-      <div class="container" style="position:relative;">
-        <span class="section__bg-number" style="top:-20px;right:0;">03</span>
-        <div class="zone-head reveal" style="position:relative;z-index:1;">
-          <span class="zone-head__num">03</span>
-          <div>
-            <span class="eyebrow eyebrow--accent">Bitácora</span>
-            <h2 class="section-head section-head--sm">Consistencia, día a día</h2>
+      <div class="filmstrip__track">
+        <figure class="filmstrip__slide" data-slot="images/proyectos/bateria/destacada-01.jpg" data-alt="Batería — foto destacada 1">
+          <span class="filmstrip__ghost" aria-hidden="true">01</span>
+          <div class="filmstrip__pendinglabel">
+            <span class="eyebrow">Próximamente</span>
+            <span class="placeholder-img__note">destacada-01.jpg</span>
           </div>
-        </div>
-
-
-        <!-- CÓMO REGISTRAR UN DÍA:
-             1) En la semana correcta, cambia un <li class="timeline__day"> vacío por el bloque
-                "logged" (copia el del 10·03): pon la fecha en data-date y bajo el punto.
-             2) Copia un <div class="timeline__note" id="nota-sX-dY" hidden> al final de esa
-                semana, escribe tu nota y usa el MISMO id en aria-controls del botón.
-             La bitácora se actualiza sola. -->
-        <div class="timeline-wrap">
-          <span class="timeline__line" aria-hidden="true"></span>
-          <ol class="timeline" data-goal="28">
-
-            <li class="timeline__week reveal">
-              <div class="timeline__week-head">
-                <span class="timeline__week-label">Semana 1</span>
-                <span class="timeline__week-range count-note">10·03 → 16·03</span>
-                <span class="timeline__week-count count-note js-week-count"></span>
-              </div>
-              <ol class="timeline__days">
-                <li class="timeline__day timeline__day--logged" data-date="2025-03-10">
-                  <button class="timeline__dot" aria-expanded="false" aria-controls="nota-s1-d1">
-                    <span class="timeline__dot-mark" aria-hidden="true"></span>
-                    <span class="timeline__dot-date">10·03</span>
-                  </button>
-                </li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-              </ol>
-              <div class="timeline__note" id="nota-s1-d1" hidden>
-                <span class="exp-entry__date">10 · 03 · 2025 · 2H</span>
-                <p>Primera sesión formal de ensayo con enfoque en técnica de brazos y desarrollo de independencia rítmica.</p>
-                <a class="arrow-link" href="experiencia-01.html">Ver EXP. 1 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-              </div>
-            </li>
-
-            <li class="timeline__week timeline__week--pending reveal">
-              <div class="timeline__week-head">
-                <span class="timeline__week-label">Semana 2</span>
-                <span class="timeline__week-range count-note">17·03 → 23·03</span>
-              </div>
-              <ol class="timeline__days">
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-              </ol>
-            </li>
-
-            <li class="timeline__week timeline__week--pending reveal">
-              <div class="timeline__week-head">
-                <span class="timeline__week-label">Semana 3</span>
-                <span class="pending-date">Por definir</span>
-              </div>
-              <ol class="timeline__days">
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-              </ol>
-            </li>
-
-            <li class="timeline__week timeline__week--pending reveal">
-              <div class="timeline__week-head">
-                <span class="timeline__week-label">Semana 4</span>
-                <span class="pending-date">Por definir</span>
-              </div>
-              <ol class="timeline__days">
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-                <li class="timeline__day"><span class="timeline__dot-mark timeline__dot-mark--empty" aria-hidden="true"></span></li>
-              </ol>
-            </li>
-
-          </ol>
-        </div>
+          <div class="filmstrip__caption">
+            <span class="filmstrip__caption-title">Batería</span>
+            <span class="filmstrip__caption-count">01 / 04</span>
+          </div>
+        </figure>
+        <figure class="filmstrip__slide" data-slot="images/proyectos/bateria/destacada-02.jpg" data-alt="Batería — foto destacada 2">
+          <span class="filmstrip__ghost" aria-hidden="true">02</span>
+          <div class="filmstrip__pendinglabel">
+            <span class="eyebrow">Próximamente</span>
+            <span class="placeholder-img__note">destacada-02.jpg</span>
+          </div>
+          <div class="filmstrip__caption">
+            <span class="filmstrip__caption-title">Batería</span>
+            <span class="filmstrip__caption-count">02 / 04</span>
+          </div>
+        </figure>
+        <figure class="filmstrip__slide" data-slot="images/proyectos/bateria/destacada-03.jpg" data-alt="Batería — foto destacada 3">
+          <span class="filmstrip__ghost" aria-hidden="true">03</span>
+          <div class="filmstrip__pendinglabel">
+            <span class="eyebrow">Próximamente</span>
+            <span class="placeholder-img__note">destacada-03.jpg</span>
+          </div>
+          <div class="filmstrip__caption">
+            <span class="filmstrip__caption-title">Batería</span>
+            <span class="filmstrip__caption-count">03 / 04</span>
+          </div>
+        </figure>
+        <figure class="filmstrip__slide" data-slot="images/proyectos/bateria/destacada-04.jpg" data-alt="Batería — foto destacada 4">
+          <span class="filmstrip__ghost" aria-hidden="true">04</span>
+          <div class="filmstrip__pendinglabel">
+            <span class="eyebrow">Próximamente</span>
+            <span class="placeholder-img__note">destacada-04.jpg</span>
+          </div>
+          <div class="filmstrip__caption">
+            <span class="filmstrip__caption-title">Batería</span>
+            <span class="filmstrip__caption-count">04 / 04</span>
+          </div>
+        </figure>
       </div>
     </section>
 
-    <!-- ══ ZONA 04 · FOTOS ══ -->
+    <!-- ══ ZONA 03 · FOTOS ══ -->
     <section class="section strip proj-zone" id="fotos">
       <div class="container" style="position:relative;">
-        <span class="section__bg-number" style="top:-20px;left:-10px;">04</span>
+        <span class="section__bg-number" style="top:-20px;left:-10px;">03</span>
         <div class="zone-head reveal" style="position:relative;z-index:1;">
-          <span class="zone-head__num">04</span>
+          <span class="zone-head__num">03</span>
           <div>
             <span class="eyebrow eyebrow--accent">Fotos</span>
             <h2 class="section-head section-head--sm">Evidencias</h2>
           </div>
         </div>
-        <!-- CÓMO AÑADIR UNA FOTO REAL:
-             Dentro del <figure> reemplaza el <div class="placeholder-img">…</div> por:
-               <a class="mosaic__link" href="images/mifoto.jpg">
-                 <img src="images/mifoto.jpg" alt="Descripción de la foto" loading="lazy">
-               </a>
-               <figcaption class="mosaic__cap">10·03·2025 — Descripción corta</figcaption>
-             Conserva el <figure class="mosaic__item …"> y su modificador de tamaño.
-             El visor a pantalla completa funciona automáticamente. -->
+        <!-- PARA PONER TUS FOTOS: súbelas a images/proyectos/bateria/ con el nombre que
+             declara cada data-slot (01.jpg, 02.jpg…) y aparecen solas, con su
+             visor a pantalla completa. No hace falta tocar este HTML.
+             · sin modificador → vertical 3:4 (el formato de foto de celular)
+             · mosaic__item--tall → vertical largo 9:16
+             · mosaic__item--land → horizontal 3:2 -->
         <div class="mosaic reveal" data-lightbox="galeria-bateria" style="position:relative;z-index:1;">
-          <figure class="mosaic__item mosaic__item--wide">
-            <div class="placeholder-img"><span class="eyebrow">Próximamente</span><span class="placeholder-img__note">Evidencia 01</span></div>
+          <figure class="mosaic__item" data-slot="images/proyectos/bateria/01.jpg" data-alt="Batería — evidencia 01" data-cap="Evidencia 01">
+            <div class="placeholder-img"><span class="eyebrow">Foto 01</span><span class="placeholder-img__note">01.jpg</span></div>
           </figure>
-          <figure class="mosaic__item mosaic__item--tall">
-            <div class="placeholder-img"><span class="eyebrow">Próximamente</span><span class="placeholder-img__note">Evidencia 02</span></div>
+          <figure class="mosaic__item" data-slot="images/proyectos/bateria/02.jpg" data-alt="Batería — evidencia 02" data-cap="Evidencia 02">
+            <div class="placeholder-img"><span class="eyebrow">Foto 02</span><span class="placeholder-img__note">02.jpg</span></div>
           </figure>
-          <figure class="mosaic__item">
-            <div class="placeholder-img"><span class="eyebrow">Próximamente</span><span class="placeholder-img__note">Evidencia 03</span></div>
+          <figure class="mosaic__item mosaic__item--tall" data-slot="images/proyectos/bateria/03.jpg" data-alt="Batería — evidencia 03" data-cap="Evidencia 03">
+            <div class="placeholder-img"><span class="eyebrow">Foto 03</span><span class="placeholder-img__note">03.jpg</span></div>
           </figure>
-          <figure class="mosaic__item">
-            <div class="placeholder-img"><span class="eyebrow">Próximamente</span><span class="placeholder-img__note">Evidencia 04</span></div>
+          <figure class="mosaic__item" data-slot="images/proyectos/bateria/04.jpg" data-alt="Batería — evidencia 04" data-cap="Evidencia 04">
+            <div class="placeholder-img"><span class="eyebrow">Foto 04</span><span class="placeholder-img__note">04.jpg</span></div>
           </figure>
-          <figure class="mosaic__item mosaic__item--wide">
-            <div class="placeholder-img"><span class="eyebrow">Próximamente</span><span class="placeholder-img__note">Evidencia 05</span></div>
+          <figure class="mosaic__item mosaic__item--land" data-slot="images/proyectos/bateria/05.jpg" data-alt="Batería — evidencia 05" data-cap="Evidencia 05">
+            <div class="placeholder-img"><span class="eyebrow">Foto 05</span><span class="placeholder-img__note">05.jpg</span></div>
           </figure>
-          <figure class="mosaic__item">
-            <div class="placeholder-img"><span class="eyebrow">Próximamente</span><span class="placeholder-img__note">Evidencia 06</span></div>
+          <figure class="mosaic__item" data-slot="images/proyectos/bateria/06.jpg" data-alt="Batería — evidencia 06" data-cap="Evidencia 06">
+            <div class="placeholder-img"><span class="eyebrow">Foto 06</span><span class="placeholder-img__note">06.jpg</span></div>
+          </figure>
+          <figure class="mosaic__item mosaic__item--tall" data-slot="images/proyectos/bateria/07.jpg" data-alt="Batería — evidencia 07" data-cap="Evidencia 07">
+            <div class="placeholder-img"><span class="eyebrow">Foto 07</span><span class="placeholder-img__note">07.jpg</span></div>
+          </figure>
+          <figure class="mosaic__item" data-slot="images/proyectos/bateria/08.jpg" data-alt="Batería — evidencia 08" data-cap="Evidencia 08">
+            <div class="placeholder-img"><span class="eyebrow">Foto 08</span><span class="placeholder-img__note">08.jpg</span></div>
+          </figure>
+          <figure class="mosaic__item" data-slot="images/proyectos/bateria/09.jpg" data-alt="Batería — evidencia 09" data-cap="Evidencia 09">
+            <div class="placeholder-img"><span class="eyebrow">Foto 09</span><span class="placeholder-img__note">09.jpg</span></div>
           </figure>
         </div>
       </div>
@@ -325,6 +237,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="js/scroll-anim.js"></script>
+  <script src="js/photo-slots.js"></script>
   <script src="js/project-page.js"></script>
   <script src="js/lightbox.js"></script>
 </body>

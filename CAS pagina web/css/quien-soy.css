@@ -1,7 +1,7 @@
 /* ============================================
    CAS PORTFOLIO — "Quién Soy" page styles
    Loaded AFTER styles.css. Scoped to this page:
-   typographic hero + "showcase" section.
+   hero de galería 3D + bio con galería sticky.
    Content stays visible without JS / GSAP / under
    prefers-reduced-motion (static fallback).
    ============================================ */
@@ -146,144 +146,118 @@
   display: inline-block;
 }
 
-/* ---------- SHOWCASE ("Lo que me define") ---------- */
-.showcase__head {
-  margin-bottom: 56px;
-}
+/* ---------- BIO — texto + galería sticky ----------
+   Dos columnas: la lectura a la izquierda, la galería a la derecha.
+   La galería se queda fija mientras el texto sube y va cambiando de
+   foto (js/bio-gallery.js).
 
-.showcase__layout {
+   El estado que ves aquí abajo es el FALLBACK: sin JS, sin GSAP, con
+   prefers-reduced-motion o en móvil, las fotos quedan como una columna
+   normal, todas visibles. El modo animado se activa añadiendo
+   .bio__gallery--live desde JS. */
+.bio__layout {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 72px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
+  gap: clamp(32px, 5vw, 72px);
   align-items: start;
 }
 
-/* -- Left: staggered photo grid -- */
-.showcase__grid {
-  display: flex;
-  gap: 20px;
-  justify-content: flex-start;
+.bio__text { max-width: 680px; }
+
+.bio__gallery {
+  position: sticky;
+  top: calc(var(--nav-height) + 28px);
 }
 
-.showcase__col {
+.bio__frame {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
 }
 
-.showcase__col--2 { margin-top: 68px; }
-.showcase__col--3 { margin-top: 32px; }
-
-.showcase__tile {
+.bio__shot {
   position: relative;
-  width: 160px;
-  height: 160px;
-  border-radius: 12px;
+  margin: 0;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
   border: 1px solid var(--border);
   background: var(--surface);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  outline: none;
-  transition: border-color 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* slight size variation per column, like the original */
-.showcase__col--1 .showcase__tile { width: 158px; height: 172px; }
-.showcase__col--2 .showcase__tile { width: 172px; height: 150px; }
-.showcase__col--3 .showcase__tile { width: 152px; height: 164px; }
-
-.showcase__tile-name {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 20px;
-  color: var(--ink);
-  text-align: center;
-  padding: 0 10px;
-  transition: color 0.3s ease;
-}
-
-/* When a photo arrives it fills the tile; name becomes an overlay caption */
-.showcase__tile img {
+.bio__shot img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(1) brightness(0.77);
-  transition: filter 0.5s ease;
-}
-.showcase__tile.is-active img { filter: none; }
-
-.showcase__tile:focus-visible {
-  border-color: var(--ink);
+  z-index: 1;
 }
 
-/* -- Right: names list -- */
-.showcase__list {
+/* El marco vacío vive DEBAJO de la imagen: si la foto carga, la tapa;
+   si todavía no existe, queda a la vista sin que haya que hacer nada. */
+.bio__ph {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
-}
-
-.showcase__row {
-  display: grid;
-  grid-template-columns: 20px 1fr;
-  column-gap: 14px;
   align-items: center;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--border-light);
-  cursor: pointer;
-  outline: none;
-  transition: opacity 0.35s ease;
-}
-.showcase__row:first-child { border-top: 1px solid var(--border-light); }
-
-.showcase__marker {
-  display: block;
-  width: 16px;
-  height: 12px;
-  border-radius: 5px;
-  background: rgba(28, 24, 20, 0.25);
-  transition: width 0.3s ease, background 0.3s ease;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 12px;
+  text-align: center;
+  color: var(--zinc);
 }
 
-.showcase__row-name {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 18px;
-  color: var(--ink);
-  line-height: 1.2;
-}
-
-.showcase__row-role {
-  grid-column: 2;
+/* Chip sólido: se lee igual sobre una foto oscura que sobre el marco crema */
+.bio__shot-cap {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 2;
+  padding: 5px 10px;
   font-family: var(--font-mono);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--zinc);
-  margin-top: 3px;
-}
-
-/* -- Cross-highlight states (driven by js/showcase.js) -- */
-.showcase__tile.is-active {
-  border-color: var(--ink);
-  opacity: 1;
-}
-.showcase__tile.is-active .showcase__tile-name {
-  color: var(--ink);
-}
-.showcase__tile.is-dim {
-  opacity: 0.5;
-}
-
-.showcase__row.is-active { opacity: 1; }
-.showcase__row.is-active .showcase__marker {
-  width: 20px;
+  letter-spacing: 0.16em;
+  color: var(--bg);
   background: var(--ink);
 }
-.showcase__row.is-dim { opacity: 0.6; }
+
+.bio__meta {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.bio__counter {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--zinc);
+}
+
+/* ---------- Modo animado ---------- */
+.bio__gallery--live .bio__frame {
+  display: block;
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.bio__gallery--live .bio__shot {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: auto;
+  border: none;
+  will-change: opacity, transform;
+}
+
+.bio__gallery--live .bio__counter { display: block; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
@@ -298,34 +272,21 @@
     font-size: 9px;
   }
 
-  .showcase__layout {
+  /* Una sola columna: la galería baja bajo el texto y deja de ser sticky */
+  .bio__layout {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
   }
 
-  /* grid on top, horizontal scroll if it doesn't fit */
-  .showcase__grid {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 8px;
-    scrollbar-width: thin;
-  }
-  .showcase__col { flex-shrink: 0; }
-  .showcase__col--2 { margin-top: 40px; }
-  .showcase__col--3 { margin-top: 20px; }
+  .bio__gallery { position: static; }
 
-  /* list below in 2 columns, like the original sm:grid-cols-2 */
-  .showcase__list {
+  .bio__frame {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 32px;
+    gap: 12px;
   }
-  .showcase__row:nth-child(2) { border-top: 1px solid var(--border-light); }
 }
 
-@media (max-width: 560px) {
-  .showcase__list {
-    grid-template-columns: 1fr;
-  }
-  .showcase__row:nth-child(2) { border-top: none; }
+@media (max-width: 480px) {
+  .bio__frame { grid-template-columns: 1fr; }
 }

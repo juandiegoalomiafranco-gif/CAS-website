@@ -72,132 +72,63 @@
       </div>
     </section>
 
-    <!-- BIO — ¿Quién soy? -->
-    <section class="section--sm">
-      <div class="container">
-        <div class="reveal prose" style="max-width:680px;">
-          <span class="eyebrow" style="margin-bottom:12px;">Bienvenido a mi portafolio CAS</span>
-          <h2 class="section-head section-head--sm" style="margin-bottom:24px;">¿Quién soy?</h2>
-          <p class="lead">Mi nombre es Juan Diego, tengo 18 años y estoy en grado 12 del Programa del Diploma IB, en el Colegio Colombo Británico de Cali. Si tuviera que resumirme en dos palabras, serían música y movimiento: toco batería y bajo, y entreno natación y running.</p>
-          <p>Soy una persona disciplinada. La música y el deporte me enseñaron que los resultados no aparecen de un día para otro: aparecen cuando practicas un día, y al siguiente, y al siguiente. Esa constancia es mi mayor fortaleza, y es la razón por la que confío en que puedo aprender casi cualquier cosa que me proponga.</p>
-          <p>También conozco mi debilidad: siempre quiero estar en control de todo, y eso a veces me juega en contra. Estoy aprendiendo a confiar más en los demás, a delegar y a aceptar que no todo depende de mí. CAS, con sus proyectos en equipo, es el mejor lugar para practicarlo.</p>
-          <p>De los atributos del perfil IB, me identifico especialmente con tres. Soy <strong>audaz</strong>, porque me atrevo a intentar cosas nuevas: desde aprender un instrumento nuevo hasta exigirme cada vez más en el deporte. Soy <strong>equilibrado</strong>, porque busco que lo académico, la música y el deporte convivan en mi semana sin sacrificarse entre sí. Y soy <strong>reflexivo</strong>, porque después de cada ensayo y cada entrenamiento me pregunto qué hice bien y qué puedo hacer mejor.</p>
-          <p>Mi talento es la música: es mi forma más honesta de expresión, la manera en la que digo lo que a veces no sé decir con palabras. Y el deporte es mi escuela de carácter: ahí aprendí a perder, a insistir y a respetar el proceso.</p>
-          <p>Mi propósito es superarme cada día. No me interesa ser mejor que nadie: me interesa ser mejor que el que fui ayer, un poco más en la música, un poco más en el deporte, un poco más como persona. Y, en ese camino, usar lo que soy para aportarle algo real a mi comunidad. Por eso este portafolio se abre con la frase &ldquo;Don't count the days, make the days count&rdquo;: no quiero contar los días, quiero que cada día cuente.</p>
-        </div>
-      </div>
-    </section>
+    <!-- BIO — ¿Quién soy?
+         Texto a la izquierda, galería a la derecha. La galería queda fija
+         (sticky) mientras el texto sube, y va cambiando de foto según el
+         avance de la lectura (js/bio-gallery.js).
 
-    <!-- SHOWCASE — Lo que me define -->
-    <section class="section showcase">
+         PARA AÑADIR TUS FOTOS: sube el archivo a images/quien-soy/ con el
+         nombre exacto que declara cada data-slot (01.jpg, 02.jpg…) y la foto
+         aparece sola — no hay que tocar el HTML. Mientras el archivo no
+         exista se ve el marco vacío, sin imágenes rotas.
+         Actualiza también data-alt con una descripción real de la foto. -->
+    <section class="section--sm bio">
       <div class="container">
-        <div class="showcase__head reveal">
-          <span class="eyebrow" style="margin-bottom:12px;">Mi mundo</span>
-          <h2 class="section-head section-head--sm">Lo que me define</h2>
-        </div>
-        <div class="showcase__layout">
-          <!-- Left: staggered photo grid (fotos por llegar) -->
-          <div class="showcase__grid">
-            <div class="showcase__col showcase__col--1">
-              <figure class="showcase__tile" data-id="estudiante" tabindex="0">
-                <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-                <span class="showcase__tile-name">Estudiante</span>
-              </figure>
-              <figure class="showcase__tile" data-id="natacion" tabindex="0">
-                <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-                <span class="showcase__tile-name">Natación</span>
-              </figure>
-              <figure class="showcase__tile" data-id="onu" tabindex="0">
-                <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-                <span class="showcase__tile-name">ONU</span>
-              </figure>
-              <figure class="showcase__tile" data-id="equilibrado" tabindex="0">
-                <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-                <span class="showcase__tile-name">Equilibrado</span>
-              </figure>
-            </div>
-            <div class="showcase__col showcase__col--2">
-              <figure class="showcase__tile" data-id="bajo" tabindex="0">
-                <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-                <span class="showcase__tile-name">Bajo</span>
-              </figure>
-              <figure class="showcase__tile" data-id="running" tabindex="0">
-                <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-                <span class="showcase__tile-name">Running</span>
-              </figure>
-              <figure class="showcase__tile" data-id="audaz" tabindex="0">
-                <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-                <span class="showcase__tile-name">Audaz</span>
-              </figure>
-            </div>
-            <div class="showcase__col showcase__col--3">
-              <figure class="showcase__tile" data-id="bateria" tabindex="0">
-                <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-                <span class="showcase__tile-name">Batería</span>
-              </figure>
-              <figure class="showcase__tile" data-id="gimnasio" tabindex="0">
-                <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-                <span class="showcase__tile-name">Gimnasio</span>
-              </figure>
-              <figure class="showcase__tile" data-id="reflexivo" tabindex="0">
-                <!-- Cuando llegue la foto: <img src="images/xxx.jpg" alt="..."> y el nombre pasa a caption -->
-                <span class="showcase__tile-name">Reflexivo</span>
-              </figure>
-            </div>
+        <div class="bio__layout">
+
+          <div class="bio__text reveal prose">
+            <span class="eyebrow" style="margin-bottom:12px;">Bienvenido a mi portafolio CAS</span>
+            <h2 class="section-head section-head--sm" style="margin-bottom:24px;">¿Quién soy?</h2>
+            <p class="lead">Mi nombre es Juan Diego, tengo 18 años y estoy en grado 12 del Programa del Diploma IB, en el Colegio Colombo Británico de Cali. Si tuviera que resumirme en dos palabras, serían música y movimiento: toco batería y bajo, y entreno natación y running.</p>
+            <p>Soy una persona disciplinada. La música y el deporte me enseñaron que los resultados no aparecen de un día para otro: aparecen cuando practicas un día, y al siguiente, y al siguiente. Esa constancia es mi mayor fortaleza, y es la razón por la que confío en que puedo aprender casi cualquier cosa que me proponga.</p>
+            <p>También conozco mi debilidad: siempre quiero estar en control de todo, y eso a veces me juega en contra. Estoy aprendiendo a confiar más en los demás, a delegar y a aceptar que no todo depende de mí. CAS, con sus proyectos en equipo, es el mejor lugar para practicarlo.</p>
+            <p>De los atributos del perfil IB, me identifico especialmente con tres. Soy <strong>audaz</strong>, porque me atrevo a intentar cosas nuevas: desde aprender un instrumento nuevo hasta exigirme cada vez más en el deporte. Soy <strong>equilibrado</strong>, porque busco que lo académico, la música y el deporte convivan en mi semana sin sacrificarse entre sí. Y soy <strong>reflexivo</strong>, porque después de cada ensayo y cada entrenamiento me pregunto qué hice bien y qué puedo hacer mejor.</p>
+            <p>Mi talento es la música: es mi forma más honesta de expresión, la manera en la que digo lo que a veces no sé decir con palabras. Y el deporte es mi escuela de carácter: ahí aprendí a perder, a insistir y a respetar el proceso.</p>
+            <p>Mi propósito es superarme cada día. No me interesa ser mejor que nadie: me interesa ser mejor que el que fui ayer, un poco más en la música, un poco más en el deporte, un poco más como persona. Y, en ese camino, usar lo que soy para aportarle algo real a mi comunidad. Por eso este portafolio se abre con la frase &ldquo;Don't count the days, make the days count&rdquo;: no quiero contar los días, quiero que cada día cuente.</p>
           </div>
-          <!-- Right: names list -->
-          <div class="showcase__list">
-            <div class="showcase__row" data-id="estudiante" tabindex="0">
-              <span class="showcase__marker"></span>
-              <span class="showcase__row-name">Estudiante</span>
-              <span class="showcase__row-role">IB · Grado 12</span>
+
+          <aside class="bio__gallery" data-bio-gallery aria-label="Galería personal">
+            <div class="bio__frame">
+              <figure class="bio__shot" data-slot="images/quien-soy/01.jpg" data-alt="Juan Diego tocando batería">
+                <span class="bio__ph"><span class="eyebrow">Foto 01</span><span class="placeholder-img__note">quien-soy/01.jpg</span></span>
+                <figcaption class="bio__shot-cap">Música</figcaption>
+              </figure>
+              <figure class="bio__shot" data-slot="images/quien-soy/02.jpg" data-alt="Juan Diego entrenando natación">
+                <span class="bio__ph"><span class="eyebrow">Foto 02</span><span class="placeholder-img__note">quien-soy/02.jpg</span></span>
+                <figcaption class="bio__shot-cap">Natación</figcaption>
+              </figure>
+              <figure class="bio__shot" data-slot="images/quien-soy/03.jpg" data-alt="Juan Diego corriendo">
+                <span class="bio__ph"><span class="eyebrow">Foto 03</span><span class="placeholder-img__note">quien-soy/03.jpg</span></span>
+                <figcaption class="bio__shot-cap">Running</figcaption>
+              </figure>
+              <figure class="bio__shot" data-slot="images/quien-soy/04.jpg" data-alt="Juan Diego tocando el bajo">
+                <span class="bio__ph"><span class="eyebrow">Foto 04</span><span class="placeholder-img__note">quien-soy/04.jpg</span></span>
+                <figcaption class="bio__shot-cap">Bajo</figcaption>
+              </figure>
+              <figure class="bio__shot" data-slot="images/quien-soy/05.jpg" data-alt="Juan Diego en el colegio">
+                <span class="bio__ph"><span class="eyebrow">Foto 05</span><span class="placeholder-img__note">quien-soy/05.jpg</span></span>
+                <figcaption class="bio__shot-cap">Colegio</figcaption>
+              </figure>
+              <figure class="bio__shot" data-slot="images/quien-soy/06.jpg" data-alt="Juan Diego en un proyecto de servicio">
+                <span class="bio__ph"><span class="eyebrow">Foto 06</span><span class="placeholder-img__note">quien-soy/06.jpg</span></span>
+                <figcaption class="bio__shot-cap">Servicio</figcaption>
+              </figure>
             </div>
-            <div class="showcase__row" data-id="bajo" tabindex="0">
-              <span class="showcase__marker"></span>
-              <span class="showcase__row-name">Bajo</span>
-              <span class="showcase__row-role">Creatividad</span>
+            <div class="bio__meta">
+              <span class="bio__counter" data-bio-counter aria-hidden="true">01 / 06</span>
             </div>
-            <div class="showcase__row" data-id="bateria" tabindex="0">
-              <span class="showcase__marker"></span>
-              <span class="showcase__row-name">Batería</span>
-              <span class="showcase__row-role">Creatividad</span>
-            </div>
-            <div class="showcase__row" data-id="natacion" tabindex="0">
-              <span class="showcase__marker"></span>
-              <span class="showcase__row-name">Natación</span>
-              <span class="showcase__row-role">Actividad</span>
-            </div>
-            <div class="showcase__row" data-id="running" tabindex="0">
-              <span class="showcase__marker"></span>
-              <span class="showcase__row-name">Running</span>
-              <span class="showcase__row-role">Actividad</span>
-            </div>
-            <div class="showcase__row" data-id="gimnasio" tabindex="0">
-              <span class="showcase__marker"></span>
-              <span class="showcase__row-name">Gimnasio</span>
-              <span class="showcase__row-role">Actividad</span>
-            </div>
-            <div class="showcase__row" data-id="onu" tabindex="0">
-              <span class="showcase__marker"></span>
-              <span class="showcase__row-name">ONU</span>
-              <span class="showcase__row-role">Servicio</span>
-            </div>
-            <div class="showcase__row" data-id="audaz" tabindex="0">
-              <span class="showcase__marker"></span>
-              <span class="showcase__row-name">Audaz</span>
-              <span class="showcase__row-role">Atributo IB</span>
-            </div>
-            <div class="showcase__row" data-id="reflexivo" tabindex="0">
-              <span class="showcase__marker"></span>
-              <span class="showcase__row-name">Reflexivo</span>
-              <span class="showcase__row-role">Atributo IB</span>
-            </div>
-            <div class="showcase__row" data-id="equilibrado" tabindex="0">
-              <span class="showcase__marker"></span>
-              <span class="showcase__row-name">Equilibrado</span>
-              <span class="showcase__row-role">Atributo IB</span>
-            </div>
-          </div>
+          </aside>
+
         </div>
       </div>
     </section>
@@ -270,6 +201,7 @@
   <script src="js/scroll-anim.js"></script>
   <script src="js/ps-hero.js"></script>
   <script src="js/g3d-hero.js"></script>
-  <script src="js/showcase.js"></script>
+  <script src="js/photo-slots.js"></script>
+  <script src="js/bio-gallery.js"></script>
 </body>
 </html>
