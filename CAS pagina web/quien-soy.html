@@ -77,15 +77,18 @@
          (sticky) mientras el texto sube, y va cambiando de foto según el
          avance de la lectura (js/bio-gallery.js).
 
-         PARA AÑADIR TUS FOTOS: sube el archivo a images/quien-soy/ con el
-         nombre exacto que declara cada data-slot (01.jpg, 02.jpg…) y la foto
-         aparece sola — no hay que tocar el HTML. Mientras el archivo no
-         exista se ve el marco vacío, sin imágenes rotas.
-         Actualiza también data-alt con una descripción real de la foto. -->
+         PARA AÑADIR TUS FOTOS: súbelas a images/quien-soy/ numeradas
+         01.jpg, 02.jpg, 03.jpg… y aparecen solas. NO hay que tocar este
+         HTML ni añadir más marcos: js/bio-gallery.js busca en secuencia
+         hasta que deja de encontrar y arma la galería con las que existan
+         —admite más de 100—, alargando el recorrido para que a cada una le
+         toque su momento. Los 6 marcos de abajo son solo el respaldo para
+         cuando no hay JavaScript. -->
     <section class="section--sm bio">
       <div class="container">
         <div class="bio__layout">
 
+          <div class="bio__col">
           <div class="bio__text reveal prose">
             <span class="eyebrow" style="margin-bottom:12px;">Bienvenido a mi portafolio CAS</span>
             <h2 class="section-head section-head--sm" style="margin-bottom:24px;">¿Quién soy?</h2>
@@ -96,9 +99,13 @@
             <p>Mi talento es la música: es mi forma más honesta de expresión, la manera en la que digo lo que a veces no sé decir con palabras. Y el deporte es mi escuela de carácter: ahí aprendí a perder, a insistir y a respetar el proceso.</p>
             <p>Mi propósito es superarme cada día. No me interesa ser mejor que nadie: me interesa ser mejor que el que fui ayer, un poco más en la música, un poco más en el deporte, un poco más como persona. Y, en ese camino, usar lo que soy para aportarle algo real a mi comunidad. Por eso este portafolio se abre con la frase &ldquo;Don't count the days, make the days count&rdquo;: no quiero contar los días, quiero que cada día cuente.</p>
           </div>
+          <!-- Su altura la calcula js/bio-gallery.js según cuántas fotos haya:
+               es lo que le da recorrido a la galería fija de al lado. -->
+          <div class="bio__spacer" data-bio-spacer aria-hidden="true"></div>
+          </div>
 
           <aside class="bio__gallery" data-bio-gallery aria-label="Galería personal">
-            <div class="bio__frame">
+            <div class="bio__frame" data-bio-dir="images/quien-soy/">
               <figure class="bio__shot" data-slot="images/quien-soy/01.jpg" data-alt="Juan Diego tocando batería">
                 <span class="bio__ph"><span class="eyebrow">Foto 01</span><span class="placeholder-img__note">quien-soy/01.jpg</span></span>
                 <figcaption class="bio__shot-cap">Música</figcaption>

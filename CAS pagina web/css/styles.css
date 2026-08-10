@@ -1497,6 +1497,88 @@ main { padding-top: var(--nav-height); }
   color: var(--ink);
 }
 
+/* --- FICHA EN BANDA ---
+   La ficha vivía en una columna del 35%, y ese ancho obligaba a tipos de
+   11–13 px que costaba leer. En banda ocupa el ancho completo y se reparte
+   en rejilla, así que los tamaños pueden subir de verdad:
+
+     Área · Fecha · Duración      ← datos cortos, tres en fila
+     Objetivo de Aprendizaje      ← fila entera, los RA se leen cómodos
+     Habilidades · Atributos      ← media fila cada uno
+*/
+.proj-ficha--band {
+  border-top: 1px solid var(--accent);
+  border-bottom: 1px solid var(--border-light);
+  padding: 26px 0 30px;
+  align-self: auto;
+}
+
+/* anula el sticky de la versión en columna (regla de min-width:1025px) */
+@media (min-width: 1025px) {
+  .proj-ficha--band { position: static; top: auto; }
+}
+
+.proj-ficha--band .proj-ficha__list {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 28px 40px;
+  margin-top: 24px;
+}
+
+/* sin líneas por fila: en rejilla estorban, el aire ya separa */
+.proj-ficha--band .proj-ficha__row {
+  grid-column: span 2;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 9px;
+  padding: 0;
+  border-bottom: none;
+}
+
+.proj-ficha--band .proj-ficha__row--wide { grid-column: 1 / -1; }
+.proj-ficha--band .proj-ficha__row--half { grid-column: span 3; }
+
+.proj-ficha--band dt {
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  color: var(--zinc);
+}
+
+.proj-ficha--band dd {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  color: var(--ink);
+}
+
+.proj-ficha--band .tag { font-size: 13px; padding: 5px 12px; }
+
+.proj-ficha--band .ficha-ra { gap: 14px; }
+/* a todo el ancho las líneas se irían a ~110 caracteres: se acotan
+   para que la medida de lectura siga siendo cómoda */
+.proj-ficha--band .ficha-ra a { font-size: 15px; line-height: 1.5; max-width: 76ch; }
+.proj-ficha--band .ficha-ra__num { font-size: 11px; margin-bottom: 3px; }
+
+@media (max-width: 900px) {
+  .proj-ficha--band .proj-ficha__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 28px;
+  }
+  .proj-ficha--band .proj-ficha__row { grid-column: span 1; }
+  .proj-ficha--band .proj-ficha__row--wide,
+  .proj-ficha--band .proj-ficha__row--half { grid-column: 1 / -1; }
+  .proj-ficha--band dd { font-size: 15px; }
+}
+
+@media (max-width: 520px) {
+  .proj-ficha--band .proj-ficha__list { grid-template-columns: 1fr; }
+}
+
 /* Lista de Resultados de Aprendizaje dentro de la ficha.
    Va como <ul> a ancho completo, así que anula el flex de la fila. */
 .ficha-ra {
@@ -1656,8 +1738,10 @@ main { padding-top: var(--nav-height); }
   .proj-pager__link--prev { padding-right: 0; }
   .proj-ficha__row dd { text-align: right; }
   /* misma especificidad que la regla de arriba: repetimos el override
-     para que las filas apiladas sigan alineadas a la izquierda en móvil */
-  .proj-ficha__row--stack dd { text-align: left; }
+     para que las filas apiladas —y la ficha en banda— sigan alineadas a
+     la izquierda en móvil, o el texto de los RA se va contra el margen. */
+  .proj-ficha__row--stack dd,
+  .proj-ficha--band dd { text-align: left; }
   .zone-head { gap: 14px; }
 }
 

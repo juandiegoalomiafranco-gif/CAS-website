@@ -57,8 +57,10 @@
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: hero,
+            // ~2.2 pantallas: la primera mitad resuelve la animación y la
+            // segunda es el reposo que la deja respirar (ver el HOLD abajo).
             start: 'top top',
-            end: '+=120%',
+            end: '+=220%',
             pin: true,
             scrub: 1,
             anticipatePin: 1,
@@ -106,6 +108,14 @@
             0.01
           );
         }
+
+        // HOLD — la secuencia termina en 1.05; a partir de ahí la línea de
+        // tiempo no anima nada durante otra unidad entera. Como el scrub
+        // reparte el recorrido de forma lineal, eso convierte la mitad final
+        // del pin en reposo puro: la foto ya enfocada, las dos frases en
+        // blanco y el oscurecido en su punto final se quedan quietos en
+        // pantalla antes de soltar el pin. Es lo que le da el golpe de efecto.
+        tl.to({}, { duration: 1.0 }, 1.05);
 
         // Entrance plays once, after the scrub is set up (pin applied, no layout jump)
         if (!entranceDone) {

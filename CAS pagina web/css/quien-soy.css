@@ -162,7 +162,15 @@
   align-items: start;
 }
 
+.bio__col { min-width: 0; }
+
 .bio__text { max-width: 680px; }
+
+/* La galería de al lado es sticky: solo puede deslizarse mientras esta
+   columna siga pasando. Este espaciador alarga la columna para darle ese
+   recorrido, y su altura la calcula js/bio-gallery.js a partir de cuántas
+   fotos se encontraron (más fotos, más recorrido, con tope). */
+.bio__spacer { height: 0; }
 
 .bio__gallery {
   position: sticky;
@@ -259,6 +267,28 @@
 
 .bio__gallery--live .bio__counter { display: block; }
 
+/* Tramo en el que ya no queda texto al lado: la galería se centra y crece un
+   poco, para que el recorrido largo se lea como una secuencia intencional en
+   vez de una foto descolgada junto a media pantalla vacía.
+   El desplazamiento exacto lo mide js/bio-gallery.js (--solo-x). */
+.bio__gallery--live .bio__frame,
+.bio__gallery--live .bio__meta {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bio__gallery--solo .bio__frame {
+  transform: translateX(var(--solo-x, 0)) scale(1.08);
+}
+
+.bio__gallery--solo .bio__meta {
+  transform: translateX(var(--solo-x, 0));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bio__gallery--live .bio__frame,
+  .bio__gallery--live .bio__meta { transition: none; }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .ps-hero {
@@ -279,6 +309,9 @@
   }
 
   .bio__gallery { position: static; }
+
+  /* sin sticky no hay recorrido que alimentar */
+  .bio__spacer { display: none !important; }
 
   .bio__frame {
     display: grid;
