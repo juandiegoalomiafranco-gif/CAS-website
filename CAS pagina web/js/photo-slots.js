@@ -18,7 +18,11 @@
    imagen rota: el HTML solo contiene marcos, y sin JS se ven marcos.
    ============================================ */
 (function () {
-  var slots = Array.prototype.slice.call(document.querySelectorAll('[data-slot]'));
+  // La galería de la bio se gestiona entera desde js/bio-gallery.js
+  // (descubre las fotos por su cuenta), así que aquí se deja fuera para
+  // no probar dos veces las mismas rutas.
+  var slots = Array.prototype.slice.call(document.querySelectorAll('[data-slot]'))
+    .filter(function (el) { return !el.closest('[data-bio-gallery]'); });
   if (!slots.length) return;
 
   function fillMosaic(fig, src, alt, cap) {
