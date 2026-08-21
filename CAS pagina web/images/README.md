@@ -62,9 +62,19 @@ Cada una acepta:
 
 ### Experiencias → `images/experiencias/exp-0N/`
 
-Carpetas: `exp-01` … `exp-05`
+Cada experiencia tiene su carpeta y acepta **6 fotos:** `01.jpg` … `06.jpg`
 
-- **6 fotos:** `01.jpg` … `06.jpg`
+| Carpeta | Experiencia |
+|---|---|
+| `exp-01` | Ensayo de Batería |
+| `exp-02` | Entrenamiento de Natación |
+| `exp-03` | Carrera 5K |
+| `exp-04` | Práctica de Bajo |
+| `exp-05` | Investigación de Impacto Social |
+| `exp-06` | Concierto en el Teatro Municipal |
+
+Enlace directo para subir las fotos del Teatro Municipal (rama `main`):
+<https://github.com/juandiegoalomiafranco-gif/CAS-website/upload/main/CAS%20pagina%20web/images/experiencias/exp-06>
 
 ---
 

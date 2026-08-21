@@ -1976,7 +1976,10 @@ main { padding-top: var(--nav-height); }
   gap: 28px;
 }
 
-.exp-carousel__track > a:nth-child(n+6) { display: none; } /* copies hidden until JS enables the loop */
+/* Sin JS el riel muestra solo las experiencias reales; con JS activo la regla
+   .exp-carousel--live de más abajo las vuelve a mostrar junto a sus copias.
+   Al añadir una experiencia hay que subir este número: nº de experiencias + 1. */
+.exp-carousel__track > a:nth-child(n+7) { display: none; }
 
 .exp-carousel__node {
   display: flex;
