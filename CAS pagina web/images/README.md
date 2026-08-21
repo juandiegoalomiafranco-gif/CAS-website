@@ -1,9 +1,9 @@
-# Cómo subir tus fotos
+# Cómo subir tus fotos y vídeos
 
 No hay que tocar nada de código. **Sube el archivo a su carpeta con el nombre
-exacto que aparece abajo y la foto aparece sola en la página.**
+exacto que aparece abajo y aparece solo en la página.**
 
-Mientras un archivo no exista, se ve un marco vacío con su etiqueta — la página
+Mientras un archivo no exista, se ve un marco vacío con su etiqueta. La página
 nunca se rompe ni muestra imágenes rotas.
 
 ---
@@ -15,8 +15,11 @@ nunca se rompe ni muestra imágenes rotas.
 3. Navega hasta la carpeta, por ejemplo
    `CAS pagina web/images/proyectos/bateria/`
 4. Botón **Add file → Upload files**
-5. Arrastra tus fotos
-6. **Importante:** renómbralas a `01.jpg`, `02.jpg`, `03.jpg`… antes de subirlas
+5. Arrastra tus fotos o vídeos
+6. **Importante:** renómbralos antes de subirlos (`01.jpg`, `02.jpg`… para las
+   fotos; `video-01.mp4`, `video-02.mp4`… para los vídeos). Los nombres que
+   pone WhatsApp, del tipo `WhatsApp Image 2026-05-24 at 8.04.12 PM.jpeg`, no
+   los reconoce la página: hay que cambiarlos.
 7. Abajo, **Commit changes**
 
 ---
@@ -27,6 +30,18 @@ nunca se rompe ni muestra imágenes rotas.
   vertical 3:4, y admite también 9:16 y alguna horizontal sin descuadrarse.
 - **`.jpg`** en minúscula. Si tu foto es `.png` o `.HEIC`, conviértela primero.
 - Ideal entre **1200 y 2000 px** de ancho. Más grande solo hace la página lenta.
+
+## Formato de los vídeos
+
+- **`.mp4`** en minúscula. Es el único formato que reproducen todos los
+  navegadores. Si grabaste con iPhone tendrás un `.mov`: compártelo por
+  WhatsApp o Drive, o expórtalo desde Fotos, y sale en `.mp4`.
+- La página también intenta `.webm` y `.mov` con el mismo nombre, pero un
+  `.mov` de iPhone no se ve en Chrome ni en Android. Con `.mp4` no hay dudas.
+- **Menos de 25 MB** por vídeo. GitHub no acepta archivos de más de 100 MB, y
+  un vídeo pesado hace que la página tarde en cargar. Recorta el clip a los
+  segundos que de verdad quieres mostrar.
+- Vertical y horizontal funcionan los dos. El marco se adapta a lo que subas.
 
 ---
 
@@ -62,9 +77,23 @@ Cada una acepta:
 
 ### Experiencias → `images/experiencias/exp-0N/`
 
-Carpetas: `exp-01` … `exp-05`
+Cada experiencia tiene su carpeta, con huecos para fotos y para vídeos.
 
-- **6 fotos:** `01.jpg` … `06.jpg`
+| Carpeta | Experiencia | Fotos | Vídeos |
+|---|---|---|---|
+| `exp-01` | Concierto en el Teatro Municipal | `01.jpg`, `02.jpg` | `video-01.mp4`, `video-02.mp4` |
+
+Esos son los marcos que existen hoy. Para una foto `03.jpg` o un vídeo
+`video-03.mp4` hay que crear también su marco en el HTML: está explicado al
+final de este archivo.
+
+**Enlace directo para subir los archivos del Teatro Municipal:**
+<https://github.com/juandiegoalomiafranco-gif/CAS-website/upload/main/CAS%20pagina%20web/images/experiencias/exp-01>
+
+Ese mismo enlace sirve para las fotos y para los vídeos: los dos van a la
+misma carpeta y la página los coloca en su sección según el nombre del archivo.
+
+Al crear una experiencia nueva, su carpeta se llama `exp-02`, `exp-03`, y así.
 
 ---
 
@@ -91,3 +120,26 @@ Para controlar la proporción de un hueco:
 | `mosaic__item` | vertical 3:4 *(por defecto)* |
 | `mosaic__item mosaic__item--tall` | vertical largo 9:16 |
 | `mosaic__item mosaic__item--land` | horizontal 3:2 |
+
+## Si quieres más (o menos) vídeos
+
+Funciona igual, con `data-video-slot` en vez de `data-slot`:
+
+```html
+<figure class="vidslot vidslot--tall"
+        data-video-slot="images/experiencias/exp-01/video-04.mp4"
+        data-alt="Concierto — vídeo 04" data-cap="Vídeo 04">
+  <div class="placeholder-img">
+    <span class="eyebrow">Vídeo 04</span>
+    <span class="placeholder-img__note">video-04.mp4</span>
+  </div>
+</figure>
+```
+
+| Clase | Marco vacío |
+|---|---|
+| `vidslot` | horizontal 16:9 *(por defecto)* |
+| `vidslot vidslot--tall` | vertical 9:16 *(vídeo de celular)* |
+
+El marco solo fija el hueco mientras no hay archivo. Una vez subes el vídeo,
+manda su proporción real.

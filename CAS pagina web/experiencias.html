@@ -26,58 +26,31 @@
     <!-- ══ HERO CARRUSEL — loop infinito de experiencias ══ -->
     <section class="exp-carousel" aria-label="Experiencias">
       <h1 class="sr-only">Experiencias</h1>
+      <!-- El fondo se rellena solo con la primera foto de la experiencia
+           (images/experiencias/exp-01/01.jpg). Mientras no exista se ve el
+           rótulo E·1 sobre el color del proyecto. -->
       <div class="exp-carousel__stage">
-      <div class="exp-carousel__img tone-p01"><img src="images/drummer.jpg" alt="Ensayo de Batería"><div class="exp-carousel__darken"></div></div>
-      <div class="exp-carousel__img tone-p04"><span class="filmstrip__ghost" aria-hidden="true">E·2</span><div class="exp-carousel__darken"></div></div>
-      <div class="exp-carousel__img tone-p05"><span class="filmstrip__ghost" aria-hidden="true">E·3</span><div class="exp-carousel__darken"></div></div>
-      <div class="exp-carousel__img tone-p02"><span class="filmstrip__ghost" aria-hidden="true">E·4</span><div class="exp-carousel__darken"></div></div>
-      <div class="exp-carousel__img tone-p07"><span class="filmstrip__ghost" aria-hidden="true">E·5</span><div class="exp-carousel__darken"></div></div>
+      <div class="exp-carousel__img tone-p01" style="--focus: center 72%;" data-slot="images/experiencias/exp-01/01.jpg" data-alt="La banda del colegio en el escenario del Teatro Municipal"><span class="filmstrip__ghost" aria-hidden="true">E·1</span><div class="exp-carousel__darken"></div></div>
       </div>
       <div class="exp-carousel__panel">
-        <span class="eyebrow">Experiencia 1 · 10·03·2025 · 2H</span>
-        <h2 class="exp-carousel__title">Ensayo de Batería</h2>
+        <span class="eyebrow">Experiencia 1 · 24·05·2026 · 2H</span>
+        <h2 class="exp-carousel__title">Concierto en el Teatro Municipal</h2>
         <a class="btn exp-carousel__cta" href="experiencia-01.html">Ver experiencia</a>
       </div>
+      <!-- Riel de experiencias. El carrusel con scroll pinned (js/exp-carousel.js)
+           necesita al menos dos experiencias para animarse; con una sola el riel
+           se queda quieto y el enlace sigue funcionando igual.
+           Al añadir una experiencia: un <div class="exp-carousel__img"> más arriba
+           y un <a class="exp-carousel__node"> más aquí — el JS empareja las dos
+           listas por posición, así que tienen que crecer juntas. -->
       <div class="exp-carousel__rail" aria-hidden="false">
         <div class="exp-carousel__track">
-        <a class="exp-carousel__node tone-p01" href="experiencia-01.html" data-meta="Experiencia 1 · 10·03·2025 · 2H">
-          <span class="exp-carousel__thumb"><img src="images/drummer.jpg" alt=""></span>
+        <a class="exp-carousel__node tone-p01" href="experiencia-01.html" data-meta="Experiencia 1 · 24·05·2026 · 2H">
+          <span class="exp-carousel__thumb">E·1</span>
           <span class="exp-carousel__label">
             <span class="exp-carousel__label-num">EXP. 1</span>
-            <span class="exp-carousel__label-title">Ensayo de Batería</span>
-            <span class="exp-carousel__label-desc">Técnica de brazos e independencia rítmica.</span>
-          </span>
-        </a>
-        <a class="exp-carousel__node tone-p04" href="experiencia-02.html" data-meta="Experiencia 2 · 12·03·2025 · 1.5H">
-          <span class="exp-carousel__thumb">E·2</span>
-          <span class="exp-carousel__label">
-            <span class="exp-carousel__label-num">EXP. 2</span>
-            <span class="exp-carousel__label-title">Entrenamiento de Natación</span>
-            <span class="exp-carousel__label-desc">Técnica de crol y respiración bilateral.</span>
-          </span>
-        </a>
-        <a class="exp-carousel__node tone-p05" href="experiencia-03.html" data-meta="Experiencia 3 · 15·03·2025 · 45MIN">
-          <span class="exp-carousel__thumb">E·3</span>
-          <span class="exp-carousel__label">
-            <span class="exp-carousel__label-num">EXP. 3</span>
-            <span class="exp-carousel__label-title">Carrera 5K</span>
-            <span class="exp-carousel__label-desc">5km en zona aeróbica con registro de datos.</span>
-          </span>
-        </a>
-        <a class="exp-carousel__node tone-p02" href="experiencia-04.html" data-meta="Experiencia 4 · 18·03·2025 · 1H">
-          <span class="exp-carousel__thumb">E·4</span>
-          <span class="exp-carousel__label">
-            <span class="exp-carousel__label-num">EXP. 4</span>
-            <span class="exp-carousel__label-title">Práctica de Bajo</span>
-            <span class="exp-carousel__label-desc">Escalas pentatónicas sobre backing track.</span>
-          </span>
-        </a>
-        <a class="exp-carousel__node tone-p07" href="experiencia-05.html" data-meta="Experiencia 5 · 20·03·2025 · 3H">
-          <span class="exp-carousel__thumb">E·5</span>
-          <span class="exp-carousel__label">
-            <span class="exp-carousel__label-num">EXP. 5</span>
-            <span class="exp-carousel__label-title">Investigación de Impacto Social</span>
-            <span class="exp-carousel__label-desc">Estudio de necesidades de la comunidad local.</span>
+            <span class="exp-carousel__label-title">Concierto en el Teatro Municipal</span>
+            <span class="exp-carousel__label-desc">Popurrí de «Get Lucky» y «Mil Horas» con la banda del colegio.</span>
           </span>
         </a>
         </div>
@@ -110,73 +83,19 @@
         <!-- Experience List -->
         <div class="exp-list">
 
-          <!-- EXP.001 -->
-          <div class="exp-entry tone-p01 exp-entry--creativity reveal" data-category="creativity" data-date="2025-03-10">
+          <!-- EXP.001 — para añadir otra, copia este bloque entero y cambia
+               número, fecha, data-date, duración, categoría (data-category y
+               la clase exp-entry--…), título, descripción y enlace. -->
+          <div class="exp-entry tone-p01 exp-entry--creativity reveal" data-category="creativity" data-date="2026-05-24">
             <div class="exp-entry__rail">
               <span class="exp-entry__number">EXP. 1</span>
-              <span class="exp-entry__date">10 · 03 · 2025</span>
+              <span class="exp-entry__date">24 · 05 · 2026</span>
               <span class="exp-entry__dur text-accent">2H</span>
               <span class="cat-chip cat-chip--c">C</span>
             </div>
-            <h3 class="exp-entry__title"><a href="experiencia-01.html" class="project-block__title-link">Ensayo de Batería</a></h3>
-            <p class="exp-entry__desc">Primera sesión formal de ensayo con enfoque en técnica de brazos y desarrollo de independencia rítmica.</p>
+            <h3 class="exp-entry__title"><a href="experiencia-01.html" class="project-block__title-link">Concierto en el Teatro Municipal</a></h3>
+            <p class="exp-entry__desc">Presentación con la banda del colegio: un popurrí que unía «Get Lucky» y «Mil Horas», montado en una sola semana de ensayos.</p>
             <a href="experiencia-01.html" class="arrow-link">Ver experiencia <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-
-
-          <!-- EXP.002 -->
-          <div class="exp-entry tone-p04 exp-entry--activity reveal" data-category="activity" data-date="2025-03-12">
-            <div class="exp-entry__rail">
-              <span class="exp-entry__number">EXP. 2</span>
-              <span class="exp-entry__date">12 · 03 · 2025</span>
-              <span class="exp-entry__dur text-accent">1.5H</span>
-              <span class="cat-chip cat-chip--a">A</span>
-            </div>
-            <h3 class="exp-entry__title"><a href="experiencia-02.html" class="project-block__title-link">Entrenamiento de Natación</a></h3>
-            <p class="exp-entry__desc">Sesión de piscina enfocada en técnica de crol y mejora de respiración bilateral.</p>
-            <a href="experiencia-02.html" class="arrow-link">Ver experiencia <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-
-
-          <!-- EXP.003 -->
-          <div class="exp-entry tone-p05 exp-entry--activity reveal" data-category="activity" data-date="2025-03-15">
-            <div class="exp-entry__rail">
-              <span class="exp-entry__number">EXP. 3</span>
-              <span class="exp-entry__date">15 · 03 · 2025</span>
-              <span class="exp-entry__dur text-accent">45MIN</span>
-              <span class="cat-chip cat-chip--a">A</span>
-            </div>
-            <h3 class="exp-entry__title"><a href="experiencia-03.html" class="project-block__title-link">Carrera 5K</a></h3>
-            <p class="exp-entry__desc">Primera salida de running estructurada: 5km en zona aeróbica, ritmo controlado y registro de datos.</p>
-            <a href="experiencia-03.html" class="arrow-link">Ver experiencia <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-
-
-          <!-- EXP.004 -->
-          <div class="exp-entry tone-p02 exp-entry--creativity reveal" data-category="creativity" data-date="2025-03-18">
-            <div class="exp-entry__rail">
-              <span class="exp-entry__number">EXP. 4</span>
-              <span class="exp-entry__date">18 · 03 · 2025</span>
-              <span class="exp-entry__dur text-accent">1H</span>
-              <span class="cat-chip cat-chip--c">C</span>
-            </div>
-            <h3 class="exp-entry__title"><a href="experiencia-04.html" class="project-block__title-link">Práctica de Bajo</a></h3>
-            <p class="exp-entry__desc">Sesión de bajo eléctrico: escalas pentatónicas y primeras líneas de bajo sobre backing track.</p>
-            <a href="experiencia-04.html" class="arrow-link">Ver experiencia <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-
-
-          <!-- EXP.005 -->
-          <div class="exp-entry tone-p07 exp-entry--service reveal" data-category="service" data-date="2025-03-20">
-            <div class="exp-entry__rail">
-              <span class="exp-entry__number">EXP. 5</span>
-              <span class="exp-entry__date">20 · 03 · 2025</span>
-              <span class="exp-entry__dur text-accent">3H</span>
-              <span class="cat-chip cat-chip--s">S</span>
-            </div>
-            <h3 class="exp-entry__title"><a href="experiencia-05.html" class="project-block__title-link">Investigación de Impacto Social</a></h3>
-            <p class="exp-entry__desc">Investigación preliminar para definir el proyecto de servicio: estudio de necesidades de la comunidad local.</p>
-            <a href="experiencia-05.html" class="arrow-link">Ver experiencia <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
 
         </div><!-- /exp-list -->
@@ -189,6 +108,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="js/scroll-anim.js"></script>
+  <script src="js/photo-slots.js"></script>
   <script src="js/exp-carousel.js"></script>
 </body>
 </html>

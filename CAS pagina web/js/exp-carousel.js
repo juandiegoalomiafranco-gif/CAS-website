@@ -20,7 +20,13 @@
     if (N < 2) return;
 
     // Two extra copies for the seamless wrap
-    for (let c = 0; c < 2; c++) originals.forEach((n) => track.appendChild(n.cloneNode(true)));
+    // Las copias van marcadas con is-clone para que el CSS pueda esconderlas
+    // sin tener que saber cuántas experiencias hay.
+    for (let c = 0; c < 2; c++) originals.forEach((n) => {
+      const copy = n.cloneNode(true);
+      copy.classList.add('is-clone');
+      track.appendChild(copy);
+    });
     const nodes = [...track.querySelectorAll('a')];
 
     root.classList.add('exp-carousel--live');
