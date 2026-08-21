@@ -1561,6 +1561,7 @@ main { padding-top: var(--nav-height); }
   padding: 40px 0;
 }
 
+.proj-pager--single { grid-template-columns: 1fr; }
 .proj-pager__link--next { text-align: right; align-items: flex-end; border-left: 1px solid var(--border-light); }
 .proj-pager__link--prev { padding-right: 32px; }
 .proj-pager__link--next { padding-left: 32px; }
@@ -1639,6 +1640,41 @@ main { padding-top: var(--nav-height); }
   color: var(--zinc);
   margin-top: 6px;
 }
+
+/* --- HUECOS DE VÍDEO ---
+   Mismo sistema que las fotos: el marco declara su ruta en data-video-slot y
+   js/photo-slots.js mete el <video> solo si el archivo existe. Sin archivo
+   queda el marco vacío, nunca un reproductor roto. */
+.vidgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.vidslot { margin: 0; position: relative; }
+
+/* Un marco vacío no tiene vídeo que le dé alto: se lo damos nosotros. */
+.vidslot .placeholder-img { height: auto; aspect-ratio: 16 / 9; }
+.vidslot--tall .placeholder-img { aspect-ratio: 9 / 16; }  /* vídeo de celular */
+
+/* height:auto — manda la proporción real del vídeo, no lo recortamos. */
+.vidslot video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--border);
+  background: var(--ink);
+}
+
+.vidslot__cap {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--zinc);
+  margin-top: 6px;
+}
+
+@media (max-width: 1024px) { .vidgrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px)  { .vidgrid { grid-template-columns: 1fr; } }
 
 @media (max-width: 1200px) {
   .mosaic { columns: 3; }
@@ -1976,10 +2012,12 @@ main { padding-top: var(--nav-height); }
   gap: 28px;
 }
 
-/* Sin JS el riel muestra solo las experiencias reales; con JS activo la regla
-   .exp-carousel--live de más abajo las vuelve a mostrar junto a sus copias.
-   Al añadir una experiencia hay que subir este número: nº de experiencias + 1. */
-.exp-carousel__track > a:nth-child(n+7) { display: none; }
+/* El riel solo muestra experiencias reales: las copias que clona el JS para
+   el bucle infinito se marcan con .is-clone y la regla .exp-carousel--live de
+   más abajo las devuelve a la vista cuando el carrusel arranca. Antes esto era
+   un :nth-child con el número de experiencias escrito a mano, que escondía la
+   última cada vez que se añadía una. */
+.exp-carousel__track > a.is-clone { display: none; }
 
 .exp-carousel__node {
   display: flex;
