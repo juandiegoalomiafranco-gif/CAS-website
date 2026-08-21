@@ -133,28 +133,16 @@
             <h2 class="section-head section-head--sm">Evidencias</h2>
           </div>
         </div>
-        <!-- PARA PONER TUS FOTOS: súbelas a images/experiencias/exp-01/ con el nombre que declara
-             cada data-slot (01.jpg, 02.jpg…) y aparecen solas, con su visor a
-             pantalla completa. No hace falta tocar este HTML.
+        <!-- Las fotos viven en images/experiencias/exp-01/ con el nombre que declara cada
+             data-slot. Para añadir la 03: sube 03.jpg y copia uno de estos bloques
+             cambiando el número.
              · sin modificador → vertical 3:4   · --tall → 9:16   · --land → 3:2 -->
-        <div class="mosaic reveal" data-lightbox="galeria-exp-01" style="position:relative;z-index:1;">
-          <figure class="mosaic__item" data-slot="images/experiencias/exp-01/01.jpg" data-alt="Concierto en el Teatro Municipal — foto 01" data-cap="Foto 01">
+        <div class="mosaic mosaic--pair reveal" data-lightbox="galeria-exp-01" style="position:relative;z-index:1;">
+          <figure class="mosaic__item mosaic__item--tall" data-slot="images/experiencias/exp-01/01.jpg" data-alt="La banda del colegio en el escenario del Teatro Municipal, vista desde el balcón" data-cap="La banda en el escenario">
             <div class="placeholder-img"><span class="eyebrow">Foto 01</span><span class="placeholder-img__note">01.jpg</span></div>
           </figure>
-          <figure class="mosaic__item" data-slot="images/experiencias/exp-01/02.jpg" data-alt="Concierto en el Teatro Municipal — foto 02" data-cap="Foto 02">
+          <figure class="mosaic__item mosaic__item--tall" data-slot="images/experiencias/exp-01/02.jpg" data-alt="Juan Diego tocando la batería durante la presentación" data-cap="En la batería">
             <div class="placeholder-img"><span class="eyebrow">Foto 02</span><span class="placeholder-img__note">02.jpg</span></div>
-          </figure>
-          <figure class="mosaic__item mosaic__item--land" data-slot="images/experiencias/exp-01/03.jpg" data-alt="Concierto en el Teatro Municipal — foto 03" data-cap="Foto 03">
-            <div class="placeholder-img"><span class="eyebrow">Foto 03</span><span class="placeholder-img__note">03.jpg</span></div>
-          </figure>
-          <figure class="mosaic__item" data-slot="images/experiencias/exp-01/04.jpg" data-alt="Concierto en el Teatro Municipal — foto 04" data-cap="Foto 04">
-            <div class="placeholder-img"><span class="eyebrow">Foto 04</span><span class="placeholder-img__note">04.jpg</span></div>
-          </figure>
-          <figure class="mosaic__item mosaic__item--tall" data-slot="images/experiencias/exp-01/05.jpg" data-alt="Concierto en el Teatro Municipal — foto 05" data-cap="Foto 05">
-            <div class="placeholder-img"><span class="eyebrow">Foto 05</span><span class="placeholder-img__note">05.jpg</span></div>
-          </figure>
-          <figure class="mosaic__item" data-slot="images/experiencias/exp-01/06.jpg" data-alt="Concierto en el Teatro Municipal — foto 06" data-cap="Foto 06">
-            <div class="placeholder-img"><span class="eyebrow">Foto 06</span><span class="placeholder-img__note">06.jpg</span></div>
           </figure>
         </div>
       </div>
@@ -171,20 +159,16 @@
             <h2 class="section-head section-head--sm">El concierto en movimiento</h2>
           </div>
         </div>
-        <!-- PARA PONER TUS VÍDEOS: súbelos a images/experiencias/exp-01/ con el nombre
-             que declara cada data-video-slot (video-01.mp4, video-02.mp4…) y aparecen
-             solos, con los controles del navegador. No hace falta tocar este HTML.
-             · sin modificador → marco horizontal 16:9   · --tall → vertical 9:16
-             Sube .mp4. Si grabaste en vertical con el celular, usa --tall. -->
-        <div class="vidgrid reveal" style="position:relative;z-index:1;">
-          <figure class="vidslot vidslot--tall" data-video-slot="images/experiencias/exp-01/video-01.mp4" data-alt="Concierto en el Teatro Municipal — vídeo 01" data-cap="Vídeo 01">
+        <!-- Los vídeos viven en images/experiencias/exp-01/ con el nombre que declara cada
+             data-video-slot. Para añadir el 03: sube video-03.mp4 y copia uno de estos
+             bloques cambiando el número.
+             · sin modificador → marco horizontal 16:9   · --tall → vertical 9:16 -->
+        <div class="vidgrid vidgrid--pair reveal" style="position:relative;z-index:1;">
+          <figure class="vidslot vidslot--tall" data-video-slot="images/experiencias/exp-01/video-01.mp4" data-alt="Vídeo del concierto en el Teatro Municipal" data-cap="Vídeo 01">
             <div class="placeholder-img"><span class="eyebrow">Vídeo 01</span><span class="placeholder-img__note">video-01.mp4</span></div>
           </figure>
-          <figure class="vidslot vidslot--tall" data-video-slot="images/experiencias/exp-01/video-02.mp4" data-alt="Concierto en el Teatro Municipal — vídeo 02" data-cap="Vídeo 02">
+          <figure class="vidslot vidslot--tall" data-video-slot="images/experiencias/exp-01/video-02.mp4" data-alt="Vídeo del concierto en el Teatro Municipal" data-cap="Vídeo 02">
             <div class="placeholder-img"><span class="eyebrow">Vídeo 02</span><span class="placeholder-img__note">video-02.mp4</span></div>
-          </figure>
-          <figure class="vidslot" data-video-slot="images/experiencias/exp-01/video-03.mp4" data-alt="Concierto en el Teatro Municipal — vídeo 03" data-cap="Vídeo 03">
-            <div class="placeholder-img"><span class="eyebrow">Vídeo 03</span><span class="placeholder-img__note">video-03.mp4</span></div>
           </figure>
         </div>
       </div>

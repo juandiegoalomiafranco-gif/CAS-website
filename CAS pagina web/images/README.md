@@ -17,7 +17,9 @@ nunca se rompe ni muestra imágenes rotas.
 4. Botón **Add file → Upload files**
 5. Arrastra tus fotos o vídeos
 6. **Importante:** renómbralos antes de subirlos (`01.jpg`, `02.jpg`… para las
-   fotos; `video-01.mp4`, `video-02.mp4`… para los vídeos)
+   fotos; `video-01.mp4`, `video-02.mp4`… para los vídeos). Los nombres que
+   pone WhatsApp, del tipo `WhatsApp Image 2026-05-24 at 8.04.12 PM.jpeg`, no
+   los reconoce la página: hay que cambiarlos.
 7. Abajo, **Commit changes**
 
 ---
@@ -79,7 +81,11 @@ Cada experiencia tiene su carpeta, con huecos para fotos y para vídeos.
 
 | Carpeta | Experiencia | Fotos | Vídeos |
 |---|---|---|---|
-| `exp-01` | Concierto en el Teatro Municipal | `01.jpg` … `06.jpg` | `video-01.mp4` … `video-03.mp4` |
+| `exp-01` | Concierto en el Teatro Municipal | `01.jpg`, `02.jpg` | `video-01.mp4`, `video-02.mp4` |
+
+Esos son los marcos que existen hoy. Para una foto `03.jpg` o un vídeo
+`video-03.mp4` hay que crear también su marco en el HTML: está explicado al
+final de este archivo.
 
 **Enlace directo para subir los archivos del Teatro Municipal:**
 <https://github.com/juandiegoalomiafranco-gif/CAS-website/upload/main/CAS%20pagina%20web/images/experiencias/exp-01>
