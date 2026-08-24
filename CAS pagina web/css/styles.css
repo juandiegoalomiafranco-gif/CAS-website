@@ -1399,6 +1399,8 @@ main { padding-top: var(--nav-height); }
 .tone-p05 { --accent: var(--p05); }
 .tone-p06 { --accent: var(--p06); }
 .tone-p07 { --accent: var(--p07); }
+/* Una experiencia que no cuelga de ningún proyecto toma el color de su área. */
+.tone-service { --accent: var(--service); }
 
 .text-accent { color: var(--accent); }
 .eyebrow--accent { color: var(--accent); }
