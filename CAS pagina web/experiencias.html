@@ -26,11 +26,12 @@
     <!-- ══ HERO CARRUSEL — loop infinito de experiencias ══ -->
     <section class="exp-carousel" aria-label="Experiencias">
       <h1 class="sr-only">Experiencias</h1>
-      <!-- El fondo se rellena solo con la primera foto de la experiencia
-           (images/experiencias/exp-01/01.jpg). Mientras no exista se ve el
-           rótulo E·1 sobre el color del proyecto. -->
+      <!-- Cada capa se rellena sola con la primera foto de su experiencia
+           (images/experiencias/exp-0N/01.jpg). Mientras esa foto no exista se
+           ve el rótulo E·N sobre el color de la experiencia. -->
       <div class="exp-carousel__stage">
       <div class="exp-carousel__img tone-p01" style="--focus: center 72%;" data-slot="images/experiencias/exp-01/01.jpg" data-alt="La banda del colegio en el escenario del Teatro Municipal"><span class="filmstrip__ghost" aria-hidden="true">E·1</span><div class="exp-carousel__darken"></div></div>
+      <div class="exp-carousel__img tone-service" data-slot="images/experiencias/exp-02/01.jpg" data-alt="Los desayunos organizados en el carro antes de salir a repartir"><span class="filmstrip__ghost" aria-hidden="true">E·2</span><div class="exp-carousel__darken"></div></div>
       </div>
       <div class="exp-carousel__panel">
         <span class="eyebrow">Experiencia 1 · 24·05·2026 · 2H</span>
@@ -38,8 +39,7 @@
         <a class="btn exp-carousel__cta" href="experiencia-01.html">Ver experiencia</a>
       </div>
       <!-- Riel de experiencias. El carrusel con scroll pinned (js/exp-carousel.js)
-           necesita al menos dos experiencias para animarse; con una sola el riel
-           se queda quieto y el enlace sigue funcionando igual.
+           necesita al menos dos experiencias para animarse.
            Al añadir una experiencia: un <div class="exp-carousel__img"> más arriba
            y un <a class="exp-carousel__node"> más aquí — el JS empareja las dos
            listas por posición, así que tienen que crecer juntas. -->
@@ -51,6 +51,14 @@
             <span class="exp-carousel__label-num">EXP. 1</span>
             <span class="exp-carousel__label-title">Concierto en el Teatro Municipal</span>
             <span class="exp-carousel__label-desc">Popurrí de «Get Lucky» y «Mil Horas» con la banda del colegio.</span>
+          </span>
+        </a>
+        <a class="exp-carousel__node tone-service" href="experiencia-02.html" data-meta="Experiencia 2 · 24·08·2026 · 3H">
+          <span class="exp-carousel__thumb">E·2</span>
+          <span class="exp-carousel__label">
+            <span class="exp-carousel__label-num">EXP. 2</span>
+            <span class="exp-carousel__label-title">Desayunos con la parroquia La María</span>
+            <span class="exp-carousel__label-desc">Madrugada de servicio repartiendo unos 20 desayunos a habitantes de calle.</span>
           </span>
         </a>
         </div>
@@ -96,6 +104,19 @@
             <h3 class="exp-entry__title"><a href="experiencia-01.html" class="project-block__title-link">Concierto en el Teatro Municipal</a></h3>
             <p class="exp-entry__desc">Presentación con la banda del colegio: un popurrí que unía «Get Lucky» y «Mil Horas», montado en una sola semana de ensayos.</p>
             <a href="experiencia-01.html" class="arrow-link">Ver experiencia <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+
+          <!-- EXP.002 -->
+          <div class="exp-entry tone-service exp-entry--service reveal" data-category="service" data-date="2026-08-24">
+            <div class="exp-entry__rail">
+              <span class="exp-entry__number">EXP. 2</span>
+              <span class="exp-entry__date">24 · 08 · 2026</span>
+              <span class="exp-entry__dur text-accent">3H</span>
+              <span class="cat-chip cat-chip--s">S</span>
+            </div>
+            <h3 class="exp-entry__title"><a href="experiencia-02.html" class="project-block__title-link">Desayunos con la parroquia La María</a></h3>
+            <p class="exp-entry__desc">Madrugada de servicio con la parroquia: recorrer una ruta en carro y repartir unos 20 desayunos a habitantes de calle, antes del cierre y la misa.</p>
+            <a href="experiencia-02.html" class="arrow-link">Ver experiencia <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
 
         </div><!-- /exp-list -->

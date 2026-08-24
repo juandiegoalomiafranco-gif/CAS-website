@@ -82,18 +82,27 @@ Cada experiencia tiene su carpeta, con huecos para fotos y para vídeos.
 | Carpeta | Experiencia | Fotos | Vídeos |
 |---|---|---|---|
 | `exp-01` | Concierto en el Teatro Municipal | `01.jpg`, `02.jpg` | `video-01.mp4`, `video-02.mp4` |
+| `exp-02` | Desayunos con la parroquia La María | `01.jpg`, `02.jpg` | `video-01.mp4`, `video-02.mp4` |
 
 Esos son los marcos que existen hoy. Para una foto `03.jpg` o un vídeo
 `video-03.mp4` hay que crear también su marco en el HTML: está explicado al
 final de este archivo.
 
-**Enlace directo para subir los archivos del Teatro Municipal:**
-<https://github.com/juandiegoalomiafranco-gif/CAS-website/upload/main/CAS%20pagina%20web/images/experiencias/exp-01>
+**Enlaces directos para subir los archivos:**
 
-Ese mismo enlace sirve para las fotos y para los vídeos: los dos van a la
-misma carpeta y la página los coloca en su sección según el nombre del archivo.
+- Teatro Municipal (`exp-01`):
+  <https://github.com/juandiegoalomiafranco-gif/CAS-website/upload/main/CAS%20pagina%20web/images/experiencias/exp-01>
+- Desayunos con la parroquia La María (`exp-02`):
+  <https://github.com/juandiegoalomiafranco-gif/CAS-website/upload/main/CAS%20pagina%20web/images/experiencias/exp-02>
 
-Al crear una experiencia nueva, su carpeta se llama `exp-02`, `exp-03`, y así.
+Cada enlace sirve para las fotos y para los vídeos de esa experiencia: los dos
+van a la misma carpeta y la página los coloca en su sección según el nombre del
+archivo.
+
+> Los enlaces apuntan a `main`. Mientras la experiencia siga en su rama y no se
+> haya fusionado, cambia `/upload/main/` por `/upload/<nombre-de-la-rama>/`.
+
+Al crear una experiencia nueva, su carpeta se llama `exp-03`, `exp-04`, y así.
 
 ---
 
